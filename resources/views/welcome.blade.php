@@ -6,6 +6,7 @@
     <title>Yoxlama Səhifəsi</title>
 </head>
 <body>
+
     <h1>Xoş gəlmisiniz</h1>  
 </body>
 </html>
