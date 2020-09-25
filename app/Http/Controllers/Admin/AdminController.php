@@ -12,7 +12,7 @@ class AdminController extends Controller
     protected $credentials;
 
     public function index() {
-        dd('ok');
+        return view('backend.index');
     }
 
     public function loginView() {
