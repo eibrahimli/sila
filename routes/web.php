@@ -9,7 +9,7 @@ Route::name('admin.')->namespace('Admin')->prefix('admin')->middleware('admin')-
     
 });
 
-Route::get('admin/login', [AdminController::class,'loginView'])->name('admin.loginView');
-Route::post('admin/login', [AdminController::class,'loginStore'])->name('admin.loginStore');
+Route::get('admin/login', [AdminController::class,'loginView'])->name('admin.loginView')->middleware('guest');
+Route::post('admin/login', [AdminController::class,'loginStore'])->name('admin.loginStore')->middleware('guest');
 
 Route::get('',[SiteController::class,'index'])->name('index');
