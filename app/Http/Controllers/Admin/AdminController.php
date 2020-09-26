@@ -30,7 +30,8 @@ class AdminController extends Controller
         if(Auth::attempt($this->credentials)) {
             return redirect()->to(route('admin.index'));
         } else {
-            dd('Olmadı');
+            return redirect()->back()->withErrors('email', 'Daxil etdiyiniz məlumatlar üzrə bazada bir sitifadəçi yoxdur');
         }
     }
+
 }

@@ -34,93 +34,60 @@
 
 
 </head>
-<body class="sidebar-pinned page-home">
-    @include('backend.inc.nav')
-<main class="admin-main">
-    <!--site header begins-->
-    <header class="admin-header">
+<body class="jumbo-page">
 
-        <a href="#" class="sidebar-toggle" data-toggleclass="sidebar-open" data-target="body"> </a>
+<main class="admin-main  bg-pattern">
+    <div class="container">
+        <div class="row m-h-100 ">
+            <div class="col-md-8 col-lg-4  m-auto">
+                <div class="card shadow-lg ">
+                    <div class="card-body ">
+                        <div class=" padding-box-2 ">
+                            <div class="text-center p-b-20 pull-up-sm">
 
-        <nav class=" mr-auto my-auto">
-            <ul class="nav align-items-center">
+                                <div class="avatar avatar-lg">
+                                    <span class="avatar-title rounded-circle bg-pink"> <i class="mdi mdi-key-change"></i> </span>
+                                </div>
 
-                <li class="nav-item">
-                    <a class="nav-link" data-target="#siteSearchModal" data-toggle="modal" href="#">
-                        <i class=" mdi mdi-magnify mdi-24px align-middle"></i>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        <nav class=" ml-auto">
-            <ul class="nav align-items-center">
-                <li class="nav-item">
-                    <div class="dropdown">
-                        <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="mdi mdi-24px mdi-bell-outline"></i>
-                            <span class="notification-counter"></span>
-                        </a>
-
-                        <div class="dropdown-menu notification-container dropdown-menu-right">
-                            <div class="d-flex p-all-15 bg-white justify-content-between border-bottom ">
-                                <a href="#!" class="mdi mdi-18px mdi-settings text-muted"></a>
-                                <span class="h5 m-0">Notifications</span>
-                                <a href="#!" class="mdi mdi-18px mdi-notification-clear-all text-muted"></a>
                             </div>
-                            <div class="notification-events bg-gray-300">
-                                <div class="text-overline m-b-5">today</div>
-                                <a href="#" class="d-block m-b-10">
-                                    <div class="card">
-                                        <div class="card-body"> <i class="mdi mdi-circle text-success"></i> All systems operational.</div>
-                                    </div>
-                                </a>
-                                <a href="#" class="d-block m-b-10">
-                                    <div class="card">
-                                        <div class="card-body"> <i class="mdi mdi-upload-multiple "></i> File upload successful.</div>
-                                    </div>
-                                </a>
-                                <a href="#" class="d-block m-b-10">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <i class="mdi mdi-cancel text-danger"></i> Your holiday has been denied
+                            <h3 class="text-center">Şifrənizi sıfırlayın</h3>
+                            <form action="{{ route('password.email') }}" method="post">
+                                @csrf
+                                <div class="form-group">
+                                    <label>Email</label>
+
+                                    <div class="input-group input-group-flush mb-3">
+                                        <input type="email" name="email" class="form-control form-control-prepended @error('email') is-invalid @enderror" placeholder="yourmail@example.com">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                <span class="mdi mdi-email"></span>
+                                            </div>
                                         </div>
+                                        @error('email')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </div>
-                                </a>
+                                    <p class="small">
+                                        Saytımızda qeydiyyatda olan e-poçt ünvanınıza şifrənizi sıfırlamaq üçün e-poçt göndərəciyik
+                                    </p>
+                                </div>
 
 
-                            </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn text-uppercase btn-block  btn-primary">
+                                        Sıfırla
+                                    </button>
+                                </div>
+                            </form>
 
                         </div>
                     </div>
-                </li>
-                <li class="nav-item dropdown ">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <div class="avatar avatar-sm avatar-online">
-                            <span class="avatar-title rounded-circle bg-dark">V</span>
-
-                        </div>
-                    </a>
-                    <div class="dropdown-menu  dropdown-menu-right">
-                        <a class="dropdown-item" href="#">  Add Account</a>
-                        <a class="dropdown-item" href="#">  Reset Password</a>
-                        <a class="dropdown-item" href="#">  Help </a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="{{ route('logout') }}"
-                           onclick="event.preventDefault();
-                                    document.getElementById('logout-form').submit();"> Çıxış Et</a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
-                        </form>
-                    </div>
-                </li>
-
-            </ul>
-
-        </nav>
-    </header>
-    <!--site header ends -->
-    <section class="admin-content">
-        @yield('content')
-    </section>
+                </div>
+            </div>
+        </div>
+    </div>
 </main>
 
 <div class="modal modal-slide-left  fade" id="siteSearchModal" tabindex="-1" role="dialog" aria-labelledby="siteSearchModal" aria-hidden="true">
@@ -247,12 +214,8 @@
     </div>
 </div>
 
+
 <script src='{{ asset("backend/js/script.js") }}'></script>
 <!--page specific scripts for demo-->
-
-<!--Additional Page includes-->
-<script src='{{ asset("backend/vendor/apexchart/apexcharts.min.js") }}'></script>
-<!--chart data for current dashboard-->
-<script src='{{ asset("backend/js/dashboard.js") }}'></script>
 </body>
 </html>
