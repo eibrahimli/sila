@@ -20,7 +20,7 @@
     <link rel='stylesheet' href='{{ asset("backend/vendor/pace/pace.css") }}'>
     <script src='{{ asset("backend/vendor/pace/pace.min.js") }}'></script>
     <!--vendors-->
-    <link rel='stylesheet' type='text/css' href='{{ asset("backend/assets/css/datepicker.css") }}'>
+    <link rel='stylesheet' type='text/css' href='{{ asset("backend/css/datepicker.css") }}'>
 
     <link rel='stylesheet' href='{{ asset("backend/css/style.css") }}'>
 
@@ -254,5 +254,6 @@
 <script src='{{ asset("backend/vendor/apexchart/apexcharts.min.js") }}'></script>
 <!--chart data for current dashboard-->
 <script src='{{ asset("backend/js/dashboard.js") }}'></script>
+@yield('js')
 </body>
 </html>

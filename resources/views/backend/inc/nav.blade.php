@@ -2,7 +2,7 @@
     <div class="admin-sidebar-brand">
         <!-- begin sidebar branding-->
         <img class="admin-brand-logo" src="{{ asset('backend/img/logo.png') }}" width="40" alt="sila Logo">
-        <span class="admin-brand-content font-secondary"><a href='{{ route('admin.index') }}'>  Sila Express</a></span>
+        <span class="admin-brand-content font-secondary"><a href='{{ route('admin.index') }}'> Sila Express</a></span>
         <!-- end sidebar branding-->
         <div class="ml-auto">
             <!-- sidebar pin-->
@@ -13,22 +13,19 @@
     </div>
     <div class="admin-sidebar-wrapper js-scrollbar">
         <ul class="menu">
-            <li class="menu-item active ">
-                <a href="#" class="open-dropdown menu-link">
-                        <span class="menu-label">
-                            <span class="menu-name">Dashboard
-                                <span class="menu-arrow"></span>
-                            </span>
+            <li class="menu-item">
+                <a href="{{ route('admin.index') }}" class="menu-link">
+                    <span class="menu-label">
+                        <span class="menu-name">Anasəhifə</span>
 
-                        </span>
+                    </span>
                     <span class="menu-icon">
 {{--                           <span class="icon-badge badge-success badge badge-pill">4</span>--}}
-                           <i class="icon-placeholder mdi mdi-shape-outline "></i>
+                        <i class="icon-placeholder mdi mdi-shape-outline "></i>
                     </span>
                 </a>
                 <!--submenu-->
-                <ul class="sub-menu">
-
+                {{-- <ul class="sub-menu">
                     <li class="menu-item ">
                         <a href='index.htm' class=' menu-link'>
                             <span class="menu-label">
@@ -40,7 +37,18 @@
                             </span>
                         </a>
                     </li>
-                </ul>
+                </ul> --}}
+            </li>
+            <li class="menu-item">
+                <a href="{{ route('admin.edit') }}" class="menu-link">
+                    <span class="menu-label">
+                        <span class="menu-name">Ayarlar</span>
+                    </span>
+                    <span class="menu-icon">
+                        <i class="icon-placeholder mdi mdi-settings"></i>
+                    </span>
+                </a>
+            
             </li>
         </ul>
     </div>

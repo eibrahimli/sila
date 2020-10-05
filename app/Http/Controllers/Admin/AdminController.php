@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -32,6 +33,16 @@ class AdminController extends Controller
         } else {
             return redirect()->back()->withErrors('email', 'Daxil etdiyiniz məlumatlar üzrə bazada bir sitifadəçi yoxdur');
         }
+    }
+
+    public function edit() {
+        $setting = Setting::first();
+
+        return view('backend.edit',compact('setting'));
+    }
+
+    public function update(Request $request) {
+        
     }
 
 }
