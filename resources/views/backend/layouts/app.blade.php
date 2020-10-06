@@ -32,11 +32,10 @@
     <link rel='stylesheet' type='text/css' href='{{ asset("backend/css/atmos.min.css") }}'>
     <!-- Additional library for page -->
 
-
 </head>
 <body class="sidebar-pinned page-home">
     @include('backend.inc.nav')
-<main class="admin-main">
+<main class="admin-main" id="app">
     <!--site header begins-->
     <header class="admin-header">
 
@@ -255,5 +254,7 @@
 <!--chart data for current dashboard-->
 <script src='{{ asset("backend/js/dashboard.js") }}'></script>
 @yield('js')
+
+    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

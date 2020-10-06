@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
@@ -43,6 +42,11 @@ class AdminController extends Controller
 
     public function update(Request $request) {
         
+    }
+
+    public function setting() {
+      $setting = Setting::first();
+      return response()->json($setting);
     }
 
 }

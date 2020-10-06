@@ -23,3 +23,4 @@ Route::post('/forgot-password', [SiteController::class,'sendResetEmailLink'])->m
 Route::post('logout',[SiteController::class,'logout'])->name('logout')->middleware('auth');
 
 Route::get('',[SiteController::class,'index'])->name('index');
+
