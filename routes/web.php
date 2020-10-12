@@ -7,7 +7,8 @@ use Illuminate\Support\Facades\Route;
 Route::name('admin.')->namespace('Admin')->prefix('admin')->middleware('admin')->group(function() {
     Route::get('', [AdminController::class, 'index'])->name('index');
     Route::get('ayarlar', [AdminController::class,'edit'])->name('edit');
-    Route::post('ayarlar', [AdminController::class,'update'])->name('update');
+    Route::get('settings', [AdminController::class, 'settings']);
+    Route::post('settings', [AdminController::class,'update'])->name('update');
 });
 
 Route::get('admin/login', [AdminController::class,'loginView'])->name('admin.loginView')->middleware('guest');

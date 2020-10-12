@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class AdminController extends Controller
 {
@@ -41,10 +42,37 @@ class AdminController extends Controller
     }
 
     public function update(Request $request) {
-        
+        $data = Validator::make($request->all(),[
+            'title' => 'required|min:3',
+            'desc' => 'required|min:5',
+            'keyw' => 'required|min:3',
+            'email' => 'required|email',
+            'adress' => 'required|min:3',
+            'number' => 'required|digits:12',
+            'social' => 'required',
+            'logo' => 'sometimes|file|image|mimes:jpg,jpeg,png,gif,svg'
+        ]);
+
+
+
+        if($data->fails()) {
+            return response()->json($data->errors(),400);
+        } else {
+            $setting = Setting::first();
+
+            $setting->update($request->except(['created_at','updated_at', 'id']));
+
+            if($request->has('logo')) {
+                $setting->update([
+                    'logo' => $request->logo->store('uploads', 'public')
+                ]);
+            }
+
+            return response()->json(['mes' => 'Ayarlar uğurla yeniləndi...','setting' => $setting],200);
+        }
     }
 
-    public function setting() {
+    public function settings() {
       $setting = Setting::first();
       return response()->json($setting);
     }
