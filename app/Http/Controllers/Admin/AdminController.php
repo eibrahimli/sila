@@ -2,79 +2,84 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use App\Models\Setting;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Password;
+use Illuminate\Auth\Events\PasswordReset;
 
 class AdminController extends Controller
 {
     protected $credentials;
 
-    public function index() {
+    public function __construct()
+    {
+        $this->middleware('admin')->except(['loginView', 'loginStore','resetPassword','forgotPassword']);
+    }
+
+    public function index()
+    {
         return view('backend.index');
     }
 
-    public function loginView() {
+    public function loginView()
+    {
         return view('backend.login');
     }
 
-    public function loginStore(Request $request) {
+    public function loginStore(Request $request)
+    {
         $request->validate([
             'email' => 'required|email',
             'password' => 'required|min:8'
         ]);
 
-        $this->credentials = $request->only(['email','password']);
+        $this->credentials = $request->only(['email', 'password']);
 
-        if(Auth::attempt($this->credentials)) {
+        if (Auth::attempt($this->credentials)) {
             return redirect()->to(route('admin.index'));
         } else {
             return redirect()->back()->withErrors('email', 'Daxil etdiyiniz məlumatlar üzrə bazada bir sitifadəçi yoxdur');
         }
     }
 
-    public function edit() {
-        $setting = Setting::first();
+    public function forgotPassword(Request $request)
+    {
+        $request->validate(['email' => 'required|email']);
 
-        return view('backend.edit',compact('setting'));
+        $status = Password::sendResetLink(
+            $request->only('email')
+        );
+
+        return $status === Password::RESET_LINK_SENT
+            ? back()->with(['status' => __($status)])
+            : back()->withErrors(['email' => __($status)]);
     }
 
-    public function update(Request $request) {
-        $data = Validator::make($request->all(),[
-            'title' => 'required|min:3',
-            'desc' => 'required|min:5',
-            'keyw' => 'required|min:3',
+    public function resetPassword(Request $request) {
+        $request->validate([
+            'token' => 'required',
             'email' => 'required|email',
-            'adress' => 'required|min:3',
-            'number' => 'required|digits:12',
-            'social' => 'required',
-            'logo' => 'sometimes|file|image|mimes:jpg,jpeg,png,gif,svg'
+            'password' => 'required|min:8|confirmed',
         ]);
-
-
-
-        if($data->fails()) {
-            return response()->json($data->errors(),400);
-        } else {
-            $setting = Setting::first();
-
-            $setting->update($request->except(['created_at','updated_at', 'id']));
-
-            if($request->has('logo')) {
-                $setting->update([
-                    'logo' => $request->logo->store('uploads', 'public')
-                ]);
+    
+        $status = Password::reset(
+            $request->only('email', 'password', 'password_confirmation', 'token'),
+            function ($user, $password) use ($request) {
+                $user->forceFill([
+                    'password' => Hash::make($password)
+                ])->save();
+    
+                $user->setRememberToken(Str::random(60));
+    
+                event(new PasswordReset($user));
             }
-
-            return response()->json(['mes' => 'Ayarlar uğurla yeniləndi...','setting' => $setting],200);
-        }
+        );
+    
+        return $status == Password::PASSWORD_RESET
+                    ? redirect()->route('admin.loginView')->with('status', __($status))
+                    : back()->withErrors(['email' => __($status)]);
     }
-
-    public function settings() {
-      $setting = Setting::first();
-      return response()->json($setting);
-    }
-
 }
