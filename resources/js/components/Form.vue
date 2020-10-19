@@ -357,7 +357,7 @@ export default {
     },
 
     setSocial() {
-      if (this.setting != null) {
+      if (this.setting.social) {
         let socialData = this.setting.social.split("|||");
 
         this.social = {
