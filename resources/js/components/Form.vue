@@ -365,8 +365,15 @@ export default {
           instagram: socialData[1],
           twitter: socialData[2],
           google: socialData[3],
-        };
-      }
+        }
+      }else {
+          this.social = {
+            facebook: '',
+            instagram: '',
+            twitter: '',
+            google: '',
+          }
+        }
     },
 
     submit() {
