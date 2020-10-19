@@ -19,12 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a46ce7e5-5fcb-4d11-85d5-c77d9d458cf4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/frontend/img/manat_symbol.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/layouts/app.blade.php" afterDir="false" />
-    </list>
+    <list default="true" id="a46ce7e5-5fcb-4d11-85d5-c77d9d458cf4" name="Default Changelist" comment="Ana səhifə Azərbaycandilinə tərcümə edildi..." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -210,8 +205,16 @@
       <workItem from="1602066523115" duration="1063000" />
       <workItem from="1602086018688" duration="1914000" />
       <workItem from="1602097291093" duration="76000" />
-      <workItem from="1603105180816" duration="5056000" />
+      <workItem from="1603105180816" duration="5568000" />
     </task>
+    <task id="LOCAL-00001" summary="Ana səhifə Azərbaycandilinə tərcümə edildi...">
+      <created>1603111876562</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1603111876563</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -231,6 +234,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Ana səhifə Azərbaycandilinə tərcümə edildi..." />
+    <option name="LAST_COMMIT_MESSAGE" value="Ana səhifə Azərbaycandilinə tərcümə edildi..." />
   </component>
   <component name="WindowStateProjectService">
     <state x="413" y="139" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1601122647456">
@@ -250,6 +255,10 @@
     </state>
     <state x="184" y="9" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1601119477145" />
     <state x="184" y="9" key="SettingsEditor/0.0.1366.768/1366.0.1680.1050@0.0.1366.768" timestamp="1603105628095" />
+    <state x="275" y="113" key="Vcs.Push.Dialog.v2" timestamp="1603111879839">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="275" y="113" key="Vcs.Push.Dialog.v2/0.0.1366.768/1366.0.1680.1050@0.0.1366.768" timestamp="1603111879839" />
     <state x="500" y="294" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1601117883419">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
