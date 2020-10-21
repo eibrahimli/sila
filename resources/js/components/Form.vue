@@ -289,8 +289,20 @@ export default {
     return {
       loading: true,
       base_url: "",
-      social: {},
-      setting: {},
+      social: {
+        facebook: '',
+        instagram: '',
+        twitter: '',
+        google: '',
+      },
+      setting: {
+        title: '',
+        email: '',
+        number: '',
+        keyw: '',
+        desc: '',
+        adress: ''
+      },
     };
   },
   validations: {
@@ -346,7 +358,9 @@ export default {
   methods: {
     getSettings: function () {
       axios.get(this.base_url + "/admin/settings").then((res) => {
-        this.setting = res.data;
+        if(Object.entries(res.data).length > 0) {
+          this.setting = res.data
+        }
         this.setSocial();
       });
       window.onload = () => {
@@ -379,7 +393,7 @@ export default {
     submit() {
       this.$v.$touch();
       if (this.$v.$invalid) {
-        this.submitStatus = "ERROR";
+        console.log('error')
       } else {
         const vm = this;
         Swal.fire({
@@ -395,7 +409,7 @@ export default {
         });
 
         setTimeout(() => {
-          if (this.setting.logo.type != "file") {
+          if (typeof this.setting.logo == 'string') {
             delete this.setting.logo;
           } else {
             this.setting.logo = this.setting.logo.files[0];
@@ -409,6 +423,8 @@ export default {
           for (var [key, value] of Object.entries(this.setting)) {
             formdata.set(key, value);
           }
+
+          this.setting.logo = ''
 
           axios
             .post(this.base_url + "/admin/settings", formdata)

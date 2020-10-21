@@ -24,7 +24,7 @@ class SettingController extends Controller
       'keyw' => 'required|min:3',
       'email' => 'required|email',
       'adress' => 'required|min:3',
-      'number' => 'required|digits:12',
+      'number' => 'required',
       'social' => 'required',
       'logo' => 'sometimes|file|image|mimes:jpg,jpeg,png,gif,svg'
     ]);
