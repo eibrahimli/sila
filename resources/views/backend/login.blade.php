@@ -93,7 +93,7 @@
 
               </form>
               <p class="text-right p-t-10">
-                <a href="{{ route('password.request') }}" class="text-underline">Şifrəmi unutdum?</a>
+                <a href="{{ route('admin.password.request') }}" class="text-underline">Şifrəmi unutdum?</a>
               </p>
             </div>
 

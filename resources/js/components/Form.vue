@@ -79,7 +79,7 @@
             Email boş ola bilməz...
           </div>
           <div v-if="!$v.setting.email.email" class="invalid-feedback">
-            Email doğru deil...
+            Email doğru deyil...
           </div>
         </div>
       </div>
@@ -237,9 +237,9 @@
             class="form-control"
             :class="{
               'is-valid':
-                $v.social.google.required || $v.social.google.minLength,
+                !$v.social.google.$invalid,
               'is-invalid':
-                !$v.social.google.required || !$v.social.google.minLength,
+                $v.social.google.$invalid,
             }"
             placeholder="Saytın google plus adresi"
           />
@@ -434,7 +434,7 @@ export default {
         function showAlert(res) {
           if (res.status == 200) {
             Swal.fire({
-              position: "top-end",
+              position: "center",
               icon: "success",
               title: res.data.mes,
               showConfirmButton: false,
@@ -444,8 +444,8 @@ export default {
             vm.setSocial();
           } else {
             Swal.fire({
-              position: "top-end",
-              icon: "success",
+              position: "center",
+              icon: "error",
               title: res.data.mes,
               showConfirmButton: false,
               timer: 1500,
@@ -456,7 +456,7 @@ export default {
     },
 
     getLogo(e) {
-      this.setting.logo = event.target;
+      this.setting.logo = e.target;
     },
   },
 };

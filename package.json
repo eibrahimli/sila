@@ -21,6 +21,7 @@
         "vuelidate": "^0.7.5"
     },
     "dependencies": {
-        "sweetalert2": "^10.4.0"
+        "sweetalert2": "^10.4.0",
+        "vue-select": "^3.10.8"
     }
 }

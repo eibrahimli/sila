@@ -23,34 +23,83 @@
 {{--                           <span class="icon-badge badge-success badge badge-pill">4</span>--}}
                         <i class="icon-placeholder mdi mdi-shape-outline "></i>
                     </span>
+                </a>              
+            </li>
+            <li class="menu-item">
+                <a href="#" class="open-dropdown menu-link">
+                    <span class="menu-label">
+                        <span class="menu-name">İstifadəçilər
+                            <span class="menu-arrow"></span>
+                        </span>
+                    </span>
+                    <span class="menu-icon">
+                        <i class="icon-placeholder mdi mdi-account"></i>
+                    </span>
                 </a>
-                <!--submenu-->
-                {{-- <ul class="sub-menu">
+                <ul class="sub-menu">
                     <li class="menu-item ">
-                        <a href='index.htm' class=' menu-link'>
+                        <a href='{{ route('admin.user.index') }}' class='menu-link'>
                             <span class="menu-label">
-                                <span class="menu-name">Dashboard 1</span>
+                                <span class="menu-name">Bütün İstifadəçilər</span>
                             </span>
                             <span class="menu-icon">
-                                <i class="icon-placeholder  mdi mdi-shape-circle-plus ">
+                                <i class="icon-placeholder  mdi mdi-account-box">
                                 </i>
                             </span>
                         </a>
                     </li>
-                </ul> --}}
+                </ul>
             </li>
+
+            <li class="menu-item">
+                <a href="#" class="open-dropdown menu-link">
+                    <span class="menu-label">
+                        <span class="menu-name">Kateqoriyalar
+                            <span class="menu-arrow"></span>
+                        </span>
+                    </span>
+                    <span class="menu-icon">
+                        <i class="icon-placeholder mdi mdi-format-list-bulleted"></i>
+                    </span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="menu-item ">
+                        <a href='{{ route('admin.category.index') }}' class='menu-link'>
+                            <span class="menu-label">
+                                <span class="menu-name">Bütün Kateqoriyalar</span>
+                            </span>
+                            <span class="menu-icon">
+                                <i class="icon-placeholder mdi mdi-format-list-checks">
+                                </i>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="menu-item ">
+                        <a href='{{ route('admin.category.create') }}' class='menu-link'>
+                            <span class="menu-label">
+                                <span class="menu-name">Yeni Kateqoriya</span>
+                            </span>
+                            <span class="menu-icon">
+                                <i class="icon-placeholder mdi mdi-plus-circle">
+                                </i>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </li>            
             <li class="menu-item">
                 <a href="{{ route('admin.edit') }}" class="menu-link">
                     <span class="menu-label">
-                        <span class="menu-name">Ayarlar</span>
+                        <span class="menu-name">Ayarlar
+                            
+                        </span>
                     </span>
                     <span class="menu-icon">
                         <i class="icon-placeholder mdi mdi-settings"></i>
                     </span>
                 </a>
-            
             </li>
+   
         </ul>
     </div>
-
 </aside>

@@ -68,7 +68,7 @@
                   </div>
                 </div>
                 @endif
-                <form action="{{ route('password.update') }}" method="post">
+                <form action="{{ route('admin.password.update') }}" method="post">
                   @csrf
                   <input type="hidden" name="token" value="{{ $token }}">
                   <div class="form-group">
@@ -108,7 +108,7 @@
                   </div>
 
                   <div class="form-group">
-                    <label>Email</label>
+                    <label>Şifrə</label>
 
                     <div class="input-group input-group-flush mb-3">
                       <input type="password" name="password_confirmation" class="form-control form-control-prepended @error('password_confirmation') is-invalid @enderror" placeholder="Yeni şifrə təkrar">

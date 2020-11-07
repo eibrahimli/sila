@@ -16,9 +16,11 @@ class OnlyAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        if(@auth()->user()->rank != 'admin' && !auth()->check()):
-            return redirect(route('admin.loginView'));
+
+        if(@auth()->user()->role != 'admin' || !auth()->check()):
+            return redirect()->route('admin.loginView');
         endif;
+
         return $next($request);
     }
 }

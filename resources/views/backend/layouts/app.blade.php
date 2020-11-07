@@ -8,7 +8,8 @@
   <meta name="apple-touch-fullscreen" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta content="" name="Elvir Ibrahimli">
-  <meta name="crsf-token" content="{{ csrf_token() }}">
+  <meta author="Elvir Ibrahimli">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
   <script>
     window.Laravel = {
       csrfToken: "{{ csrf_token() }}"
@@ -16,14 +17,8 @@
     }
 
   </script>
-  <meta content="atlas is Bootstrap 4 based admin panel.It comes with 100's widgets,charts and icons" name="description">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="atlas is Bootstrap 4 based admin panel.It comes with 100's widgets,charts and icons">
-  <meta property="og:description" content="atlas is Bootstrap 4 based admin panel.It comes with 100's widgets,charts and icons">
-  <meta property="og:image" content="https://cdn.dribbble.com/users/180706/screenshots/5424805/the_sceens_-_mobile_perspective_mockup_3_-_by_tranmautritam.jpg">
-  <meta property="og:site_name" content="atlas ">
-  <title>Atmos Admin Panel- Bootstrap 4 Based Admin Panel</title>
+
+  <title>Sila Express | Admin Panel</title>
   <link rel="icon" type="image/x-icon" href="{{ asset('backend/img/logo.png') }}">
   <link rel="icon" href="{{ asset('backend/img\logo.png') }}" type="image/png" sizes="16x16">
   <link rel='stylesheet' href='{{ asset("backend/vendor/pace/pace.css") }}'>
@@ -40,6 +35,8 @@
   <!--Bootstrap + atmos Admin CSS-->
   <link rel='stylesheet' type='text/css' href='{{ asset("backend/css/atmos.min.css") }}'>
   <!-- Additional library for page -->
+
+  @yield('styles')
 
 </head>
 
@@ -106,8 +103,7 @@
           <li class="nav-item dropdown ">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <div class="avatar avatar-sm avatar-online">
-                <span class="avatar-title rounded-circle bg-dark">V</span>
-
+                <img src="{{ asset('storage/'.auth()->user()->photo) }}" alt="{{ auth()->user()->name.' '.auth()->user()->surname }}">
               </div>
             </a>
             <div class="dropdown-menu  dropdown-menu-right">
@@ -156,7 +152,6 @@
             </div>
             <div class="list-group list  ">
 
-
               <div class="list-group-item d-flex  align-items-center">
                 <div class="m-r-20">
                   <div class="avatar avatar-sm "><img class="avatar-img rounded-circle" src="assets\img\users\user-3.jpg" alt="user-image"></div>
@@ -165,7 +160,6 @@
                   <div class="name">Eric Chen</div>
                   <div class="text-muted">Developer</div>
                 </div>
-
 
               </div>
               <div class="list-group-item d-flex  align-items-center">
@@ -253,16 +247,16 @@
       </div>
     </div>
   </div>
-
+  <script src="{{ asset('js/app.js') }}"></script>
   <script src='{{ asset("backend/js/script.js") }}'></script>
   <!--page specific scripts for demo-->
 
   <!--Additional Page includes-->
-  <script src='{{ asset("backend/vendor/apexchart/apexcharts.min.js") }}'></script>
+  {{-- <script src='{{ asset("backend/vendor/apexchart/apexcharts.min.js") }}'></script> --}}
   <!--chart data for current dashboard-->
-  <script src='{{ asset("backend/js/dashboard.js") }}'></script>
+  {{-- <script src='{{ asset("backend/js/dashboard.js") }}'></script> --}}
+  
   @yield('js')
-  <script src="{{ asset('js/app.js') }}"></script>
 </body>
 
 </html>

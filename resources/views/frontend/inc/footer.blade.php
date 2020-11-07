@@ -203,7 +203,7 @@
                             </div>
                             <div class="col pl-3">
                                 <div class="font-size-13 font-weight-light">Sualın var? Onda bizə zəng et 24/7!</div>
-                                <a href="tel:+{{ $setting->number }}" class="font-size-20 text-gray-90">{{ $setting->number }}, </a><a href="tel:+994516291868" class="font-size-20 text-gray-90">(994) 051-629-18-68</a>
+                                <a href="tel:+{{ str_replace(['(',')','-'],'',$setting->number) }}" class="font-size-20 text-gray-90">+{{ $setting->number }}, </a><a href="tel:+{{ str_replace(['(',')', '-'],'',$setting->number) }}" class="font-size-20 text-gray-90">+{{ $setting->number }}</a>
                             </div>
                         </div>
                     </div>
@@ -216,23 +216,23 @@
                     <div class="my-4 my-md-4">
                         <ul class="list-inline mb-0 opacity-7">
                             <li class="list-inline-item mr-0">
-                                <a class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle" href="#">
+                                <a class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle" href="{{ explode('|||',$setting->social)[0] }}">
                                     <span class="fab fa-facebook-f btn-icon__inner"></span>
                                 </a>
                             </li>
                             <li class="list-inline-item mr-0">
-                                <a class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle" href="#">
-                                    <span class="fab fa-google btn-icon__inner"></span>
+                                <a class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle" href="{{ explode('|||',$setting->social)[1] }}">
+                                    <span class="fab fa-instagram btn-icon__inner"></span>
                                 </a>
                             </li>
                             <li class="list-inline-item mr-0">
-                                <a class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle" href="#">
+                                <a class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle" href="{{ explode('|||',$setting->social)[2] }}">
                                     <span class="fab fa-twitter btn-icon__inner"></span>
                                 </a>
                             </li>
                             <li class="list-inline-item mr-0">
-                                <a class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle" href="#">
-                                    <span class="fab fa-github btn-icon__inner"></span>
+                                <a class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle" href="{{ explode('|||',$setting->social)[3] }}">
+                                    <span class="fab fa-google btn-icon__inner"></span>
                                 </a>
                             </li>
                         </ul>
@@ -271,7 +271,7 @@
                             <h6 class="mb-3 font-weight-bold">İstifadəçi Bölməsi</h6>
                             <!-- List Group -->
                             <ul class="list-group list-group-flush list-group-borderless mb-0 list-group-transparent">
-                                <li><a class="list-group-item list-group-item-action" href="#">Mənim Profilim</a></li>
+                                <li><a class="list-group-item list-group-item-action" href="#">Mənim Hesabım</a></li>
                                 <li><a class="list-group-item list-group-item-action" href="#">Sifarişim hardadır?</a></li>
                                 <li><a class="list-group-item list-group-item-action" href="#">İstək Siyahısı</a></li>
                                 <li><a class="list-group-item list-group-item-action" href="#">Müştəri dicməti</a></li>

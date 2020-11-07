@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\Setting;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
 class SettingController extends Controller
@@ -29,8 +31,6 @@ class SettingController extends Controller
       'logo' => 'sometimes|file|image|mimes:jpg,jpeg,png,gif,svg'
     ]);
 
-
-
     if ($data->fails()) {
       return response()->json($data->errors(), 400);
     } else {
@@ -39,9 +39,11 @@ class SettingController extends Controller
       $setting->update($request->except(['created_at', 'updated_at', 'id']));
 
       if ($request->has('logo')) {
+        Storage::delete('public/'.$setting->logo);
         $setting->update([
           'logo' => $request->logo->store('uploads', 'public')
         ]);
+
       }
 
       return response()->json(['mes' => 'Ayarlar uğurla yeniləndi...', 'setting' => $setting], 200);
