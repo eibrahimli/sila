@@ -3196,6 +3196,13 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['id', '_method', 'url'],
@@ -3259,6 +3266,16 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
   mounted: function mounted() {
     this.getUser(this.id);
     this.base_url = Laravel.base_url;
+  },
+  computed: {
+    validationErrors: function validationErrors() {
+      if (typeof this.errors != 'string') {
+        this.errors = Object.values(this.errors).flat();
+        return this.errors;
+      }
+
+      return this.errors;
+    }
   },
   methods: {
     getUser: function getUser(id) {
@@ -3326,6 +3343,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
             return showAlert(res);
           })["catch"](function (error) {
             _this2.errors = error.response.data.error;
+            Swal.close();
           });
         }, 1000);
       }
@@ -26496,14 +26514,28 @@ var render = function() {
           ])
         ]),
         _vm._v(" "),
-        Object.entries(_vm.errors).length
+        _vm.validationErrors.length
           ? _c(
               "div",
               { staticClass: "alert alert-danger", attrs: { role: "alert" } },
               [
                 _c("strong", [_vm._v("Xəta!")]),
                 _vm._v(" "),
-                _c("div", [_vm._v(_vm._s(_vm.errors))])
+                typeof _vm.validationErrors != "string"
+                  ? _c("div", [
+                      _c(
+                        "ul",
+                        _vm._l(_vm.validationErrors, function(error) {
+                          return _c("li", [_vm._v(_vm._s(error))])
+                        }),
+                        0
+                      )
+                    ])
+                  : _c("div", [
+                      _vm._v(
+                        "\n        " + _vm._s(_vm.validationErrors) + "\n      "
+                      )
+                    ])
               ]
             )
           : _vm._e(),

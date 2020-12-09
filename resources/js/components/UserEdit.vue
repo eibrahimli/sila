@@ -36,9 +36,16 @@
           />
         </label>
       </div>
-      <div v-if="Object.entries(errors).length" class="alert alert-danger" role="alert">
+      <div v-if="validationErrors.length" class="alert alert-danger" role="alert">
         <strong>Xəta!</strong> 
-        <div>{{ errors }}</div>
+        <div v-if="typeof validationErrors != 'string'">
+          <ul>
+            <li v-for="error in validationErrors">{{ error }}</li>
+          </ul>
+        </div>
+        <div v-else>
+          {{ validationErrors }}
+        </div>
       </div>
       <div class="form-row">
         <div class="form-group col-md-6">
@@ -255,6 +262,7 @@ export default {
       errors: []
     };
   },
+
   validations: {
     user: {
       name: {
@@ -293,9 +301,22 @@ export default {
       }
     },
   },
+
   mounted() {
     this.getUser(this.id);
     this.base_url = Laravel.base_url;
+  },
+
+  computed: {
+    validationErrors() {
+      if(typeof this.errors != 'string') {
+        this.errors = Object.values(this.errors).flat()
+
+        return this.errors
+      }
+
+      return this.errors
+    }
   },
 
   methods: {
@@ -349,7 +370,8 @@ export default {
             .post(this.url, formdata)
             .then((res) => showAlert(res))
             .catch((error) => {              
-              this.errors = error.response.data.error                
+              this.errors = error.response.data.error
+              Swal.close()
             });
         }, 1000);
         function showAlert(res) {

@@ -22,14 +22,12 @@ class CreateProductsTable extends Migration
             $table->integer('store_id')->default(0);
             $table->string('lang')->default('az');
             $table->double('price');
-            $table->string('color_id');
-            $table->integer('stock');
+            $table->integer('stock')->nullable();
             $table->string('ral')->nullable();
-            $table->string('spec',500)->nullable();
-            $table->string('tecspec',1000)->nullable();
+            $table->string('spec',1000)->nullable();
             $table->string('brand_id')->nullable();
-            $table->string('photo');
-            $table->enum('status',[0,1,2,3])->default(0);
+            $table->string('photo')->nullable();
+            $table->enum('status',[0,1])->default(0);
             $table->unsignedBigInteger('sold')->default(0);
             $table->unsignedBigInteger('ordered')->default(0);
             $table->timestamps();

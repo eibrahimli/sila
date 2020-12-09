@@ -9,8 +9,11 @@
         Salam dəyərli satıcı,
         {{ auth()->user()->name .' '. auth()->user()->surname}}
       </h4>
-      @if(count(auth()->user()->stores) > 0)
-
+      @if(auth()->user()->stores)
+        <p class="opacity-75 ">
+            Burdan mağazanıza göz atıb mağaza məlumatlarını dəyişə bilərsiniz , mağazaya yeni məhsul əlavə edə bilərsiniz və ya digər əməliyyatları apara bilərsiniz.
+        </p>
+        <a href="{{ route('seller.store.index') }}" class="btn btn-white-translucent"><i class="mdi mdi-format-horizontal-align-right"></i> Mağazanız</a>
       @else
       <p class="opacity-75 ">
         Əgər mağaza əlavə etməmisinizsə yeni mağaza əlavə edin.

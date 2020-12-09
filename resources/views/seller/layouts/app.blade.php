@@ -254,7 +254,7 @@
   {{-- <script src='{{ asset("backend/vendor/apexchart/apexcharts.min.js") }}'></script> --}}
   <!--chart data for current dashboard-->
   {{-- <script src='{{ asset("backend/js/dashboard.js") }}'></script> --}}
-  
+
   @yield('js')
 </body>
 

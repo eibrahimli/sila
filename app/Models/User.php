@@ -42,7 +42,7 @@ class User extends Authenticatable implements \Illuminate\Contracts\Auth\CanRese
   }
 
   public function stores() {
-    return $this->hasMany(Store::class);
+    return $this->hasOne(Store::class);
   }
 
 }

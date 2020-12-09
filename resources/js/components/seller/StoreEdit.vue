@@ -6,35 +6,40 @@
       </div>
     </div>
     <form
-      method="POST"
-      v-show="!loading"
-      enctype="multipart/form-data"
-      @submit.prevent="submit()"
+        method="POST"
+        v-show="!loading"
+        enctype="multipart/form-data"
+        @submit.prevent="submit()"
     >
       <h3 class="">Mağaza ayarları</h3>
       <p class="text-muted">
-        Bu formdan istifadə edərək yeni mağaza sürətli şəkildə
-        əlavə edə bilərsiniz...
+        Bu formdan istifadə edərək mağazanızı sürətli şəkildə
+        yeniləyə bilərsiniz...
       </p>
-      <div v-if="Object.entries(errors).length" class="alert alert-danger" role="alert">
+      <div v-if="error" class="alert alert-danger" role="alert">
         <strong>Xəta!</strong>
-        <div>{{ errors }}</div>
+        <div v-if="typeof validationErrors != 'string'">
+          <ul class="list-item">
+            <li v-for="error in validationErrors" :key="error">{{ error }}</li>
+          </ul>
+        </div>
+        <div v-else>{{ errors }}</div>
       </div>
       <div class="form-row">
         <div class="form-group col-md-12">
           <label for="name">Mağaza Adı</label>
           <input
-            type="text"
-            v-model.trim="$v.store.name.$model"
-            class="form-control"
-            :class="{
+              type="text"
+              v-model.trim="$v.store.name.$model"
+              class="form-control"
+              :class="{
               'is-valid':
                 !$v.store.name.$invalid && $v.store.name.$dirty,
               'is-invalid':
                 $v.store.name.$invalid && $v.store.name.$dirty,
             }"
-            id="name"
-            placeholder="Ad"
+              id="name"
+              placeholder="Ad"
           />
           <div v-if="!$v.store.name.required && $v.store.name.$dirty" class="invalid-feedback">
             Ad boş ola bilməz...
@@ -49,18 +54,18 @@
         <div class="form-group col-md-6">
           <label for="keyw">Nömrə</label>
           <input
-            type="text"
-            name="number"
-            class="form-control"
-            :class="{
+              type="text"
+              name="number"
+              class="form-control"
+              :class="{
               'is-valid': !$v.store.number.$invalid && $v.store.number.$dirty,
               'is-invalid': $v.store.number.$invalid && $v.store.number.$dirty,
             }"
-            id="number"
-            v-model="$v.store.number.$model"
-            data-mask="(00000)-000-00-00"
-            data-mask-clearifnotmatch="true"
-            placeholder="(99400)-000-00-00"
+              id="number"
+              v-model="$v.store.number.$model"
+              data-mask="(00000)-000-00-00"
+              data-mask-clearifnotmatch="true"
+              placeholder="(99400)-000-00-00"
           />
           <div v-if="!$v.store.keyw.required && $v.store.keyw.$dirty" class="invalid-feedback">
             Nömrə boş ola bilməz...
@@ -69,17 +74,17 @@
         <div class="form-group col-md-6">
           <label for="keyw">Mağaza açar sözlər</label>
           <input
-            type="text"
-            v-model.trim="$v.store.keyw.$model"
-            class="form-control"
-            :class="{
+              type="text"
+              v-model.trim="$v.store.keyw.$model"
+              class="form-control"
+              :class="{
               'is-valid':
                 !$v.store.keyw.$invalid && $v.store.keyw.$dirty,
               'is-invalid':
                 $v.store.keyw.$invalid && $v.store.keyw.$dirty,
             }"
-            id="keyw"
-            placeholder="Açar sözlər"
+              id="keyw"
+              placeholder="Açar sözlər"
           />
           <div v-if="!$v.store.keyw.required && $v.store.keyw.$dirty" class="invalid-feedback">
             Soyad boş ola bilməz...
@@ -94,15 +99,15 @@
         <div class="form-group col-md-6">
           <label class="form-label" for="desc">Açıqlama</label>
           <textarea
-            type="text"
-            class="form-control"
-            :class="{
+              type="text"
+              class="form-control"
+              :class="{
               'is-valid': !$v.store.desc.$invalid && $v.store.desc.$dirty,
               'is-invalid': $v.store.desc.$invalid && $v.store.desc.$dirty,
             }"
-            id="desc"
-            v-model="$v.store.desc.$model"
-            placeholder="Açıqlama"
+              id="desc"
+              v-model="$v.store.desc.$model"
+              placeholder="Açıqlama"
           ></textarea>
           <div v-if="!$v.store.desc.required && $v.store.desc.$dirty" class="invalid-feedback">
             Açıqlama boş ola bilməz...
@@ -115,15 +120,15 @@
         <div class="form-group col-md-6">
           <label class="form-label" for="address">Adres</label>
           <textarea
-            type="text"
-            class="form-control"
-            :class="{
+              type="text"
+              class="form-control"
+              :class="{
               'is-valid': !$v.store.address.$invalid && $v.store.address.$dirty,
               'is-invalid': $v.store.address.$invalid && $v.store.address.$dirty,
             }"
-            id="address"
-            v-model="$v.store.address.$model"
-            placeholder="Adres"
+              id="address"
+              v-model="$v.store.address.$model"
+              placeholder="Adres"
           ></textarea>
           <div v-if="!$v.store.address.required && $v.store.address.$dirty" class="invalid-feedback">
             Adres boş ola bilməz...
@@ -140,15 +145,13 @@
 </template>
 
 <script>
-import { required, minLength } from "vuelidate/lib/validators";
+import {required, minLength} from "vuelidate/lib/validators";
 
 export default {
-  props: ['url'],
+  props: ['url', 'getstoreurl', '_method'],
   data() {
     return {
       loading: true,
-      base_url: "",
-      options: [],
       store: {
         name: '',
         number: '',
@@ -156,7 +159,8 @@ export default {
         keyw: '',
         desc: '',
       },
-      errors: []
+      errors: [],
+      error: false
     };
   },
   validations: {
@@ -185,18 +189,42 @@ export default {
   mounted() {
     setTimeout(() => {
       this.loading = false
-    },1000)
+    }, 1000)
+
+    this.getStore()
+  },
+
+  computed: {
+    validationErrors() {
+      if(typeof this.errors != 'string') {
+        return this.errors = Object.values(this.errors).flat()
+      }
+
+      return this.errors
+    }
   },
   methods: {
+
+    getStore() {
+      axios.get(this.getstoreurl)
+          .then(res => this.store = res.data.store)
+          .catch(error => this.errors = error.response.data.error)
+    },
 
     submit() {
       this.$v.$touch();
       if (this.$v.$invalid) {
-        console.log('error')
+        Swal.fire({
+          position: "center",
+          icon: "error",
+          title: 'Formu doğru şəkildə doldurun',
+          showConfirmButton: false,
+          timer: 1500,
+        })
       } else {
         const vm = this;
         Swal.fire({
-          title: "Mağaza əlavə edilir.",
+          title: "Mağaza yenilənir...",
           html:
               `
                 <div class="d-flex justify-content-center">
@@ -212,17 +240,21 @@ export default {
 
           let formdata = new FormData();
           for (let [key, value] of Object.entries(this.store)) {
-            if(value != null) formdata.append(key, value);
+            if (value != null) formdata.append(key, value);
           }
 
+          formdata.set('_method', this._method)
+
           axios
-            .post(this.url, formdata)
-            .then((res) => showAlert(res))
-            .catch((error) => {
-              this.errors = error.response.data.error
-              Swal.close()
-            });
+              .post(this.url, formdata)
+              .then((res) => showAlert(res))
+              .catch(error => {
+                this.errors = error.response.data.error
+                this.error = true
+                Swal.close()
+              });
         }, 1000);
+
         function showAlert(res) {
           if (res.status == 200) {
             Swal.fire({
@@ -231,7 +263,8 @@ export default {
               title: res.data.mes,
               showConfirmButton: false,
               timer: 1500,
-            });
+            });            
+            vm.error = false
           }
         }
       }

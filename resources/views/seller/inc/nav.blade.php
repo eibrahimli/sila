@@ -24,7 +24,7 @@
             <i class="icon-placeholder mdi mdi-shape-outline "></i>
           </span>
         </a>
-      </li>      
+      </li>
 
       <li class="menu-item">
         <a href="#" class="open-dropdown menu-link">
@@ -63,7 +63,7 @@
         </ul>
       </li>
       <li class="menu-item">
-        <a href="{{ route('seller.edit') }}" class="menu-link">
+        <a href="{{ route('seller.edit',auth()->id()) }}" class="menu-link">
           <span class="menu-label">
             <span class="menu-name">Ayarlar
 
