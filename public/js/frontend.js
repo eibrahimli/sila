@@ -41790,7 +41790,7 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\wamp64\www\ecommerce\resources\js\frontend.js */"./resources/js/frontend.js");
+module.exports = __webpack_require__(/*! /home/elvir/projects/ecommerce/resources/js/frontend.js */"./resources/js/frontend.js");
 
 
 /***/ })

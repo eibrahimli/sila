@@ -41,10 +41,21 @@
           <li class="menu-item ">
             <a href='{{ route('seller.product.index') }}' class='menu-link'>
               <span class="menu-label">
-                <span class="menu-name">Bütün Məhsullar</span>
+                <span class="menu-name">Aktiv Olan Məhsullar</span>
               </span>
               <span class="menu-icon">
                 <i class="icon-placeholder mdi mdi-format-list-checks">
+                </i>
+              </span>
+            </a>
+          </li>
+          <li class="menu-item ">
+            <a href='{{ route('seller.product.notActiveIndex') }}' class='menu-link'>
+              <span class="menu-label">
+                <span class="menu-name">Aktiv Olmayan Məhsullar</span>
+              </span>
+              <span class="menu-icon">
+                <i class="icon-placeholder mdi mdi-format-list-bulleted">
                 </i>
               </span>
             </a>

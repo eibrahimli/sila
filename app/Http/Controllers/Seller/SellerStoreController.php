@@ -18,7 +18,7 @@ class SellerStoreController extends Controller
 
     public function create()
     {
-        if (count(auth()->user()->stores) > 0) {
+        if (auth()->user()->stores()->count() > 0) {
             return redirect()->back()->with('status', 'Yalnızca bir mağazanız ola bilər. Gələcəkdə daha çox mağaza əlavə etmək şansınız olacaq');
         }
         return view('seller.store.create');

@@ -187,10 +187,6 @@ export default {
     },
   },
   mounted() {
-    setTimeout(() => {
-      this.loading = false
-    }, 1000)
-
     this.getStore()
   },
 
@@ -209,6 +205,9 @@ export default {
       axios.get(this.getstoreurl)
           .then(res => this.store = res.data.store)
           .catch(error => this.errors = error.response.data.error)
+      window.onload = () => {
+        this.loading = false
+      }
     },
 
     submit() {

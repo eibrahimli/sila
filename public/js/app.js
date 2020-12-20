@@ -41225,10 +41225,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_select_dist_vue_select_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_select_dist_vue_select_css__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var vuelidate__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuelidate */ "./node_modules/vuelidate/lib/index.js");
 /* harmony import */ var vuelidate__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vuelidate__WEBPACK_IMPORTED_MODULE_2__);
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
-
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 window.Swal = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
+
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+
 
 
 
@@ -41559,8 +41560,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\wamp64\www\ecommerce\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\wamp64\www\ecommerce\resources\css\app.css */"./resources/css/app.css");
+__webpack_require__(/*! /home/elvir/projects/ecommerce/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/elvir/projects/ecommerce/resources/css/app.css */"./resources/css/app.css");
 
 
 /***/ })

@@ -1,7 +1,8 @@
-require('./bootstrap');
-
 window.Vue = require('vue');
 window.Swal = require('sweetalert2')
+
+require('./bootstrap');
+
 import vSelect from 'vue-select'
 import 'vue-select/dist/vue-select.css'
 import Vuelidate from 'vuelidate'

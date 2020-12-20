@@ -9,6 +9,11 @@
         Salam dəyərli satıcı,
         {{ auth()->user()->name .' '. auth()->user()->surname}}
       </h4>
+      @if(session('statusWarning'))
+      <div class="alert alert-warning" role="alert">
+        {{ session('statusWarning') }}
+      </div>
+      @endif
       @if(auth()->user()->stores)
         <p class="opacity-75 ">
             Burdan mağazanıza göz atıb mağaza məlumatlarını dəyişə bilərsiniz , mağazaya yeni məhsul əlavə edə bilərsiniz və ya digər əməliyyatları apara bilərsiniz.

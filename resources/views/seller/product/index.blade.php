@@ -6,7 +6,7 @@
       <div class="row p-b-60 p-t-60">
         <div class="col-md-8 text-white p-t-40 p-b-30">
           <h4>
-            Mağazadakı məhsullar
+            Mağazadakı @isset($active) {{ $active }} @else aktiv olmayan @endisset məhsullar
           </h4>
           <p class="opacity-75">
             Mağazadakı bütün məhsulları burdan idarə edə bilərsiniz.
@@ -139,7 +139,7 @@
         confirmButtonText: 'Bəli sil!'
       }).then((result) => {
         if (result.isConfirmed) {
-          fetch(`${Laravel.base_url}/admin/product/${id}`, {
+          fetch(`{{ url('/seller/product/') }}/${id}`, {
             method: "DELETE",
             headers: {
               'X-CSRF-Token': document.querySelector('meta[name=csrf-token]').getAttribute('content')
@@ -162,7 +162,7 @@
             });
 
             setTimeout(() => {
-              window.location.href = '{{ route("seller.product.index") }}'
+              window.location.href = '{{ isset($active) ? route("seller.product.notActiveIndex") : route("seller.product.index") }}'
             }, 1500)
           }
         }

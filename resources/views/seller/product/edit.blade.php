@@ -14,7 +14,7 @@
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb bg-transparent">
               <li class="breadcrumb-item"><a href="{{ route('seller.index') }}">AnaSəhifə</a></li>
-              <li class="breadcrumb-item"><a href="{{ route('seller.product.index') }}">Bütün Məhsullar</a></li>
+              <li class="breadcrumb-item"><a href="{{ $product->status == '0' ? route('seller.product.notActiveIndex') : route('seller.product.index') }}">Bütün @if($product->status == '0') Aktiv Olmayan @else Aktiv @endif Məhsullar</a></li>
               <li class="breadcrumb-item active" aria-current="page">Məhsul redaktə
               </li>
             </ol>
@@ -32,7 +32,6 @@
               <product-edit-page
                 getproducturl = "{{ route('seller.product.getProductUrl',$product->id) }}"
                 colorsurl="{{ route('seller.colors.all') }}"
-                url="{{ route('seller.product.updateProduct',$product->id) }}"
                 brandsurl="{{ route('seller.brand.all') }}"
                 categoryurl="{{ route('seller.getCat') }}"
                 getspecs="{{ route('seller.product.getSpecs',$product->id) }}"
@@ -40,6 +39,8 @@
                 deletephotos="{{ route('seller.product.deletePhotos',$product->id) }}"
                 getcolorsrelatedtoproduct="{{ route('seller.product.getColorsRelatedToProduct',$product->id) }}"
                 deleteproductcolor="{{ route('seller.product.deletColorStock',$product->id) }}"
+                deletesingleproductcolor="{{ route('seller.product.deleteSingleColorStock',$product->id) }}"
+                update_specs="{{ route('seller.product.updateProductSpecs',$product->id) }}"
                 id="{{ $product->id }}"
               ></product-edit-page>
             </div>

@@ -183,9 +183,9 @@ export default {
     },
   },
   mounted() {
-    setTimeout(() => {
+    window.onload = () => {
       this.loading = false
-    },1000)
+    }
   },
   methods: {
 

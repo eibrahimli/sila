@@ -6161,6 +6161,389 @@ function mergeFn (a, b) {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/seller/SellerEdit.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/seller/SellerEdit.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuelidate/lib/validators */ "./node_modules/vuelidate/lib/validators/index.js");
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__);
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "SellerEdit",
+  props: ['get_user', '_method', 'url'],
+  data: function data() {
+    return {
+      loading: true,
+      base_url: "",
+      user: {
+        name: '',
+        surname: '',
+        number: '',
+        password: '',
+        city: '',
+        adress: '',
+        bank_account: '',
+        email: ''
+      },
+      errors: []
+    };
+  },
+  validations: {
+    user: {
+      name: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["required"],
+        minLength: Object(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["minLength"])(2)
+      },
+      surname: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["required"],
+        minLength: Object(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["minLength"])(2)
+      },
+      email: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["required"],
+        email: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["email"]
+      },
+      password: {
+        required: false,
+        minLength: Object(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["minLength"])(8)
+      },
+      number: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["required"]
+      },
+      adress: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["required"],
+        minLength: Object(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["minLength"])(5)
+      },
+      city: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["required"],
+        minLength: Object(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["minLength"])(4)
+      },
+      bank_account: {
+        integer: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["integer"],
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["required"],
+        minLength: Object(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["minLength"])(16)
+      }
+    }
+  },
+  mounted: function mounted() {
+    this.getUser();
+    this.base_url = Laravel.base_url;
+  },
+  computed: {
+    validationErrors: function validationErrors() {
+      if (typeof this.errors != 'string') {
+        this.errors = Object.values(this.errors).flat();
+        return this.errors;
+      }
+
+      return this.errors;
+    }
+  },
+  methods: {
+    getUser: function getUser() {
+      var _this = this;
+
+      axios.get(this.get_user).then(function (res) {
+        if (Object.entries(res.data).length > 0) {
+          _this.user = res.data.user;
+        }
+      });
+
+      window.onload = function () {
+        setTimeout(function () {
+          _this.loading = false;
+        }, 1000);
+      };
+    },
+    submit: function submit() {
+      var _this2 = this;
+
+      this.$v.$touch();
+
+      if (this.$v.$invalid) {
+        console.log('error');
+      } else {
+        var showAlert = function showAlert(res) {
+          if (res.status == 200) {
+            Swal.fire({
+              position: "center",
+              icon: "success",
+              title: res.data.mes,
+              showConfirmButton: false,
+              timer: 1500
+            });
+          }
+        };
+
+        var vm = this;
+        Swal.fire({
+          title: "Satıcı redaktə edilir.",
+          html: "\n\t\t\t\t\t\t\t<div class=\"d-flex justify-content-center\">\n\t\t\t\t\t\t\t\t\t<div class=\"spinner-border\" role=\"status\">\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"sr-only\">Loading...</span>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t",
+          showConfirmButton: false
+        });
+        setTimeout(function () {
+          var formdata = new FormData();
+
+          for (var _i = 0, _Object$entries = Object.entries(_this2.user); _i < _Object$entries.length; _i++) {
+            var _Object$entries$_i = _slicedToArray(_Object$entries[_i], 2),
+                key = _Object$entries$_i[0],
+                value = _Object$entries$_i[1];
+
+            if (value != null) formdata.append(key, value);
+          }
+
+          formdata.set('_method', _this2._method);
+          axios.post(_this2.url, formdata).then(function (res) {
+            return showAlert(res);
+          })["catch"](function (error) {
+            _this2.errors = error.response.data.error;
+            Swal.close();
+          });
+        }, 1000);
+      }
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/seller/StoreCreate.vue?vue&type=script&lang=js&":
 /*!*****************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/seller/StoreCreate.vue?vue&type=script&lang=js& ***!
@@ -6369,9 +6752,9 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
   mounted: function mounted() {
     var _this = this;
 
-    setTimeout(function () {
+    window.onload = function () {
       _this.loading = false;
-    }, 1000);
+    };
   },
   methods: {
     submit: function submit() {
@@ -6635,11 +7018,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
     }
   },
   mounted: function mounted() {
-    var _this = this;
-
-    setTimeout(function () {
-      _this.loading = false;
-    }, 1000);
     this.getStore();
   },
   computed: {
@@ -6653,16 +7031,20 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
   },
   methods: {
     getStore: function getStore() {
-      var _this2 = this;
+      var _this = this;
 
       axios.get(this.getstoreurl).then(function (res) {
-        return _this2.store = res.data.store;
+        return _this.store = res.data.store;
       })["catch"](function (error) {
-        return _this2.errors = error.response.data.error;
+        return _this.errors = error.response.data.error;
       });
+
+      window.onload = function () {
+        _this.loading = false;
+      };
     },
     submit: function submit() {
-      var _this3 = this;
+      var _this2 = this;
 
       this.$v.$touch();
 
@@ -6697,7 +7079,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
         setTimeout(function () {
           var formdata = new FormData();
 
-          for (var _i = 0, _Object$entries = Object.entries(_this3.store); _i < _Object$entries.length; _i++) {
+          for (var _i = 0, _Object$entries = Object.entries(_this2.store); _i < _Object$entries.length; _i++) {
             var _Object$entries$_i = _slicedToArray(_Object$entries[_i], 2),
                 key = _Object$entries$_i[0],
                 value = _Object$entries$_i[1];
@@ -6705,12 +7087,12 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
             if (value != null) formdata.append(key, value);
           }
 
-          formdata.set('_method', _this3._method);
-          axios.post(_this3.url, formdata).then(function (res) {
+          formdata.set('_method', _this2._method);
+          axios.post(_this2.url, formdata).then(function (res) {
             return showAlert(res);
           })["catch"](function (error) {
-            _this3.errors = error.response.data.error;
-            _this3.error = true;
+            _this2.errors = error.response.data.error;
+            _this2.error = true;
             Swal.close();
           });
         }, 1000);
@@ -7715,6 +8097,18 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -7723,7 +8117,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
   components: {
     vueDropzone: vue2_dropzone__WEBPACK_IMPORTED_MODULE_1___default.a
   },
-  props: ["deleteproductcolor", "getproducturl", "categoryurl", "brandsurl", "colorsurl", "url", "getspecs", "getphotos", "id", "deletephotos", "getcolorsrelatedtoproduct"],
+  props: ["update_specs", "deletesingleproductcolor", "deleteproductcolor", "getproducturl", "categoryurl", "brandsurl", "colorsurl", "getspecs", "getphotos", "id", "deletephotos", "getcolorsrelatedtoproduct"],
   data: function data() {
     return {
       checkedNames: [],
@@ -7879,9 +8273,12 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
       });
     },
     addStock: function addStock() {
+      var _this2 = this;
+
+      var vm = this;
       Swal.fire({
         title: "Stok yenilənir...",
-        html: "\n          <div class=\"d-flex justify-content-center\">\n              <div class=\"spinner-border\" role=\"status\">\n                <span class=\"sr-only\">Loading...</span>\n              </div>\n          </div>\n        ",
+        html: "\n              <div class=\"d-flex justify-content-center\">\n                  <div class=\"spinner-border\" role=\"status\">\n                    <span class=\"sr-only\">Loading...</span>\n                  </div>\n              </div>\n            ",
         showConfirmButton: false
       });
       var data = new FormData();
@@ -7890,6 +8287,9 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
       data.set('quantity', this.quantity);
       data.set('_method', 'PATCH');
       axios.post(Laravel.base_url + "/seller/product/".concat(this.id, "/update/stock"), data).then(function (res) {
+        axios.get(_this2.getcolorsrelatedtoproduct).then(function (res) {
+          vm.productColors = res.data.colors;
+        });
         Swal.fire({
           icon: 'success',
           title: res.data.mes
@@ -7897,7 +8297,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
       });
     },
     updateProduct: function updateProduct() {
-      var _this2 = this;
+      var _this3 = this;
 
       var vm = this;
       this.$refs.myVueDropzone.processQueue();
@@ -7910,22 +8310,27 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
       });
       var data = new FormData();
       var jsonData = JSON.stringify(this.specs);
+      Swal.fire({
+        title: "Məhsul redaktə edilir.",
+        html: "\n                <div class=\"d-flex justify-content-center\">\n                    <div class=\"spinner-border\" role=\"status\">\n                      <span class=\"sr-only\">Loading...</span>\n                    </div>\n                </div>\n              ",
+        showConfirmButton: false
+      });
+      console.log(this.$refs.myVueDropzone.getUploadingFiles());
       data.set('specs', jsonData);
       data.set('_method', 'PATCH');
-      this.$refs.myVueDropzone.removeAllFiles();
-      axios.post(this.url, data).then(function (res) {
+      axios.post(this.update_specs, data).then(function (res) {
         Swal.fire({
           icon: 'success',
           title: res.data.mes
         });
         vm.$parent.step++;
       })["catch"](function (error) {
-        _this2.errors = error.response.data.error;
-        _this2.error = true;
+        _this3.errors = error.response.data.error;
+        _this3.error = true;
       });
     },
     submit: function submit() {
-      var _this3 = this;
+      var _this4 = this;
 
       this.$v.$touch();
 
@@ -7971,7 +8376,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
             formdata["delete"]('photo');
           }
 
-          axios.post(_this3.url, formdata).then(function (res) {
+          axios.post(_this4.url, formdata).then(function (res) {
             return showAlert(res);
           })["catch"](function (error) {
             vm.errors = error.response.data.error;
@@ -8000,6 +8405,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
           return vm.photos = res.data;
         });
         event.target.classList.remove('disabled');
+        vm.checkedNames = [];
       })["catch"](function (error) {
         Swal.fire({
           position: "center",
@@ -8012,9 +8418,10 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
       });
     },
     updateColorStock: function updateColorStock(id, color, photo, quantity, index) {
-      var _this4 = this;
+      var _this5 = this;
 
       var vm = this;
+      var colors_index = index;
       var formData = new FormData();
 
       if (typeof photo != 'string') {
@@ -8026,9 +8433,39 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
       formData.set('quantity', quantity);
       formData.set('_method', 'PATCH');
       axios.post(this.deleteproductcolor, formData).then(function (res) {
-        axios.get(_this4.getcolorsrelatedtoproduct).then(function (res) {
+        axios.get(_this5.getcolorsrelatedtoproduct).then(function (res) {
           vm.productColors = res.data.colors;
-          vm.productColors[index].photo = res.data.colors[index].photo;
+          vm.productColors[colors_index].photo = res.data.colors[colors_index].photo;
+
+          if (vm.productColors.length > 0) {
+            vm.hasColor = true;
+          }
+        });
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: res.data.mes,
+          showConfirmButton: false,
+          timer: 1500
+        });
+      })["catch"](function (error) {
+        Swal.fire({
+          position: "center",
+          icon: "error",
+          title: error.response.data.error,
+          showConfirmButton: false,
+          timer: 1500
+        });
+      });
+    },
+    deleteColorStock: function deleteColorStock(id, index) {
+      var vm = this;
+      var array_index = index;
+      axios.post(this.deletesingleproductcolor, {
+        "stock": id
+      }).then(function (res) {
+        axios.get(vm.getcolorsrelatedtoproduct).then(function (res) {
+          vm.productColors = res.data.colors;
 
           if (vm.productColors.length > 0) {
             vm.hasColor = true;
@@ -30713,6 +31150,594 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 
 /***/ }),
 
+/***/ "./node_modules/vue-disable-autocomplete/dist/vue-disable-autocomplete.js":
+/*!********************************************************************************!*\
+  !*** ./node_modules/vue-disable-autocomplete/dist/vue-disable-autocomplete.js ***!
+  \********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+const disableAutocomplete = {
+    install(Vue) {
+        Vue.mixin({
+            mounted() {
+                this.disableAutoComplete();
+            },
+
+            methods: {
+                disableAutoComplete() {
+                    let elements = document.querySelectorAll('[autocomplete="off"]');
+
+                    if (!elements) {
+                        return;
+                    }
+
+                    elements.forEach(element => {
+                        element.setAttribute('readonly', 'readonly');
+                        element.style.backgroundColor = 'inherit';
+
+                        window.addEventListener('load', () => {
+                            setTimeout(() => {
+                                element.removeAttribute('readonly');
+                            }, 500);
+                        });
+                    });
+                }
+            }
+        });
+    }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (disableAutocomplete);
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/seller/SellerEdit.vue?vue&type=template&id=27b3cb9e&scoped=true&":
+/*!********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/seller/SellerEdit.vue?vue&type=template&id=27b3cb9e&scoped=true& ***!
+  \********************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("div", { staticClass: "row justify-content-center" }, [
+      _c(
+        "div",
+        {
+          directives: [
+            {
+              name: "show",
+              rawName: "v-show",
+              value: _vm.loading,
+              expression: "loading"
+            }
+          ],
+          staticClass: "spinner-grow text-dark",
+          attrs: { role: "status" }
+        },
+        [_c("span", { staticClass: "sr-only" }, [_vm._v("Loading...")])]
+      )
+    ]),
+    _vm._v(" "),
+    _c(
+      "form",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: !_vm.loading,
+            expression: "!loading"
+          }
+        ],
+        attrs: {
+          method: "POST",
+          enctype: "multipart/form-data",
+          autocomplete: "off"
+        },
+        on: {
+          submit: function($event) {
+            $event.preventDefault()
+            return _vm.submit()
+          }
+        }
+      },
+      [
+        _c("h3", {}, [_vm._v("Profil ayarlarınız...")]),
+        _vm._v(" "),
+        _c("p", { staticClass: "text-muted" }, [
+          _vm._v(
+            "\n      Bu formdan istifadə edərək ayarlarınızı sürətli şəkildə\n      dəyişə bilərsiniz...\n    "
+          )
+        ]),
+        _vm._v(" "),
+        _vm.validationErrors.length
+          ? _c(
+              "div",
+              { staticClass: "alert alert-danger", attrs: { role: "alert" } },
+              [
+                _c("strong", [_vm._v("Xəta!")]),
+                _vm._v(" "),
+                typeof _vm.validationErrors != "string"
+                  ? _c("div", [
+                      _c(
+                        "ul",
+                        _vm._l(_vm.validationErrors, function(error) {
+                          return _c("li", [_vm._v(_vm._s(error))])
+                        }),
+                        0
+                      )
+                    ])
+                  : _c("div", [
+                      _vm._v(
+                        "\n        " + _vm._s(_vm.validationErrors) + "\n      "
+                      )
+                    ])
+              ]
+            )
+          : _vm._e(),
+        _vm._v(" "),
+        _c("input", {
+          staticClass: "hidden",
+          attrs: { autocomplete: "false", name: "hidden", type: "hidden" }
+        }),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-row" }, [
+          _c("div", { staticClass: "form-group col-md-6" }, [
+            _c("label", { attrs: { for: "name" } }, [_vm._v("Ad")]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model.trim",
+                  value: _vm.$v.user.name.$model,
+                  expression: "$v.user.name.$model",
+                  modifiers: { trim: true }
+                }
+              ],
+              staticClass: "form-control",
+              class: {
+                "is-valid":
+                  _vm.$v.user.name.required && _vm.$v.user.name.$dirty,
+                "is-invalid":
+                  !_vm.$v.user.name.required && _vm.$v.user.name.$dirty
+              },
+              attrs: { type: "text", id: "name", placeholder: "Ad" },
+              domProps: { value: _vm.$v.user.name.$model },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(
+                    _vm.$v.user.name,
+                    "$model",
+                    $event.target.value.trim()
+                  )
+                },
+                blur: function($event) {
+                  return _vm.$forceUpdate()
+                }
+              }
+            }),
+            _vm._v(" "),
+            !_vm.$v.user.name.required && _vm.$v.user.name.$dirty
+              ? _c("div", { staticClass: "invalid-feedback" }, [
+                  _vm._v("\n          Ad boş ola bilməz...\n        ")
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            !_vm.$v.user.name.minLength && _vm.$v.user.name.$dirty
+              ? _c("div", { staticClass: "invalid-feedback" }, [
+                  _vm._v(
+                    "\n          Ad ən azı " +
+                      _vm._s(_vm.$v.user.name.$params.minLength.min) +
+                      " simvol\n          olmalıdır...\n        "
+                  )
+                ])
+              : _vm._e()
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group col-md-6" }, [
+            _c("label", { attrs: { for: "surname" } }, [_vm._v("Soyad")]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model.trim",
+                  value: _vm.$v.user.surname.$model,
+                  expression: "$v.user.surname.$model",
+                  modifiers: { trim: true }
+                }
+              ],
+              staticClass: "form-control",
+              class: {
+                "is-valid":
+                  _vm.$v.user.surname.required && _vm.$v.user.surname.$dirty,
+                "is-invalid":
+                  !_vm.$v.user.surname.required && _vm.$v.user.surname.$dirty
+              },
+              attrs: { type: "text", id: "surname", placeholder: "Soyad" },
+              domProps: { value: _vm.$v.user.surname.$model },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(
+                    _vm.$v.user.surname,
+                    "$model",
+                    $event.target.value.trim()
+                  )
+                },
+                blur: function($event) {
+                  return _vm.$forceUpdate()
+                }
+              }
+            }),
+            _vm._v(" "),
+            !_vm.$v.user.surname.required && _vm.$v.user.surname.$dirty
+              ? _c("div", { staticClass: "invalid-feedback" }, [
+                  _vm._v("\n          Soyad boş ola bilməz...\n        ")
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            !_vm.$v.user.surname.minLength && _vm.$v.user.surname.$dirty
+              ? _c("div", { staticClass: "invalid-feedback" }, [
+                  _vm._v(
+                    "\n          Soyad ən azı " +
+                      _vm._s(_vm.$v.user.surname.$params.minLength.min) +
+                      " simvol\n          olmalıdır...\n        "
+                  )
+                ])
+              : _vm._e()
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-row" }, [
+          _c("div", { staticClass: "form-group col-md-6" }, [
+            _c("label", { attrs: { for: "inputEmail4" } }, [_vm._v("Email")]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.$v.user.email.$model,
+                  expression: "$v.user.email.$model"
+                }
+              ],
+              staticClass: "form-control",
+              class: {
+                "is-valid":
+                  _vm.$v.user.email.required && _vm.$v.user.email.$dirty,
+                "is-invalid":
+                  !_vm.$v.user.email.required && _vm.$v.user.email.$dirty
+              },
+              attrs: { type: "email", id: "inputEmail4", placeholder: "Email" },
+              domProps: { value: _vm.$v.user.email.$model },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.$v.user.email, "$model", $event.target.value)
+                }
+              }
+            }),
+            _vm._v(" "),
+            !_vm.$v.user.email.required && _vm.$v.user.email.$dirty
+              ? _c("div", { staticClass: "invalid-feedback" }, [
+                  _vm._v("\n          Email boş ola bilməz...\n        ")
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            !_vm.$v.user.email.email && _vm.$v.user.email.$dirty
+              ? _c("div", { staticClass: "invalid-feedback" }, [
+                  _vm._v("\n          Email doğru deyil...\n        ")
+                ])
+              : _vm._e()
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group col-md-6" }, [
+            _c(
+              "label",
+              { staticClass: "form-label", attrs: { for: "password" } },
+              [_vm._v("Şifrə")]
+            ),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.$v.user.password.$model,
+                  expression: "$v.user.password.$model"
+                }
+              ],
+              staticClass: "form-control",
+              class: {
+                "is-valid":
+                  _vm.$v.user.password.required && _vm.$v.user.password.$dirty,
+                "is-invalid":
+                  !_vm.$v.user.password.required && _vm.$v.user.password.$dirty
+              },
+              attrs: {
+                type: "password",
+                id: "password",
+                placeholder: "Şifrə",
+                autocomplete: "off"
+              },
+              domProps: { value: _vm.$v.user.password.$model },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.$v.user.password, "$model", $event.target.value)
+                }
+              }
+            }),
+            _vm._v(" "),
+            !_vm.$v.user.password.minLength && _vm.$v.user.password.$dirty
+              ? _c("div", { staticClass: "invalid-feedback" }, [
+                  _vm._v(
+                    "\n          Şifrə ən azı " +
+                      _vm._s(_vm.$v.user.password.$params.minLength.min) +
+                      " simvol\n          olmalıdır...\n        "
+                  )
+                ])
+              : _vm._e()
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-row" }, [
+          _c("div", { staticClass: "form-group col-md-6" }, [
+            _c(
+              "label",
+              { staticClass: "form-label", attrs: { for: "number" } },
+              [_vm._v("Nömrə")]
+            ),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.$v.user.number.$model,
+                  expression: "$v.user.number.$model"
+                }
+              ],
+              staticClass: "form-control",
+              class: {
+                "is-valid":
+                  _vm.$v.user.number.required && _vm.$v.user.number.$dirty,
+                "is-invalid":
+                  !_vm.$v.user.number.required && _vm.$v.user.number.$dirty
+              },
+              attrs: {
+                type: "text",
+                name: "number",
+                id: "number",
+                "data-mask": "(00000)-000-00-00",
+                "data-mask-clearifnotmatch": "true",
+                placeholder: "(00000)-000-00-00"
+              },
+              domProps: { value: _vm.$v.user.number.$model },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.$v.user.number, "$model", $event.target.value)
+                }
+              }
+            }),
+            _vm._v(" "),
+            !_vm.$v.user.number.required
+              ? _c("div", { staticClass: "invalid-feedback" }, [
+                  _vm._v("\n          Nömrə boş ola bilməz...\n        ")
+                ])
+              : _vm._e()
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group col-md-6" }, [
+            _c(
+              "label",
+              { staticClass: "form-label", attrs: { for: "bankAccount" } },
+              [_vm._v("Bank hesabı")]
+            ),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.$v.user.bank_account.$model,
+                  expression: "$v.user.bank_account.$model"
+                }
+              ],
+              staticClass: "form-control",
+              class: {
+                "is-valid":
+                  _vm.$v.user.bank_account.required &&
+                  _vm.$v.user.bank_account.$dirty,
+                "is-invalid":
+                  !_vm.$v.user.bank_account.minLength &&
+                  _vm.$v.user.bank_account.$dirty
+              },
+              attrs: {
+                type: "text",
+                id: "bankAccount",
+                placeholder: "Bank hesabı"
+              },
+              domProps: { value: _vm.$v.user.bank_account.$model },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(
+                    _vm.$v.user.bank_account,
+                    "$model",
+                    $event.target.value
+                  )
+                }
+              }
+            }),
+            _vm._v(" "),
+            !_vm.$v.user.bank_account.required
+              ? _c("div", { staticClass: "invalid-feedback" }, [
+                  _vm._v("\n          Bank hesabı boş ola bilməz...\n        ")
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            !_vm.$v.user.bank_account.minLength &&
+            _vm.$v.user.bank_account.$dirty
+              ? _c("div", { staticClass: "invalid-feedback" }, [
+                  _vm._v(
+                    "\n          Bank hesab nömrəniz ən azı\n          " +
+                      _vm._s(_vm.$v.user.bank_account.$params.minLength.min) +
+                      " rəqəm olmalıdır...\n        "
+                  )
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            !_vm.$v.user.bank_account.integer && _vm.$v.user.bank_account.$dirty
+              ? _c("div", { staticClass: "invalid-feedback" }, [
+                  _vm._v(
+                    "\n          Bank hesab nömrəniz yalnız rəqəmlərdən ibarət olmalıdır...\n        "
+                  )
+                ])
+              : _vm._e()
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-row" }, [
+          _c("div", { staticClass: "form-group col-md-12" }, [
+            _c("label", { staticClass: "form-label", attrs: { for: "city" } }, [
+              _vm._v("Şəhər")
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.$v.user.city.$model,
+                  expression: "$v.user.city.$model"
+                }
+              ],
+              staticClass: "form-control",
+              class: {
+                "is-valid":
+                  _vm.$v.user.city.required && _vm.$v.user.city.$dirty,
+                "is-invalid":
+                  !_vm.$v.user.city.required && _vm.$v.user.city.$dirty
+              },
+              attrs: { type: "text", id: "city", placeholder: "Şəhər" },
+              domProps: { value: _vm.$v.user.city.$model },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.$v.user.city, "$model", $event.target.value)
+                }
+              }
+            }),
+            _vm._v(" "),
+            !_vm.$v.user.city.required && _vm.$v.user.city.$dirty
+              ? _c("div", { staticClass: "invalid-feedback" }, [
+                  _vm._v("\n          Şəhər boş ola bilməz...\n        ")
+                ])
+              : _vm._e()
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group" }, [
+          _c("label", { staticClass: "form-label", attrs: { for: "adress" } }, [
+            _vm._v("Adress")
+          ]),
+          _vm._v(" "),
+          _c("textarea", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.$v.user.adress.$model,
+                expression: "$v.user.adress.$model"
+              }
+            ],
+            staticClass: "form-control",
+            class: {
+              "is-valid":
+                _vm.$v.user.adress.required && _vm.$v.user.adress.$dirty,
+              "is-invalid":
+                !_vm.$v.user.adress.required && _vm.$v.user.adress.$dirty
+            },
+            attrs: {
+              type: "text",
+              name: "adress",
+              id: "adress",
+              placeholder: "Satıcı adresi"
+            },
+            domProps: { value: _vm.$v.user.adress.$model },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.$v.user.adress, "$model", $event.target.value)
+              }
+            }
+          }),
+          _vm._v(" "),
+          !_vm.$v.user.adress.required && _vm.$v.user.adress.$dirty
+            ? _c("div", { staticClass: "invalid-feedback" }, [
+                _vm._v("\n        Satıcı adresi boş ola bilməz...\n      ")
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          !_vm.$v.user.adress.minLength && _vm.$v.user.adress.$dirty
+            ? _c("div", { staticClass: "invalid-feedback" }, [
+                _vm._v(
+                  "\n        Satıcı adresi ən azı\n        " +
+                    _vm._s(_vm.$v.user.adress.$params.minLength.min) +
+                    " simvol olmalıdır...\n      "
+                )
+              ])
+            : _vm._e()
+        ]),
+        _vm._v(" "),
+        _c(
+          "button",
+          { staticClass: "btn btn-success btn-cta", attrs: { type: "submit" } },
+          [_vm._v("Yadda Saxla")]
+        )
+      ]
+    )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/seller/StoreCreate.vue?vue&type=template&id=02ce54d0&":
 /*!*********************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/seller/StoreCreate.vue?vue&type=template&id=02ce54d0& ***!
@@ -32187,17 +33212,12 @@ var render = function() {
                             "div",
                             { staticClass: "form-group col-12 col-sm-12" },
                             [
-                              _c(
-                                "label",
-                                { attrs: { for: "exampleInputDesc1" } },
-                                [_vm._v("Açıqlama")]
-                              ),
+                              _c("label", { attrs: { for: "desc" } }, [
+                                _vm._v("Açıqlama")
+                              ]),
                               _vm._v(" "),
                               _c("ckeditor", {
-                                attrs: {
-                                  id: "exampleInputDesc1",
-                                  config: _vm.editorConfig
-                                },
+                                attrs: { id: "desc", config: _vm.editorConfig },
                                 model: {
                                   value: _vm.$v.product.desc.$model,
                                   callback: function($$v) {
@@ -32746,16 +33766,18 @@ var render = function() {
             _vm._v(" "),
             !_vm.$v.product.title.required && _vm.$v.product.title.$dirty
               ? _c("div", { staticClass: "invalid-feedback" }, [
-                  _vm._v("\n          Açar sözlər boş ola bilməz...\n        ")
+                  _vm._v(
+                    "\n                    Açar sözlər boş ola bilməz...\n                "
+                  )
                 ])
               : _vm._e(),
             _vm._v(" "),
             !_vm.$v.product.title.minLength && _vm.$v.product.title.$dirty
               ? _c("div", { staticClass: "invalid-feedback" }, [
                   _vm._v(
-                    "\n          Açar sözlər ən azı " +
+                    "\n                    Açar sözlər ən azı " +
                       _vm._s(_vm.$v.product.title.$params.minLength.min) +
-                      " simvol\n          olmalıdır...\n        "
+                      " simvol\n                    olmalıdır...\n                "
                   )
                 ])
               : _vm._e()
@@ -32765,12 +33787,10 @@ var render = function() {
             "div",
             { staticClass: "form-group col-12 col-sm-12" },
             [
-              _c("label", { attrs: { for: "exampleInputDesc1" } }, [
-                _vm._v("Açıqlama")
-              ]),
+              _c("label", { attrs: { for: "desc" } }, [_vm._v("Açıqlama")]),
               _vm._v(" "),
               _c("ckeditor", {
-                attrs: { id: "exampleInputDesc1", config: _vm.editorConfig },
+                attrs: { id: "desc", config: _vm.editorConfig },
                 model: {
                   value: _vm.$v.product.desc.$model,
                   callback: function($$v) {
@@ -32789,7 +33809,7 @@ var render = function() {
                     },
                     [
                       _vm._v(
-                        "\n          Açar sözlər boş ola bilməz...\n        "
+                        "\n                    Açar sözlər boş ola bilməz...\n                "
                       )
                     ]
                   )
@@ -32804,9 +33824,9 @@ var render = function() {
                     },
                     [
                       _vm._v(
-                        "\n          Açar sözlər ən azı " +
+                        "\n                    Açar sözlər ən azı " +
                           _vm._s(_vm.$v.product.desc.$params.minLength.min) +
-                          " simvol\n          olmalıdır...\n        "
+                          " simvol\n                    olmalıdır...\n                "
                       )
                     ]
                   )
@@ -32849,7 +33869,7 @@ var render = function() {
                     },
                     [
                       _vm._v(
-                        "\n          Məhsul kateqoriyası seçilməlidi...\n        "
+                        "\n                    Məhsul kateqoriyası seçilməlidi...\n                "
                       )
                     ]
                   )
@@ -32895,16 +33915,18 @@ var render = function() {
             _vm._v(" "),
             !_vm.$v.product.keyw.required && _vm.$v.product.keyw.$dirty
               ? _c("div", { staticClass: "invalid-feedback" }, [
-                  _vm._v("\n          Açar sözlər boş ola bilməz...\n        ")
+                  _vm._v(
+                    "\n                    Açar sözlər boş ola bilməz...\n                "
+                  )
                 ])
               : _vm._e(),
             _vm._v(" "),
             !_vm.$v.product.keyw.minLength && _vm.$v.product.keyw.$dirty
               ? _c("div", { staticClass: "invalid-feedback" }, [
                   _vm._v(
-                    "\n          Açar sözlər ən azı " +
+                    "\n                    Açar sözlər ən azı " +
                       _vm._s(_vm.$v.product.keyw.$params.minLength.min) +
-                      " simvol\n          olmalıdır...\n        "
+                      " simvol\n                    olmalıdır...\n                "
                   )
                 ])
               : _vm._e()
@@ -32938,7 +33960,11 @@ var render = function() {
                       staticClass: "invalid-feedback",
                       staticStyle: { display: "block" }
                     },
-                    [_vm._v("\n          Məhsul dili seçilməlidi...\n        ")]
+                    [
+                      _vm._v(
+                        "\n                    Məhsul dili seçilməlidi...\n                "
+                      )
+                    ]
                   )
                 : _vm._e()
             ],
@@ -32977,7 +34003,7 @@ var render = function() {
                     },
                     [
                       _vm._v(
-                        "\n          Məhsul brendi seçilməlidi...\n        "
+                        "\n                    Məhsul brendi seçilməlidi...\n                "
                       )
                     ]
                   )
@@ -33029,7 +34055,7 @@ var render = function() {
               },
               [
                 _vm._v(
-                  "Ümümi məhsulun stokda neçə dənə olduğu qeyd edilməlidi...\n        "
+                  "Ümümi məhsulun stokda neçə dənə olduğu qeyd\n                    edilməlidi...\n                "
                 )
               ]
             ),
@@ -33043,7 +34069,7 @@ var render = function() {
                   },
                   [
                     _vm._v(
-                      "\n          Məhsul stok daxil edilməlidi...\n        "
+                      "\n                    Məhsul stok daxil edilməlidi...\n                "
                     )
                   ]
                 )
@@ -33058,7 +34084,7 @@ var render = function() {
                   },
                   [
                     _vm._v(
-                      "\n          Məhsul stok ədədi doğru şəkildə daxil edilməlidir...\n        "
+                      "\n                    Məhsul stok ədədi doğru şəkildə daxil edilməlidir...\n                "
                     )
                   ]
                 )
@@ -33107,7 +34133,7 @@ var render = function() {
                   },
                   [
                     _vm._v(
-                      "\n          Məhsul qiyməti doldurulmalıdır...\n        "
+                      "\n                    Məhsul qiyməti doldurulmalıdır...\n                "
                     )
                   ]
                 )
@@ -33122,7 +34148,7 @@ var render = function() {
                   },
                   [
                     _vm._v(
-                      "\n          Məhsul qiyməti rəqəm olmalıdır...\n        "
+                      "\n                    Məhsul qiyməti rəqəm olmalıdır...\n                "
                     )
                   ]
                 )
@@ -33296,7 +34322,7 @@ var render = function() {
                             }
                           }
                         },
-                        [_vm._v("Sil\n            ")]
+                        [_vm._v("Sil\n                        ")]
                       )
                     ],
                     2
@@ -33492,7 +34518,7 @@ var render = function() {
                               },
                               [
                                 _vm._v(
-                                  "\n                  Yenilə\n                "
+                                  "\n                                    Yenilə\n                                "
                                 )
                               ]
                             ),
@@ -33501,7 +34527,16 @@ var render = function() {
                               "button",
                               {
                                 staticClass:
-                                  "btn btn-small btn-danger col-12 mb-1"
+                                  "btn btn-small btn-danger col-12 mb-1",
+                                on: {
+                                  click: function($event) {
+                                    $event.preventDefault()
+                                    return _vm.deleteColorStock(
+                                      productColor.id,
+                                      index
+                                    )
+                                  }
+                                }
                               },
                               [_vm._v("Sil")]
                             )
@@ -33570,7 +34605,12 @@ var render = function() {
                                   ? _c(
                                       "option",
                                       { domProps: { value: color.id } },
-                                      [_vm._v(_vm._s(color.label))]
+                                      [
+                                        _vm._v(
+                                          _vm._s(color.label) +
+                                            "\n                                    "
+                                        )
+                                      ]
                                     )
                                   : _vm._e()
                               })
@@ -33634,7 +34674,7 @@ var render = function() {
                           }
                         }
                       },
-                      [_vm._v("Əlavə et")]
+                      [_vm._v("Əlavə et\n                        ")]
                     )
                   ])
                 ])
@@ -33737,7 +34777,7 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("Əlavə et")]
+                  [_vm._v("Əlavə et\n                        ")]
                 )
               ])
             ])
@@ -33827,11 +34867,13 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-header" }, [
       _c("h5", { staticClass: "m-b-0" }, [
-        _vm._v("\n          Yüklədiyiniz şəkillər\n        ")
+        _vm._v("\n                    Yüklədiyiniz şəkillər\n                ")
       ]),
       _vm._v(" "),
       _c("p", { staticClass: "m-b-0 text-muted" }, [
-        _vm._v("\n          Şəkilləri seçib silə bilərsiniz\n        ")
+        _vm._v(
+          "\n                    Şəkilləri seçib silə bilərsiniz\n                "
+        )
       ])
     ])
   },
@@ -33841,11 +34883,13 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-header" }, [
       _c("h5", { staticClass: "m-b-0" }, [
-        _vm._v("\n          Məhsul şəkilləri\n        ")
+        _vm._v("\n                    Məhsul şəkilləri\n                ")
       ]),
       _vm._v(" "),
       _c("p", { staticClass: "m-b-0 text-muted" }, [
-        _vm._v("\n          Maksimum 5 şəkil yükləyə bilərsiniz...\n        ")
+        _vm._v(
+          "\n                    Maksimum 5 şəkil yükləyə bilərsiniz...\n                "
+        )
       ])
     ])
   },
@@ -33855,7 +34899,9 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-header" }, [
       _c("h5", { staticClass: "m-b-0" }, [
-        _vm._v("\n          Məhsulun rəngləri və ona uyğun şəkilləri\n        ")
+        _vm._v(
+          "\n                    Məhsulun rəngləri və ona uyğun şəkilləri\n                "
+        )
       ])
     ])
   },
@@ -33896,13 +34942,13 @@ var staticRenderFns = [
     return _c("div", { staticClass: "card-header" }, [
       _c("h5", { staticClass: "m-b-0" }, [
         _vm._v(
-          "\n          Məhsulun xüsusiyyəti və onun ana səhifə şəkli\n        "
+          "\n                    Məhsulun xüsusiyyəti və onun ana səhifə şəkli\n                "
         )
       ]),
       _vm._v(" "),
       _c("p", { staticClass: "m-b-0 text-muted" }, [
         _vm._v(
-          "\n          Məhsulun xüsusiyyətini aşağıdakı nümunəyə əsasən doldurulmalıdır. Əgər xüsusiyyət 1 - dən çoxdursa əlavə et\n          butonuna basaraq məhsulun xüsusiyyətini artıra bilərsiniz...\n        "
+          "\n                    Məhsulun xüsusiyyətini aşağıdakı nümunəyə əsasən doldurulmalıdır. Əgər xüsusiyyət 1 - dən\n                    çoxdursa əlavə et\n                    butonuna basaraq məhsulun xüsusiyyətini artıra bilərsiniz...\n                "
         )
       ])
     ])
@@ -48220,6 +49266,75 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+/***/ "./resources/js/components/seller/SellerEdit.vue":
+/*!*******************************************************!*\
+  !*** ./resources/js/components/seller/SellerEdit.vue ***!
+  \*******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _SellerEdit_vue_vue_type_template_id_27b3cb9e_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SellerEdit.vue?vue&type=template&id=27b3cb9e&scoped=true& */ "./resources/js/components/seller/SellerEdit.vue?vue&type=template&id=27b3cb9e&scoped=true&");
+/* harmony import */ var _SellerEdit_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SellerEdit.vue?vue&type=script&lang=js& */ "./resources/js/components/seller/SellerEdit.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _SellerEdit_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _SellerEdit_vue_vue_type_template_id_27b3cb9e_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _SellerEdit_vue_vue_type_template_id_27b3cb9e_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "27b3cb9e",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/seller/SellerEdit.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/seller/SellerEdit.vue?vue&type=script&lang=js&":
+/*!********************************************************************************!*\
+  !*** ./resources/js/components/seller/SellerEdit.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SellerEdit_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./SellerEdit.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/seller/SellerEdit.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SellerEdit_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/seller/SellerEdit.vue?vue&type=template&id=27b3cb9e&scoped=true&":
+/*!**************************************************************************************************!*\
+  !*** ./resources/js/components/seller/SellerEdit.vue?vue&type=template&id=27b3cb9e&scoped=true& ***!
+  \**************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SellerEdit_vue_vue_type_template_id_27b3cb9e_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./SellerEdit.vue?vue&type=template&id=27b3cb9e&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/seller/SellerEdit.vue?vue&type=template&id=27b3cb9e&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SellerEdit_vue_vue_type_template_id_27b3cb9e_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SellerEdit_vue_vue_type_template_id_27b3cb9e_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/seller/StoreCreate.vue":
 /*!********************************************************!*\
   !*** ./resources/js/components/seller/StoreCreate.vue ***!
@@ -48584,8 +49699,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _riophae_vue_treeselect__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_riophae_vue_treeselect__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _riophae_vue_treeselect_dist_vue_treeselect_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @riophae/vue-treeselect/dist/vue-treeselect.css */ "./node_modules/@riophae/vue-treeselect/dist/vue-treeselect.css");
 /* harmony import */ var _riophae_vue_treeselect_dist_vue_treeselect_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_riophae_vue_treeselect_dist_vue_treeselect_css__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var ckeditor4_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ckeditor4-vue */ "./node_modules/ckeditor4-vue/dist/ckeditor.js");
-/* harmony import */ var ckeditor4_vue__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(ckeditor4_vue__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var vue_disable_autocomplete__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vue-disable-autocomplete */ "./node_modules/vue-disable-autocomplete/dist/vue-disable-autocomplete.js");
+/* harmony import */ var ckeditor4_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ckeditor4-vue */ "./node_modules/ckeditor4-vue/dist/ckeditor.js");
+/* harmony import */ var ckeditor4_vue__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(ckeditor4_vue__WEBPACK_IMPORTED_MODULE_6__);
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 window.Swal = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
 
@@ -48597,10 +49713,14 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
 
-Vue.use(ckeditor4_vue__WEBPACK_IMPORTED_MODULE_5___default.a);
+
+Vue.use(ckeditor4_vue__WEBPACK_IMPORTED_MODULE_6___default.a);
 Vue.component('v-select', vue_select__WEBPACK_IMPORTED_MODULE_0___default.a);
 Vue.component('treeselect', _riophae_vue_treeselect__WEBPACK_IMPORTED_MODULE_3___default.a);
-Vue.use(vuelidate__WEBPACK_IMPORTED_MODULE_2___default.a); //Store Components
+Vue.use(vuelidate__WEBPACK_IMPORTED_MODULE_2___default.a);
+Vue.use(vue_disable_autocomplete__WEBPACK_IMPORTED_MODULE_5__["default"]); // Seller Components
+
+Vue.component('seller-edit-page', __webpack_require__(/*! ./components/seller/SellerEdit */ "./resources/js/components/seller/SellerEdit.vue")["default"]); //Store Components
 
 Vue.component('store-create-page', __webpack_require__(/*! ./components/seller/StoreCreate.vue */ "./resources/js/components/seller/StoreCreate.vue")["default"]);
 Vue.component('store-edit-page', __webpack_require__(/*! ./components/seller/StoreEdit.vue */ "./resources/js/components/seller/StoreEdit.vue")["default"]); //End Store Components
@@ -48622,7 +49742,7 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\wamp64\www\ecommerce\resources\js\seller.js */"./resources/js/seller.js");
+module.exports = __webpack_require__(/*! /home/elvir/projects/ecommerce/resources/js/seller.js */"./resources/js/seller.js");
 
 
 /***/ })

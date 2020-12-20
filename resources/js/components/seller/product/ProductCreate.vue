@@ -54,8 +54,8 @@
                   </div>
                 </div>
                 <div class="form-group col-12 col-sm-12">
-                  <label for="exampleInputDesc1">Açıqlama</label>
-                  <ckeditor v-model="$v.product.desc.$model" id="exampleInputDesc1" :config="editorConfig"></ckeditor>
+                  <label for="desc">Açıqlama</label>
+                  <ckeditor v-model="$v.product.desc.$model" id="desc" :config="editorConfig"></ckeditor>
 
                   <div v-if="!$v.product.desc.required && $v.product.desc.$dirty" style="display: block" class="invalid-feedback">
                     Açar sözlər boş ola bilməz...

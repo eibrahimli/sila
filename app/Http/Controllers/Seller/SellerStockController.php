@@ -61,6 +61,35 @@ class SellerStockController extends Controller
 
   }
 
+  public function deleteSingleColorStock(Product $product, Request $request) {
+      if($this->checkProductRelatedToCurrentUser($product->store->user->id)):
+          $validator = Validator::make($request->all(), [
+              'stock' => ['required', 'integer']
+          ]);
+
+          if($validator->fails()) {
+              return response()->json(['error' => $validator->errors()],422);
+          }
+
+          try{
+            $stock = Stock::find($request->stock);
+
+            if($stock) {
+                Storage::delete('public/'.$stock->photo);
+                $stock->delete();
+                return response()->json(['mes' => 'Məhsul stoku uğurlu şəkildə silindi...'],200);
+            } else {
+                return response()->json(['error' => 'Silmək istədiyiniz məhsul stoku bazada mövcud deil...'],422);
+            }
+
+          } catch (\Exception $e) {
+              return response()->json(['error' => 'Məhsul stoku silinərkən xəta baş verdi...'],422);
+          }
+      endif;
+
+      return $this->productIsNotYours();
+  }
+
   private function checkProductRelatedToCurrentUser($id)
   {
     return auth()->id() == $id;

@@ -107,8 +107,8 @@
             </div>
             </a>
             <div class="dropdown-menu  dropdown-menu-right">
-              <a class="dropdown-item" href="#"> Mağazanı Yenilə</a>
-              <a class="dropdown-item" href="#"> Ayarlar</a>
+              <a class="dropdown-item" href="{{ route('seller.store.edit',auth()->user()->stores()->first()->id) }}"> Mağazanı Yenilə</a>
+              <a class="dropdown-item" href="{{ route('seller.edit',auth()->id()) }}"> Ayarlar</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();"> Çıxış Et</a>

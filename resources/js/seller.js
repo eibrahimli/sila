@@ -9,13 +9,19 @@ import 'vue-select/dist/vue-select.css'
 import Vuelidate from 'vuelidate'
 import Treeselect from '@riophae/vue-treeselect'
 import '@riophae/vue-treeselect/dist/vue-treeselect.css'
-import CKEditor from 'ckeditor4-vue';
+import DisableAutocomplete from 'vue-disable-autocomplete';
+import CKEditor from 'ckeditor4-vue'
 
 Vue.use( CKEditor );
 Vue.component('v-select', vSelect)
 Vue.component('treeselect', Treeselect)
 
+
 Vue.use(Vuelidate)
+Vue.use(DisableAutocomplete);
+
+// Seller Components
+Vue.component('seller-edit-page', require('./components/seller/SellerEdit').default)
 
 //Store Components
 Vue.component('store-create-page', require('./components/seller/StoreCreate.vue').default)

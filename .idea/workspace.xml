@@ -23,58 +23,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a46ce7e5-5fcb-4d11-85d5-c77d9d458cf4" name="Default Changelist" comment="Ana səhifə Azərbaycandilinə tərcümə edildi...">
-      <change afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/BrandController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Seller/SellerStockController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Brand.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Color.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Stock.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/BrandFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_11_10_123010_create_colors_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_11_11_112220_create_stocks_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_11_17_164846_create_brands_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeders/BrandSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/css/formadvence.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/datedropper.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/datedropper.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/datedropper.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/datedropper.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/seller/StoreEdit.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/seller/product/Colors.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/seller/product/ProductCreate.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/seller/product/ProductEdit.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/seller/product/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/seller/product/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/seller/product/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/seller/store/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/UserHasToHaveStore.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/seller/SellerEdit.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/seller/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Seller/SellerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Seller/SellerController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Seller/SellerProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Seller/SellerProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Seller/SellerStockController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Seller/SellerStockController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Seller/SellerStoreController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Seller/SellerStoreController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Store.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Store.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_03_002759_create_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_03_002759_create_products_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_03_114154_create_stores_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_03_114154_create_stores_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/image.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/image.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/backend/js/formadvence.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/backend/js/formadvence.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/frontend.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/frontend.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/seller.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/seller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/UserEdit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/UserEdit.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/seller/StoreCreate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/seller/StoreCreate.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/seller/StoreEdit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/seller/StoreEdit.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/seller/product/ProductCreate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/seller/product/ProductCreate.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/seller/product/ProductEdit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/seller/product/ProductEdit.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/seller.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/seller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/seller/inc/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/seller/inc/nav.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/seller/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/seller/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/seller/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/seller/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/seller/store/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/seller/store/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/seller/product/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/seller/product/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/seller/product/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/seller/product/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/seller/store/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/seller/store/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -95,6 +70,7 @@
         <option value="Blade" />
         <option value="CSS File" />
         <option value="Laravel Blade" />
+        <option value="blade" />
         <option value="Vue Single File Component" />
       </list>
     </option>
@@ -238,11 +214,12 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/backend/fonts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Blade" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -483,6 +460,23 @@
       <workItem from="1607192107695" duration="11601000" />
       <workItem from="1607284027238" duration="9958000" />
       <workItem from="1607459744287" duration="11538000" />
+      <workItem from="1607722717294" duration="647000" />
+      <workItem from="1607731175387" duration="1913000" />
+      <workItem from="1607734421817" duration="97000" />
+      <workItem from="1607734560662" duration="629000" />
+      <workItem from="1607738526353" duration="631000" />
+      <workItem from="1607863567344" duration="5928000" />
+      <workItem from="1607917533591" duration="2887000" />
+      <workItem from="1607945384642" duration="4996000" />
+      <workItem from="1607955575663" duration="1479000" />
+      <workItem from="1607995039740" duration="9000" />
+      <workItem from="1608034367196" duration="8038000" />
+      <workItem from="1608091058560" duration="81000" />
+      <workItem from="1608168162490" duration="3577000" />
+      <workItem from="1608249841296" duration="2374000" />
+      <workItem from="1608342096499" duration="2692000" />
+      <workItem from="1608389834447" duration="1971000" />
+      <workItem from="1608418651156" duration="1764000" />
     </task>
     <task id="LOCAL-00001" summary="Ana səhifə Azərbaycandilinə tərcümə edildi...">
       <created>1603111876562</created>
@@ -525,27 +519,21 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/resources/js/components/seller/product/ProductEdit.vue</url>
-          <line>7</line>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/seller/edit.blade.php</url>
+          <line>3</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/resources/js/components/seller/product/ProductEdit.vue</url>
-          <line>371</line>
+          <url>file://$PROJECT_DIR$/resources/js/seller.js</url>
+          <line>8</line>
           <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/resources/js/components/seller/product/ProductEdit.vue</url>
-          <line>339</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/resources/js/components/seller/product/ProductEdit.vue</url>
-          <line>578</line>
-          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

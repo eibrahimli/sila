@@ -31,7 +31,6 @@
               <table class="table table-hover">
                 <thead>
                 <tr>
-                  <th>Avatar</th>
                   <th>Adı</th>
                   <th>Adres</th>
                   <th>Nömrə</th>
@@ -44,12 +43,6 @@
                 <tbody>
                 @foreach(auth()->user()->stores()->get() as $store)
                   <tr>
-                    <td>
-                      <div class="avatar avatar-sm ">
-                        <img src="{{ asset('backend/img/users/user-1.jpg') }}"
-                             class="avatar-img avatar-sm rounded-circle" alt="">
-                      </div>
-                    </td>
                     <td>{{ $store->name }}</td>
                     <td>{{ $store->address }}</td>
                     <td>{{ $store->number }}</td>
