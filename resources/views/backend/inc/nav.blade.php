@@ -86,7 +86,44 @@
                         </a>
                     </li>
                 </ul>
-            </li>            
+            </li>         
+            <li class="menu-item">
+                <a href="#" class="open-dropdown menu-link">
+                    <span class="menu-label">
+                        <span class="menu-name">Məhsullar
+                            <span class="menu-arrow"></span>
+                        </span>
+                    </span>
+                    <span class="menu-icon">
+                        <i class="icon-placeholder mdi mdi-format-list-bulleted"></i>
+                    </span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="menu-item ">
+                        <a href='{{ route('admin.product.activeIndex') }}' class='menu-link'>
+                            <span class="menu-label">
+                                <span class="menu-name">Bütün Aktiv Məhsullar</span>
+                            </span>
+                            <span class="menu-icon">
+                                <i class="icon-placeholder mdi mdi-format-list-checks">
+                                </i>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="menu-item ">
+                        <a href='{{ route('admin.product.NotActiveIndex') }}' class='menu-link'>
+                            <span class="menu-label">
+                                <span class="menu-name">Bütün Aktiv Olmayan Məhsullar</span>
+                            </span>
+                            <span class="menu-icon">
+                                <i class="icon-placeholder mdi mdi-format-list">
+                                </i>
+                            </span>
+                        </a>
+                    </li>
+                
+                </ul>
+            </li>   
             <li class="menu-item">
                 <a href="{{ route('admin.edit') }}" class="menu-link">
                     <span class="menu-label">

@@ -60,7 +60,11 @@
                       </td>
                       <td>{{ $product->lang ?? 'Boşdur' }}</td>
                       <td>
-                        {{ $product->category_id != 0 ? $product->category->name : 'Kateqoriyası yoxdur' }}
+                        @if(isset($product->category->name))
+                          {{ $product->category->name }}
+                        @else
+                          {{  'Kateqoriyası yoxdur' }}
+                        @endisset
                       </td>
                       <td>
                         <div class="row col-md-12">

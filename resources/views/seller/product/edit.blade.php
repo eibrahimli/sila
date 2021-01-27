@@ -41,6 +41,7 @@
                 deleteproductcolor="{{ route('seller.product.deletColorStock',$product->id) }}"
                 deletesingleproductcolor="{{ route('seller.product.deleteSingleColorStock',$product->id) }}"
                 update_specs="{{ route('seller.product.updateProductSpecs',$product->id) }}"
+                url="{{ route('seller.product.updateProduct',$product->id) }}"
                 id="{{ $product->id }}"
               ></product-edit-page>
             </div>

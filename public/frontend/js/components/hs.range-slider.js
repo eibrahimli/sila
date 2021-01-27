@@ -22,7 +22,9 @@ var isEmpty = function isEmpty(f) {
     _baseConfig: {
       hide_min_max: true,
       hide_from_to: true,
-      onStart: function () {},
+      onStart: function (data) {
+        console.log(data.from)
+      },
       onChange: function () {},
       onFinish: function () {},
       onUpdate: function () {}

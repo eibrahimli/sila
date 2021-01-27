@@ -30,6 +30,7 @@ class CreateProductsTable extends Migration
             $table->enum('status',[0,1])->default(0);
             $table->unsignedBigInteger('sold')->default(0);
             $table->unsignedBigInteger('ordered')->default(0);
+            $table->unsignedBigInteger('seen')->default('0');
             $table->timestamps();
         });
     }

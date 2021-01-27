@@ -22,7 +22,6 @@
             <!-- Signup -->
             <sign-up></sign-up>
             <!-- End Signup -->
-
             <!-- Forgot Password -->
             <email></email>
             <!-- End Forgot Password -->

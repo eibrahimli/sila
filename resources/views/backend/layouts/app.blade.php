@@ -107,9 +107,8 @@
               </div>
             </a>
             <div class="dropdown-menu  dropdown-menu-right">
-              <a class="dropdown-item" href="#"> Add Account</a>
-              <a class="dropdown-item" href="#"> Reset Password</a>
-              <a class="dropdown-item" href="#"> Help </a>
+              <a class="dropdown-item" href="{{ route('admin.user.index') }}"> Bütün istifadəçilər</a>
+              <a class="dropdown-item" href="{{ route('admin.user.edit',auth()->id()) }}"> Ayarlar</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();"> Çıxış Et</a>

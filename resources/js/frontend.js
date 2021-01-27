@@ -7,9 +7,12 @@ import Vuelidate from 'vuelidate'
 
 Vue.use(Vuelidate)
 
+Vue.component('pagination', require('laravel-vue-pagination'));
+
 Vue.component('sign-up', require('./components/frontend/SignUp.vue').default)
 Vue.component('sign-in', require('./components/frontend/SignIn.vue').default)
 Vue.component('email', require('./components/frontend/Email.vue').default)
+Vue.component('category-products', require('./components/frontend/category/CategoryProducts').default)
 
 // Login and register vue componenet
 

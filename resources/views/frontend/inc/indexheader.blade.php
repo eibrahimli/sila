@@ -125,18 +125,6 @@
 
                         <!-- List -->
                         <ul id="headerSidebarList" class="u-header-collapse__nav">
-                          <!-- Value of the Day -->
-                          <li class="">
-                            <a class="u-header-collapse__nav-link font-weight-bold" href="#">Günün məhsulu</a>
-                          </li>
-                          <!-- End Value of the Day -->
-
-                          <!-- Top 100 Offers -->
-                          <li class="">
-                            <a class="u-header-collapse__nav-link font-weight-bold" href="#">Ən yaxşı 100 təklif</a>
-                          </li>
-                          <!-- End Top 100 Offers -->
-
                           <!-- New Arrivals -->
                           <li class="">
                             <a class="u-header-collapse__nav-link font-weight-bold" href="#">Yeni gələnlər</a>
@@ -153,19 +141,33 @@
                               <ul class="u-header-collapse__nav-list">
                                 <li><span class="u-header-sidebar__sub-menu-title">Kateqoriya 1</span>
                                 </li>
-                                <li class=""><a class="u-header-collapse__submenu-nav-link" href="#">All Computers & Accessories</a>
+                                <li class="">
+                                  <a class="u-header-collapse__submenu-nav-link" href="#">All Computers & Accessories</a>
                                 </li>
-                                <li class=""><a class="u-header-collapse__submenu-nav-link" href="#">Laptops, Desktops & Monitors</a>
+                                <li class="">
+                                  <a class="u-header-collapse__submenu-nav-link" href="#">Laptops, Desktops & Monitors</a>
                                 </li>
-                                <li class=""><a class="u-header-collapse__submenu-nav-link" href="#">Printers & Ink</a></li>
-                                <li class=""><a class="u-header-collapse__submenu-nav-link" href="#">Networking & Internet Devices</a>
+                                <li class="">
+                                  <a class="u-header-collapse__submenu-nav-link" href="#">Printers & Ink</a>
                                 </li>
-                                <li class=""><a class="u-header-collapse__submenu-nav-link" href="#">Computer Accessories</a></li>
-                                <li class=""><a class="u-header-collapse__submenu-nav-link" href="#">Software</a></li>
-                                <li><span class="u-header-sidebar__sub-menu-title">Office & Stationery</span>
+                                <li class="">
+                                  <a class="u-header-collapse__submenu-nav-link" href="#">Networking & Internet Devices</a>
                                 </li>
-                                <li><a class="u-header-collapse__submenu-nav-link" href="#">All Office & Stationery</a></li>
-                                <li><a class="u-header-collapse__submenu-nav-link" href="#">All Electronics</a></li>
+                                <li class="">
+                                  <a class="u-header-collapse__submenu-nav-link" href="#">Computer Accessories</a>
+                                </li>
+                                <li class="">
+                                  <a class="u-header-collapse__submenu-nav-link" href="#">Software</a>
+                                </li>
+                                <li>
+                                  <span class="u-header-sidebar__sub-menu-title">Office & Stationery</span>
+                                </li>
+                                <li>
+                                  <a class="u-header-collapse__submenu-nav-link" href="#">All Office & Stationery</a>
+                                </li>
+                                <li>
+                                  <a class="u-header-collapse__submenu-nav-link" href="#">All Electronics</a>
+                                </li>
                               </ul>
                             </div>
                           </li>
@@ -235,7 +237,7 @@
               <ul class="d-flex list-unstyled mb-0 align-items-center">
                 <!-- Search -->
                 <li class="col d-xl-none px-2 px-sm-3 position-static">
-                  <a id="searchClassicInvoker" class="font-size-22 text-gray-90 text-lh-1 btn-text-secondary" href="javascript:;" role="button" data-toggle="tooltip" data-placement="top" title="Search" aria-controls="searchClassic" aria-haspopup="true" aria-expanded="false" data-unfold-target="#searchClassic" data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-delay="300" data-unfold-hide-on-scroll="true" data-unfold-animation-in="slideInUp" data-unfold-animation-out="fadeOut">
+                  <a id="searchClassicInvoker" class="font-size-22 text-gray-90 text-lh-1 btn-text-secondary" href="javascript:;" role="button" data-toggle="tooltip" data-placement="top" title="Axtar" aria-controls="searchClassic" aria-haspopup="true" aria-expanded="false" data-unfold-target="#searchClassic" data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-delay="300" data-unfold-hide-on-scroll="true" data-unfold-animation-in="slideInUp" data-unfold-animation-out="fadeOut">
                     <span class="ec ec-search"></span>
                   </a>
 
@@ -360,88 +362,38 @@
                       <div id="navBar" class="collapse navbar-collapse u-header__navbar-collapse">
                         <ul class="navbar-nav u-header__navbar-nav">
                           <li class="nav-item u-header__nav-item" data-event="hover" data-position="left">
-                            <a href="#" class="nav-link u-header__nav-link font-weight-bold">Günün
-                              məhsulu</a>
+                            <a href="#" class="nav-link u-header__nav-link font-weight-bold">Yeni əlavə olunan məhsullar</a>
                           </li>
-                          <li class="nav-item u-header__nav-item" data-event="hover" data-position="left">
-                            <a href="#" class="nav-link u-header__nav-link font-weight-bold">Ən yaxşı
-                              100 təklif</a>
-                          </li>
-                          <li class="nav-item u-header__nav-item" data-event="hover" data-position="left">
-                            <a href="#" class="nav-link u-header__nav-link font-weight-bold">Yeni
-                              Gələnlər</a>
-                          </li>
-                          <!-- Nav Item MegaMenu -->
-                          <li class="nav-item hs-has-mega-menu u-header__nav-item" data-event="hover" data-animation-in="slideInUp" data-animation-out="fadeOut" data-position="left">
-                            <a id="basicMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false">Kateqoriya 1</a>
-
-                            <!-- Nav Item - Mega Menu -->
-                            <div class="hs-mega-menu vmm-tfw u-header__sub-menu" aria-labelledby="basicMegaMenu">
-                              <div class="row u-header__mega-menu-wrapper">
-                                <div class="col mb-3 mb-sm-0">
-                                  <span class="u-header__sub-menu-title">Kateqoriya 1</span>
-                                  <ul class="u-header__sub-menu-nav-group mb-3">
-                                    <li>
-                                      <a class="nav-link u-header__sub-menu-nav-link" href="#">Alt kateqoriya 1</a></li>
-                                    <li>
-                                      <a class="nav-link u-header__sub-menu-nav-link" href="#">Alt kateqoriya 2</a></li>
-                                    <li>
-                                      <a class="nav-link u-header__sub-menu-nav-link u-nav-divider border-top pt-2 flex-column align-items-start" href="#">
-                                        <div class="">Əlavə Kateqoriya</div>
-                                        <div class="u-nav-subtext font-size-11 text-gray-30">
-                                          Daha çox kateqoriyalar
-                                        </div>
-                                      </a>
-                                    </li>
-                                  </ul>
-                                </div>
-
-                                <div class="col mb-3 mb-sm-0">
-                                  <span class="u-header__sub-menu-title">Kateqoriya 2</span>
-                                  <ul class="u-header__sub-menu-nav-group">
-                                    <li>
-                                      <a class="nav-link u-header__sub-menu-nav-link" href="#">Alt kateqoriya 3</a></li>
-                                  </ul>
-                                </div>
-                              </div>
-                            </div>
-                            <!-- End Nav Item - Mega Menu -->
-                          </li>
-                          <!-- End Nav Item MegaMenu-->
-
-                          <!-- Nav Item -->
-                          <li class="nav-item hs-has-sub-menu u-header__nav-item" data-event="click" data-animation-in="slideInUp" data-animation-out="fadeOut" data-position="left">
-                            <a id="homeMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="homeSubMenu">Accessories</a>
-
-                            <!-- Home - Submenu -->
-                            <ul id="homeSubMenu" class="hs-sub-menu u-header__sub-menu animated hs-position-left fadeOut" aria-labelledby="homeMegaMenu" style="min-width: 230px; display: none;">
-                              <!-- Home-v1 -->
-                              <li class="hs-has-sub-menu">
-                                <a class="nav-link u-header__sub-menu-nav-link " href="index.html">Home-v1</a>
-                              </li>
-                              <!-- End Home-v1 -->
-
-                              <!-- Home-v2 -->
-                              <li class="hs-has-sub-menu">
-                                <a class="nav-link u-header__sub-menu-nav-link " href="home-v2.html">Home-v2</a>
-                              </li>
-                              <!-- End Home-v2 -->
-
-                              <!-- Home-v3 -->
-                              <li class="hs-has-sub-menu">
-                                <a class="nav-link u-header__sub-menu-nav-link " href="home-v3.html">Home-v3</a>
-                              </li>
-                              <!-- End Home-v3 -->
-
-                              <!-- Home-v4 -->
-                              <li class="hs-has-sub-menu">
-                                <a class="nav-link u-header__sub-menu-nav-link " href="home-v4.html">Home-v4</a>
-                              </li>
-                              <!-- End Home-v4 -->
-                            </ul>
-                            <!-- End Home - Submenu -->
-                          </li>
-                          <!-- End Nav Item -->
+                          @foreach($categories as $category)
+                              @if(count($category->categories) > 0)
+                                <!-- Nav Item MegaMenu -->
+                                  <li class="nav-item hs-has-mega-menu u-header__nav-item" data-event="hover" data-animation-in="slideInUp" data-animation-out="fadeOut" data-position="left">
+                                    <a id="basicMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false">{{ $category->name }}</a>
+                                    <!-- Nav Item - Mega Menu -->
+                                    <div class="hs-mega-menu vmm-tfw u-header__sub-menu" aria-labelledby="basicMegaMenu">
+                                      <div class="row u-header__mega-menu-wrapper">
+                                        @foreach($category->categories->chunk(ceil(count($category->categories)/2)) as $chunk)
+                                          <div class="col mb-3 mb-sm-0">
+                                            <ul class="u-header__sub-menu-nav-group mb-3">
+                                              @foreach($chunk as $subcategory)
+                                                <li>
+                                                  <a class="nav-link u-header__sub-menu-nav-link" href="{{ $subcategory->path() }}">{{ $subcategory->name }}</a>
+                                                </li>
+                                              @endforeach
+                                            </ul>
+                                          </div>
+                                        @endforeach
+                                      </div>
+                                    </div>
+                                    <!-- End Nav Item - Mega Menu -->
+                                  </li>
+                                <!-- End Nav Item MegaMenu-->
+                              @else
+                                <li class="nav-item u-header__nav-item" data-event="hover" data-position="left">
+                                  <a href="{{ $category->path() }}" class="nav-link u-header__nav-link">{{ $category->name }}</a>
+                                </li>
+                              @endif
+                          @endforeach
                         </ul>
                       </div>
                     </nav>

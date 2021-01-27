@@ -11,21 +11,22 @@
     },
     "devDependencies": {
         "axios": "^0.19",
-        "cross-env": "^7.0",
-        "laravel-mix": "^5.0.1",
+        "cross-env": "^7.0.3",
+        "laravel-mix": "^5.0.9",
         "lodash": "^4.17.19",
-        "resolve-url-loader": "^3.1.0",
+        "resolve-url-loader": "^3.1.2",
         "vue": "^2.6.12",
-        "vue-loader": "^15.9.3",
+        "vue-loader": "^15.9.6",
         "vue-template-compiler": "^2.6.12",
         "vue2-dropzone": "^3.6.0",
-        "vuelidate": "^0.7.5"
+        "vuelidate": "^0.7.6"
     },
     "dependencies": {
         "@riophae/vue-treeselect": "^0.4.0",
         "ckeditor4-vue": "^1.2.0",
-        "sweetalert2": "^10.4.0",
+        "laravel-vue-pagination": "^2.3.1",
+        "sweetalert2": "^10.13.0",
         "vue-disable-autocomplete": "0.0.4",
-        "vue-select": "^3.10.8"
+        "vue-select": "^3.11.2"
     }
 }

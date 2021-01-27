@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Category;
 use App\Models\Setting;
 use Illuminate\Auth\Notifications\ResetPassword;
 use Illuminate\Support\Facades\Schema;
@@ -30,7 +31,8 @@ class AppServiceProvider extends ServiceProvider
 
     view()->composer(['frontend.layouts.app','frontend.index','frontend.inc.header'], function ($view) {
       $setting = Setting::first();
-      $view->with('setting', $setting);
+      $categories = Category::all()->where('category_id', 0);
+      $view->with('setting', $setting)->with('categories', $categories);
     });
   }
 }

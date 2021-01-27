@@ -2,7 +2,13 @@
 <html lang="en">
 <head>
     <!-- Title -->
-    <title>@yield('title')</title>
+    <title>
+        @if(url()->current() == route('index'))
+            {{ $setting->title }}
+        @else
+            {{ $setting->title }} | @yield('title')
+        @endif
+    </title>
 
     <!-- Required Meta Tags Always Come First -->
     <meta charset="utf-8">
@@ -31,7 +37,7 @@
         <div id="app">
             <!-- ========== HEADER ========== -->
         @if(url()->current() == route('index'))
-            @include('frontend.inc.indexheader')
+            @include('frontend.inc.indexheader',['categories' => $categories])
         @else
             @include('frontend.inc.header')
         @endif
