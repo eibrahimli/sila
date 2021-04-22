@@ -142,7 +142,7 @@ class SellerProductController extends Controller
 
       if ($request->has('photo')) {
         $stock->update([
-          'photo' => $request->photo->store('uploads/products/colors', 'public')
+          'photo' => $request->photo->store('uploads/product/colors', 'public')
         ]);
 
         $image = Image::make(public_path('storage/' . $stock->photo))->fit(720, 660);
@@ -170,7 +170,7 @@ class SellerProductController extends Controller
 
     try {
       if ($request->has('file')) {
-        $path = $request->file->store('uploads/products/photos', 'public');
+        $path = $request->file->store('uploads/product/photos', 'public');
         $product->stocks()->create([
           'color_id' => 0,
           'photo' => $path,
@@ -218,7 +218,7 @@ class SellerProductController extends Controller
     }
     $messages = [
       'stock.required' => 'Stok boş ola bilməz.',
-      'stockc.numeric' => 'Stok yalnızca rəqəm olmalıdır',
+      'stock.numeric' => 'Stok yalnızca rəqəm olmalıdır',
       'photo.required' => 'Məhsulunun əsas şəkli seçilməlidir',
       'photo.file' => 'Məhsulunun əsas şəkli fayl olmalıdır.',
       'photo.image' => 'Məhsulunun əsas şəkli tipi şəkil olmalıdır.',
@@ -248,7 +248,7 @@ class SellerProductController extends Controller
     try {
       if ($request->has('photo')) {
         $product->update([
-          'photo' => $request->photo->store('uploads/products', 'public'),
+          'photo' => $request->photo->store('uploads/product', 'public'),
           'stock' => $request->stock,
         ]);
         $image = Image::make(public_path('storage/' . $product->photo))->fit(212, 220);
@@ -290,7 +290,7 @@ class SellerProductController extends Controller
         if ($request->has('photo')) {
           Storage::delete('public/' . $oldPhoto);
           $product->update([
-            'photo' => $request->photo->store('uploads/products', 'public')
+            'photo' => $request->photo->store('uploads/product', 'public')
           ]);
 
           $image = Image::make(public_path('storage/' . $product->photo))->fit(720, 660);

@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\Admin\AdminStockController;
 use App\Http\Controllers\Admin\SettingController;
+use App\Http\Controllers\Admin\AdminPageController;
 use App\Http\Controllers\Admin\AdminUserController;
+use App\Http\Controllers\Admin\AdminOrderController;
+use App\Http\Controllers\Admin\AdminStockController;
 use App\Http\Controllers\Admin\AdminProductController;
 use App\Http\Controllers\Admin\AdminCategoryController;
 
@@ -91,6 +93,21 @@ use App\Http\Controllers\Admin\AdminCategoryController;
 
         // End Admin Store Routes
 
+        // Admin Orders Routes
+            Route::name('order.')->prefix('order')->group(function () {
+              Route::get('active', [AdminOrderController::class, 'index'])->name('index');
+              Route::get('notactive', [AdminOrderController::class, 'notActiveIndex'])->name('notActiveIndex');
+            });
+        // End Admin Orders Routes
+
+        // All Page Routes
+            
+            Route::name('page.')->prefix('page')->group(function() {
+                Route::get('{page}/edit', [AdminPageController::class, 'edit'])->name('edit');
+                Route::patch('{page}', [AdminPageController::class, 'update'])->name('update');
+            });
+        
+        // End of All Page Routes
         });
 
     });

@@ -7,7 +7,7 @@
 {{--                    <div class="border-bottom border-color-1 mb-5">--}}
 {{--                        <h3 class="section-title section-title__sm mb-0 pb-2 font-size-18">Seçilmiş Məhsullar</h3>--}}
 {{--                    </div>--}}
-{{--                    <ul class="list-unstyled products-group">--}}
+{{--                    <ul class="list-unstyled product-group">--}}
 {{--                        <li class="product-item product-item__list row no-gutters mb-6 remove-divider">--}}
 {{--                            <div class="col-auto">--}}
 {{--                                <a href="../shop/single-product-fullwidth.html" class="d-block width-75 text-center"><img class="img-fluid" src="{{ asset('frontend/img/75X75/img1.jpg') }}" alt="Image Description"></a>--}}
@@ -48,7 +48,7 @@
 {{--                <div class="border-bottom border-color-1 mb-5">--}}
 {{--                    <h3 class="section-title section-title__sm mb-0 pb-2 font-size-18">Endirimli Məhsullar</h3>--}}
 {{--                </div>--}}
-{{--                <ul class="list-unstyled products-group">--}}
+{{--                <ul class="list-unstyled product-group">--}}
 {{--                    <li class="product-item product-item__list row no-gutters mb-6 remove-divider">--}}
 {{--                        <div class="col-auto">--}}
 {{--                            <a href="../shop/single-product-fullwidth.html" class="d-block width-75 text-center"><img class="img-fluid" src="{{ asset('frontend/img/75X75/img4.jpg') }}" alt="Image Description"></a>--}}
@@ -91,7 +91,7 @@
 {{--                <div class="border-bottom border-color-1 mb-5">--}}
 {{--                    <h3 class="section-title section-title__sm mb-0 pb-2 font-size-18">Ən Çox Bəyənilən Məhsullar</h3>--}}
 {{--                </div>--}}
-{{--                <ul class="list-unstyled products-group">--}}
+{{--                <ul class="list-unstyled product-group">--}}
 {{--                    <li class="product-item product-item__list row no-gutters mb-6 remove-divider">--}}
 {{--                        <div class="col-auto">--}}
 {{--                            <a href="../shop/single-product-fullwidth.html" class="d-block width-75 text-center"><img class="img-fluid" src="{{ asset('frontend/img/75X75/img7.jpg') }}" alt="Image Description"></a>--}}
@@ -163,9 +163,6 @@
                         <div class="col-auto flex-horizontal-center">
                             <i class="ec ec-newsletter font-size-40"></i>
                             <h2 class="font-size-20 mb-0 ml-3">Bületenə abonə ol</h2>
-                        </div>
-                        <div class="col my-4 my-md-0">
-                            <h5 class="font-size-15 ml-4 mb-0">...və <strong>ilk alış üçün ₼20 endirim kuponu qazan.</strong></h5>
                         </div>
                     </div>
                 </div>
@@ -240,32 +237,21 @@
                 </div>
                 <div class="col-lg-7">
                     <div class="row">
-                        <div class="col-12 col-md mb-4 mb-md-0">
-                            <h6 class="mb-3 font-weight-bold">Sürətli giriş</h6>
-                            <!-- List Group -->
-                            <ul class="list-group list-group-flush list-group-borderless mb-0 list-group-transparent">
-                                <li><a class="list-group-item list-group-item-action" href="#">Laptops & Computers</a></li>
-                                <li><a class="list-group-item list-group-item-action" href="#">Cameras & Photography</a></li>
-                                <li><a class="list-group-item list-group-item-action" href="#">Smart Phones & Tablets</a></li>
-                                <li><a class="list-group-item list-group-item-action" href="#">Video Games & Consoles</a></li>
-                                <li><a class="list-group-item list-group-item-action" href="#">TV & Audio</a></li>
-                                <li><a class="list-group-item list-group-item-action" href="#">Gadgets</a></li>
-                                <li><a class="list-group-item list-group-item-action" href="#">Car Electronic & GPS</a></li>
-                            </ul>
-                            <!-- End List Group -->
-                        </div>
 
-                        <div class="col-12 col-md mb-4 mb-md-0">
-                            <!-- List Group -->
-                            <ul class="list-group list-group-flush list-group-borderless mb-0 list-group-transparent mt-md-6">
-                                <li><a class="list-group-item list-group-item-action" href="#">Printers & Ink</a></li>
-                                <li><a class="list-group-item list-group-item-action" href="#">Software</a></li>
-                                <li><a class="list-group-item list-group-item-action" href="#">Office Supplies</a></li>
-                                <li><a class="list-group-item list-group-item-action" href="#">Computer Components</a></li>
-                                <li><a class="list-group-item list-group-item-action" href="#">Accesories</a></li>
-                            </ul>
-                            <!-- End List Group -->
-                        </div>
+                        @if(count($categories) > 0)
+                            @foreach($categories->chunk(ceil(count($categories) / 2)) as $chunk)
+                                <div class="col-12 col-md mb-4 mb-md-0">
+                                    <h6 class="mb-3 font-weight-bold">Sürətli giriş</h6>
+                                    <!-- List Group -->
+                                    <ul class="list-group list-group-flush list-group-borderless mb-0 list-group-transparent">
+                                        @foreach($chunk as $cat)
+                                            <li><a class="list-group-item list-group-item-action" href="{{ $cat->path() }}">{{ $cat->name }}</a></li>
+                                        @endforeach
+                                    </ul>
+                                    <!-- End List Group -->
+                                </div>
+                            @endforeach
+                        @endif
 
                         <div class="col-12 col-md mb-4 mb-md-0">
                             <h6 class="mb-3 font-weight-bold">İstifadəçi Bölməsi</h6>
@@ -273,11 +259,6 @@
                             <ul class="list-group list-group-flush list-group-borderless mb-0 list-group-transparent">
                                 <li><a class="list-group-item list-group-item-action" href="#">Mənim Hesabım</a></li>
                                 <li><a class="list-group-item list-group-item-action" href="#">Sifarişim hardadır?</a></li>
-                                <li><a class="list-group-item list-group-item-action" href="#">İstək Siyahısı</a></li>
-                                <li><a class="list-group-item list-group-item-action" href="#">Müştəri dicməti</a></li>
-                                <li><a class="list-group-item list-group-item-action" href="#">Geri qaytarmaq / Dəyişmək</a></li>
-                                <li><a class="list-group-item list-group-item-action" href="#">Tez-Tez Soruşulan Suallar</a></li>
-                                <li><a class="list-group-item list-group-item-action" href="#">Məhsul Dəstəyi</a></li>
                             </ul>
                             <!-- End List Group -->
                         </div>

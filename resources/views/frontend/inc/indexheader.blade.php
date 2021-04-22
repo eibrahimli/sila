@@ -5,7 +5,7 @@
       <div class="container">
         <div class="d-flex align-items-center">
           <div class="topbar-left">
-            <a href="#" class="text-gray-110 font-size-13 hover-on-dark">Azərbaycanın ən böyük onlayn satış
+            <a href="{{ route('index') }}" class="text-gray-110 font-size-13 hover-on-dark">Azərbaycanın ən böyük onlayn satış
               saytına xoş gəlmisiniz</a>
           </div>
           <div class="topbar-right ml-auto">
@@ -125,54 +125,31 @@
 
                         <!-- List -->
                         <ul id="headerSidebarList" class="u-header-collapse__nav">
-                          <!-- New Arrivals -->
-                          <li class="">
-                            <a class="u-header-collapse__nav-link font-weight-bold" href="#">Yeni gələnlər</a>
-                          </li>
-                          <!-- End New Arrivals -->
+                          @foreach($categories as $category)
+                            @if(count($category->categories) > 0)
+                              <li class="u-has-submenu u-header-collapse__submenu">
+                                <a class="u-header-collapse__nav-link u-header-collapse__nav-pointer" href="javascript:;" data-target="#headerSidebarComputersCollapse" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="headerSidebarComputersCollapse">
+                                  {{ $category->name }}
+                                </a>
 
-                          <!-- Computers & Accessories -->
-                          <li class="u-has-submenu u-header-collapse__submenu">
-                            <a class="u-header-collapse__nav-link u-header-collapse__nav-pointer" href="javascript:;" data-target="#headerSidebarComputersCollapse" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="headerSidebarComputersCollapse">
-                              Kateqoriya 1
-                            </a>
-
-                            <div id="headerSidebarComputersCollapse" class="collapse" data-parent="#headerSidebarContent">
-                              <ul class="u-header-collapse__nav-list">
-                                <li><span class="u-header-sidebar__sub-menu-title">Kateqoriya 1</span>
-                                </li>
-                                <li class="">
-                                  <a class="u-header-collapse__submenu-nav-link" href="#">All Computers & Accessories</a>
-                                </li>
-                                <li class="">
-                                  <a class="u-header-collapse__submenu-nav-link" href="#">Laptops, Desktops & Monitors</a>
-                                </li>
-                                <li class="">
-                                  <a class="u-header-collapse__submenu-nav-link" href="#">Printers & Ink</a>
-                                </li>
-                                <li class="">
-                                  <a class="u-header-collapse__submenu-nav-link" href="#">Networking & Internet Devices</a>
-                                </li>
-                                <li class="">
-                                  <a class="u-header-collapse__submenu-nav-link" href="#">Computer Accessories</a>
-                                </li>
-                                <li class="">
-                                  <a class="u-header-collapse__submenu-nav-link" href="#">Software</a>
-                                </li>
-                                <li>
-                                  <span class="u-header-sidebar__sub-menu-title">Office & Stationery</span>
-                                </li>
-                                <li>
-                                  <a class="u-header-collapse__submenu-nav-link" href="#">All Office & Stationery</a>
-                                </li>
-                                <li>
-                                  <a class="u-header-collapse__submenu-nav-link" href="#">All Electronics</a>
-                                </li>
-                              </ul>
-                            </div>
-                          </li>
-                          <!-- End Computers & Accessories -->
-
+                                <div id="headerSidebarComputersCollapse" class="collapse" data-parent="#headerSidebarContent">
+                                  <ul class="u-header-collapse__nav-list">
+                                    <li><span class="u-header-sidebar__sub-menu-title">{{ $category->name }}</span>
+                                    </li>
+                                    @foreach($category->categories as $cat)
+                                      <li class="">
+                                        <a class="u-header-collapse__submenu-nav-link" href="{{ $cat->path() }}">{{ $cat->name }}</a>
+                                      </li>
+                                    @endforeach
+                                  </ul>
+                                </div>
+                              </li>
+                            @else
+                              <li class="">
+                                <a class="u-header-collapse__nav-link" href="{{ $category->path() }}">{{ $category->name }}</a>
+                              </li>
+                            @endif
+                          @endforeach
                         </ul>
                         <!-- End List -->
                       </div>
@@ -186,7 +163,7 @@
                         <a class="u-header-sidebar__footer-link text-gray-90" href="#">Məxfilik</a>
                       </li>
                       <li class="list-inline-item pr-3">
-                        <a class="u-header-sidebar__footer-link text-gray-90" href="#">Şərtlər</a>
+                        <a class="u-header-sidebar__footer-link text-gray-90" href="#">Alıcı Razılaşması</a>
                       </li>
                       <li class="list-inline-item">
                         <a class="u-header-sidebar__footer-link text-gray-90" href="#">
@@ -216,11 +193,11 @@
                 <input type="text" class="form-control py-2 pl-5 font-size-15 border-right-0 height-40 border-width-2 rounded-left-pill border-primary" name="key" id="searchproduct-item" placeholder="Məhsul Axtar" aria-label="Məhsul axtar" aria-describedby="searchProduct1" required>
                 <div class="input-group-append">
                   <!-- Select -->
-                  <select class="js-select selectpicker dropdown-select custom-search-categories-select" data-style="btn height-40 text-gray-60 font-weight-normal border-top border-bottom border-left-0 rounded-0 border-primary border-width-2 pl-0 pr-5 py-2">
-                    <option value="one" selected>Bütün Kateqoriyalar</option>
-                    <option value="two">Kateqoriya 1</option>
-                    <option value="three">Kateqoriya 2</option>
-                    <option value="four">Kateqoriya 3</option>
+                  <select name="category" class="js-select selectpicker dropdown-select custom-search-categories-select" data-style="btn height-40 text-gray-60 font-weight-normal border-top border-bottom border-left-0 rounded-0 border-primary border-width-2 pl-0 pr-5 py-2">
+                    <option value="all" selected>Bütün Kateqoriyalar</option>
+                    @foreach($categories as $category)
+                      <option value="{{ $category->id }}">{{$category->name}}</option>
+                    @endforeach
                   </select>
                   <!-- End Select -->
                   <button class="btn btn-primary height-40 py-2 px-3 rounded-right-pill" type="button" id="searchProduct1">
@@ -253,8 +230,6 @@
                   <!-- End Input -->
                 </li>
                 <!-- End Search -->
-                <li class="col d-none d-xl-block"><a href="#" class="text-gray-90" data-toggle="tooltip" data-placement="top" title="Qarşıladır"><i class="font-size-22 ec ec-compare"></i></a></li>
-                <li class="col d-none d-xl-block"><a href="#" class="text-gray-90" data-toggle="tooltip" data-placement="top" title="İstək Siyahısı"><i class="font-size-22 ec ec-favorites"></i></a></li>
                 <li class="col d-xl-none px-2 px-sm-3">
                   @guest
                     <a href="{{ route('user.loginregister') }}" class="text-gray-90" data-toggle="tooltip" data-placement="top" title="Mənim Hesabım">
@@ -273,61 +248,53 @@
                     @endif
                   @endauth
                 </li>
+                <!--Responsive Cart -->
+
                 <li class="col pr-xl-0 px-2 px-sm-3 d-xl-none">
-                  <a href="#" class="text-gray-90 position-relative d-flex " data-toggle="tooltip" data-placement="top" title="Səbət">
+                  <a href="{{ route('cart.index') }}" class="text-gray-90 position-relative d-flex " data-toggle="tooltip" data-placement="top" title="Səbət">
                     <i class="font-size-22 ec ec-shopping-bag"></i>
-                    <span class="bg-lg-down-black width-22 height-22 bg-primary position-absolute d-flex align-items-center justify-content-center rounded-circle left-12 top-8 font-weight-bold font-size-12">2</span>
-                    <span class="d-none d-xl-block font-weight-bold font-size-16 text-gray-90 ml-3">₼1785</span>
+                    <span class="bg-lg-down-black width-22 height-22 bg-primary position-absolute d-flex align-items-center justify-content-center rounded-circle left-12 top-8 font-weight-bold font-size-12">{{ count($cart) ?? 0 }}</span>
+                    <span class="d-none d-xl-block font-weight-bold font-size-16 text-gray-90 ml-3">₼ {{ $total}}</span>
                   </a>
                 </li>
+                <!-- End of Responsive Cart -->
                 <li class="col pr-xl-0 px-2 px-sm-3 d-none d-xl-block">
-                  <div id="basicDropdownHoverInvoker" class="text-gray-90 position-relative d-flex " data-toggle="tooltip" data-placement="top" title="Səbət" aria-controls="basicDropdownHover" aria-haspopup="true" aria-expanded="false" data-unfold-event="click" data-unfold-target="#basicDropdownHover" data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-delay="300" data-unfold-hide-on-scroll="true" data-unfold-animation-in="slideInUp" data-unfold-animation-out="fadeOut">
-                    <i class="font-size-22 ec ec-shopping-bag"></i>
-                    <span class="bg-lg-down-black width-22 height-22 bg-primary position-absolute d-flex align-items-center justify-content-center rounded-circle left-12 top-8 font-weight-bold font-size-12">2</span>
-                    <span class="d-none d-xl-block font-weight-bold font-size-16 text-gray-90 ml-3">₼1785</span>
-                  </div>
-                  <div id="basicDropdownHover" class="cart-dropdown dropdown-menu dropdown-unfold border-top border-top-primary mt-3 border-width-2 border-left-0 border-right-0 border-bottom-0 left-auto right-0" aria-labelledby="basicDropdownHoverInvoker">
-                    <ul class="list-unstyled px-3 pt-3">
-                      <li class="border-bottom pb-3 mb-3">
-                        <div class="">
-                          <ul class="list-unstyled row mx-n2">
-                            <li class="px-2 col-auto">
-                              <img class="img-fluid" src="{{ asset('frontend/img/75X75/img1.jpg') }}" alt="Image Description">
-                            </li>
-                            <li class="px-2 col">
-                              <h5 class="text-blue font-size-14 font-weight-bold">Ultra
-                                Wireless S50 Headphones S50 with Bluetooth</h5>
-                              <span class="font-size-14">1 × $1,100.00</span>
-                            </li>
-                            <li class="px-2 col-auto">
-                              <a href="#" class="text-gray-90"><i class="ec ec-close-remove"></i></a>
-                            </li>
-                          </ul>
-                        </div>
-                      </li>
-                      <li class="border-bottom pb-3 mb-3">
-                        <div class="">
-                          <ul class="list-unstyled row mx-n2">
-                            <li class="px-2 col-auto">
-                              <img class="img-fluid" src="{{ asset('frontend/img/75X75/img2.jpg') }}" alt="Image Description">
-                            </li>
-                            <li class="px-2 col">
-                              <h5 class="text-blue font-size-14 font-weight-bold">
-                                Widescreen NX Mini F1 SMART NX</h5>
-                              <span class="font-size-14">1 × $685.00</span>
-                            </li>
-                            <li class="px-2 col-auto">
-                              <a href="#" class="text-gray-90"><i class="ec ec-close-remove"></i></a>
-                            </li>
-                          </ul>
-                        </div>
-                      </li>
-                    </ul>
-                    <div class="flex-center-between px-4 pt-2">
-                      <a href="#" class="btn btn-soft-secondary mb-3 mb-md-0 font-weight-normal px-5 px-md-4 px-lg-5">Səbət</a>
-                      <a href="#" class="btn btn-primary-dark-w ml-md-2 px-5 px-md-4 px-lg-5">Ödəmə</a>
+
+
+                    <div id="basicDropdownHoverInvoker" class="text-gray-90 position-relative d-flex " data-toggle="tooltip" data-placement="top" title="Səbət" aria-controls="basicDropdownHover" aria-haspopup="true" aria-expanded="false" data-unfold-event="click" data-unfold-target="#basicDropdownHover" data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-delay="300" data-unfold-hide-on-scroll="true" data-unfold-animation-in="slideInUp" data-unfold-animation-out="fadeOut">
+                      <i class="font-size-22 ec ec-shopping-bag"></i>
+                      <span class="bg-lg-down-black width-22 height-22 bg-primary position-absolute d-flex align-items-center justify-content-center rounded-circle left-12 top-8 font-weight-bold font-size-12">{{ count($cart) ?? 0 }}</span>
+                      <span class="d-none d-xl-block font-weight-bold font-size-16 text-gray-90 ml-3">₼{{ $total == 0 ? '0' : $total }}</span>
                     </div>
-                  </div>
+                    @if(count($cart) > 0)
+                    <div id="basicDropdownHover" class="cart-dropdown dropdown-menu dropdown-unfold border-top border-top-primary mt-3 border-width-2 border-left-0 border-right-0 border-bottom-0 left-auto right-0" aria-labelledby="basicDropdownHoverInvoker">
+                      <ul class="list-unstyled px-3 pt-3">
+                        @foreach($cart as $sebet)
+                          <li class="border-bottom pb-3 mb-3">
+                            <div class="">
+                              <ul class="list-unstyled row mx-n2">
+                                <li class="px-2 col-auto">
+                                  <img class="img-fluid" src="{{ $sebet->model->img }}" height="75" width="75" alt="Image Description">
+                                </li>
+                                <li class="px-2 col">
+                                  <h5 class="text-blue font-size-14 font-weight-bold">{{ $sebet->title }}</h5>
+                                  <span class="font-size-14">{{ $sebet->qty }} × ₼ {{ $sebet->subtotal }}</span>
+                                </li>
+                                <li class="px-2 col-auto">
+                                  <a href="#" class="text-gray-90"><i class="ec ec-close-remove"></i></a>
+                                </li>
+                              </ul>
+                            </div>
+                          </li>
+                        @endforeach
+                      </ul>
+                      <div class="flex-center-between px-4 pt-2">
+                        <a href="{{ route('cart.index') }}" class="btn btn-soft-secondary mb-3 mb-md-0 font-weight-normal px-5 px-md-4 px-lg-5">Səbət</a>
+                        <a href="{{ route('cart.checkout') }}" class="btn btn-primary-dark-w ml-md-2 px-5 px-md-4 px-lg-5">Ödəmə</a>
+                      </div>
+                    </div>
+                  @endif
+
                 </li>
               </ul>
             </div>
@@ -414,15 +381,9 @@
             <div id="navBar" class="collapse navbar-collapse u-header__navbar-collapse">
               <ul class="navbar-nav u-header__navbar-nav">
 
-                <!-- Gift Cards -->
-                <li class="nav-item u-header__nav-item">
-                  <a class="nav-link u-header__nav-link" href="#" aria-haspopup="true" aria-expanded="false">Hədiyyə Kartları</a>
-                </li>
-                <!-- End Gift Cards -->
-
                 <!-- Button -->
                 <li class="nav-item u-header__nav-last-item">
-                  <a class="text-gray-90" href="#" target="_blank">
+                  <a class="text-gray-90" href="{{ route('index') }}">
                     ₼1000+ Sifarişdən sonra pulsuz çatdırılma...
                   </a>
                 </li>

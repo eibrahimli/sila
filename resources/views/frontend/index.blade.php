@@ -8,75 +8,30 @@
         <div class="bg-img-hero" style="background-image: url({{ asset('frontend/img/1920X422/img1.jpg') }});">
             <div class="container min-height-420 overflow-hidden">
                 <div class="js-slick-carousel u-slick" data-pagi-classes="text-center position-absolute right-0 bottom-0 left-0 u-slick__pagination u-slick__pagination--long justify-content-start mb-3 mb-md-4 offset-xl-3 pl-2 pb-1">
-                    <div class="js-slide bg-img-hero-center">
-                        <div class="row min-height-420 py-7 py-md-0">
-                            <div class="offset-xl-3 col-xl-4 col-6 mt-md-8">
-                                <h1 class="font-size-64 text-lh-57 font-weight-light" data-scs-animation-in="fadeInUp">
-                                    THE NEW <span class="d-block font-size-55">STANDARD</span>
-                                </h1>
-                                <h6 class="font-size-15 font-weight-bold mb-3" data-scs-animation-in="fadeInUp" data-scs-animation-delay="200">UNDER FAVORABLE SMARTWATCHES
-                                </h6>
-                                <div class="mb-4" data-scs-animation-in="fadeInUp" data-scs-animation-delay="300">
-                                    <span class="font-size-13">FROM</span>
-                                    <div class="font-size-50 font-weight-bold text-lh-45">
-                                        <sup class="">$</sup>749<sup class="">99</sup>
+                    @foreach($sliderproducts as $sliderproduct)
+                        <div class="js-slide bg-img-hero-center" data-animation-delay="0">
+                            <div class="row min-height-420 py-7 py-md-0">
+                                <div class="offset-xl-3 col-xl-4 col-6 mt-md-8">
+                                    <h1 class="font-size-64 text-lh-57 font-weight-light" data-scs-animation-in="fadeInUp">
+                                        {{ $sliderproduct->title }}
+                                    </h1>
+                                    <h6 class="font-size-15 font-weight-bold mb-3 animated fadeInUp" data-scs-animation-in="fadeInUp" data-scs-animation-delay="200" style="animation-delay: 200ms; opacity: 1; visibility: hidden">UNDER FAVORABLE SMARTWATCHES
+                                    </h6>
+                                    <div class="mb-4" data-scs-animation-in="fadeInUp" data-scs-animation-delay="300">
+                                        <div class="font-size-50 font-weight-bold text-lh-45">
+                                            <sup class="">₼</sup>{{ $sliderproduct->price }}
+                                        </div>
                                     </div>
+                                    <a href="{{ $sliderproduct->path() }}" class="btn btn-primary transition-3d-hover rounded-lg font-weight-normal py-2 px-md-7 px-3 font-size-15" data-scs-animation-in="fadeInUp" data-scs-animation-delay="400">
+                                        Almağa Başla
+                                    </a>
                                 </div>
-                                <a href="../shop/single-product-fullwidth.html" class="btn btn-primary transition-3d-hover rounded-lg font-weight-normal py-2 px-md-7 px-3 font-size-16" data-scs-animation-in="fadeInUp" data-scs-animation-delay="400">
-                                    Start Buying
-                                </a>
-                            </div>
-                            <div class="col-xl-5 col-6  d-flex align-items-center" data-scs-animation-in="zoomIn" data-scs-animation-delay="500">
-                                <img class="img-fluid" src="{{ asset('frontend/img/416X420/img1.png') }}" alt="Image Description">
+                                <div class="col-xl-5 col-6  d-flex align-items-center" data-scs-animation-in="fadeInRight" data-scs-animation-delay="500">
+                                    <img class="img-fluid" style="border-radius: 10px;" src="{{ $sliderproduct->img }}" alt="Image Description">
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="js-slide bg-img-hero-center" data-animation-delay="0">
-                        <div class="row min-height-420 py-7 py-md-0">
-                            <div class="offset-xl-3 col-xl-4 col-6 mt-md-8">
-                                <h1 class="font-size-64 text-lh-57 font-weight-light" data-scs-animation-in="fadeInUp">
-                                    THE NEW <span class="d-block font-size-55">STANDARD</span>
-                                </h1>
-                                <h6 class="font-size-15 font-weight-bold mb-3" data-scs-animation-in="fadeInUp" data-scs-animation-delay="200">UNDER FAVORABLE SMARTWATCHES
-                                </h6>
-                                <div class="mb-4" data-scs-animation-in="fadeInUp" data-scs-animation-delay="300">
-                                    <span class="font-size-13">FROM</span>
-                                    <div class="font-size-50 font-weight-bold text-lh-45">
-                                        <sup class="">$</sup>749<sup class="">99</sup>
-                                    </div>
-                                </div>
-                                <a href="../shop/single-product-fullwidth.html" class="btn btn-primary transition-3d-hover rounded-lg font-weight-normal py-2 px-md-7 px-3 font-size-16" data-scs-animation-in="fadeInUp" data-scs-animation-delay="400">
-                                    Start Buying
-                                </a>
-                            </div>
-                            <div class="col-xl-5 col-6  d-flex align-items-center" data-scs-animation-in="fadeInUp" data-scs-animation-delay="500">
-                                <img class="img-fluid" src="{{ asset('frontend/img/416X420/img2.png') }}" alt="Image Description">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="js-slide bg-img-hero-center" data-animation-delay="0">
-                        <div class="row min-height-420 py-7 py-md-0">
-                            <div class="offset-xl-3 col-xl-4 col-6 mt-md-8">
-                                <h1 class="font-size-64 text-lh-57 font-weight-light" data-scs-animation-in="fadeInUp">
-                                    THE NEW <span class="d-block font-size-55">STANDARD</span>
-                                </h1>
-                                <h6 class="font-size-15 font-weight-bold mb-3" data-scs-animation-in="fadeInUp" data-scs-animation-delay="200">UNDER FAVORABLE SMARTWATCHES
-                                </h6>
-                                <div class="mb-4" data-scs-animation-in="fadeInUp" data-scs-animation-delay="300">
-                                    <span class="font-size-13">FROM</span>
-                                    <div class="font-size-50 font-weight-bold text-lh-45">
-                                        <sup class="">$</sup>749<sup class="">99</sup>
-                                    </div>
-                                </div>
-                                <a href="../shop/single-product-fullwidth.html" class="btn btn-primary transition-3d-hover rounded-lg font-weight-normal py-2 px-md-7 px-3 font-size-15" data-scs-animation-in="fadeInUp" data-scs-animation-delay="400">
-                                    Start Buying
-                                </a>
-                            </div>
-                            <div class="col-xl-5 col-6  d-flex align-items-center" data-scs-animation-in="fadeInRight" data-scs-animation-delay="500">
-                                <img class="img-fluid" src="{{ asset('frontend/img/416X420/img3.png') }}" alt="Image Description">
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -106,13 +61,6 @@
                                         </div>
                                     </a>
                                 </li>
-{{--                                <li class="nav-item">--}}
-{{--                                    <a class="nav-link " id="pills-two-example1-tab" data-toggle="pill" href="#pills-two-example1" role="tab" aria-controls="pills-two-example1" aria-selected="false">--}}
-{{--                                        <div class="d-md-flex justify-content-md-center align-items-md-center">--}}
-{{--                                            Endirimli--}}
-{{--                                        </div>--}}
-{{--                                    </a>--}}
-{{--                                </li>--}}
                             </ul>
                         </div>
                         <!-- End Nav Classic -->
@@ -140,15 +88,6 @@
                                                                 <div class="prodcut-price">
                                                                     <div class="text-gray-100">₼{{ $product->price }}</div>
                                                                 </div>
-                                                                <div class="d-none d-xl-block prodcut-add-cart">
-                                                                    <a href="../shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-item__footer">
-                                                            <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                                <a href="#" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Qarşılaşdır</a>
-                                                                <a href="#" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> İstək siyahısı</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -158,226 +97,6 @@
                                     @endisset
                                 </ul>
                             </div>
-{{--                            <div class="tab-pane fade pt-2" id="pills-two-example1" role="tabpanel" aria-labelledby="pills-two-example1-tab">--}}
-{{--                                <ul class="row list-unstyled products-group no-gutters">--}}
-{{--                                    <li class="col-6 col-wd-3 col-md-4 product-item">--}}
-{{--                                        <div class="product-item__outer h-100">--}}
-{{--                                            <div class="product-item__inner px-xl-4 p-3">--}}
-{{--                                                <div class="product-item__body pb-xl-2">--}}
-{{--                                                    <div class="mb-2"><a href="../shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>--}}
-{{--                                                    <h5 class="mb-1 product-item__title"><a href="../shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Tablet White EliteBook Revolve 810 G2</a></h5>--}}
-{{--                                                    <div class="mb-2">--}}
-{{--                                                        <a href="../shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{ asset('frontend/img/212X200/img2.jpg') }}" alt="Image Description"></a>--}}
-{{--                                                    </div>--}}
-{{--                                                    <div class="flex-center-between mb-1">--}}
-{{--                                                        <div class="prodcut-price">--}}
-{{--                                                            <div class="text-gray-100">$685,00</div>--}}
-{{--                                                        </div>--}}
-{{--                                                        <div class="d-none d-xl-block prodcut-add-cart">--}}
-{{--                                                            <a href="../shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>--}}
-{{--                                                        </div>--}}
-{{--                                                    </div>--}}
-{{--                                                </div>--}}
-{{--                                                <div class="product-item__footer">--}}
-{{--                                                    <div class="border-top pt-2 flex-center-between flex-wrap">--}}
-{{--                                                        <a href="../shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>--}}
-{{--                                                        <a href="../shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>--}}
-{{--                                                    </div>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </li>--}}
-{{--                                    <li class="col-6 col-wd-3 col-md-4 product-item">--}}
-{{--                                        <div class="product-item__outer h-100">--}}
-{{--                                            <div class="product-item__inner px-xl-4 p-3">--}}
-{{--                                                <div class="product-item__body pb-xl-2">--}}
-{{--                                                    <div class="mb-2"><a href="../shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>--}}
-{{--                                                    <h5 class="mb-1 product-item__title"><a href="../shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Purple Solo 2 Wireless</a></h5>--}}
-{{--                                                    <div class="mb-2">--}}
-{{--                                                        <a href="../shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{ asset('frontend/img/212X200/img3.jpg') }}" alt="Image Description"></a>--}}
-{{--                                                    </div>--}}
-{{--                                                    <div class="flex-center-between mb-1">--}}
-{{--                                                        <div class="prodcut-price">--}}
-{{--                                                            <div class="text-gray-100">$685,00</div>--}}
-{{--                                                        </div>--}}
-{{--                                                        <div class="d-none d-xl-block prodcut-add-cart">--}}
-{{--                                                            <a href="../shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>--}}
-{{--                                                        </div>--}}
-{{--                                                    </div>--}}
-{{--                                                </div>--}}
-{{--                                                <div class="product-item__footer">--}}
-{{--                                                    <div class="border-top pt-2 flex-center-between flex-wrap">--}}
-{{--                                                        <a href="../shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>--}}
-{{--                                                        <a href="../shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>--}}
-{{--                                                    </div>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </li>--}}
-{{--                                    <li class="col-6 col-wd-3 col-md-4 product-item remove-divider-xl">--}}
-{{--                                        <div class="product-item__outer h-100">--}}
-{{--                                            <div class="product-item__inner px-xl-4 p-3">--}}
-{{--                                                <div class="product-item__body pb-xl-2">--}}
-{{--                                                    <div class="mb-2"><a href="../shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>--}}
-{{--                                                    <h5 class="mb-1 product-item__title"><a href="../shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Smartphone 6S 32GB LTE</a></h5>--}}
-{{--                                                    <div class="mb-2">--}}
-{{--                                                        <a href="../shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{ asset('frontend/img/212X200/img4.jpg') }}" alt="Image Description"></a>--}}
-{{--                                                    </div>--}}
-{{--                                                    <div class="flex-center-between mb-1">--}}
-{{--                                                        <div class="prodcut-price">--}}
-{{--                                                            <div class="text-gray-100">$685,00</div>--}}
-{{--                                                        </div>--}}
-{{--                                                        <div class="d-none d-xl-block prodcut-add-cart">--}}
-{{--                                                            <a href="../shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>--}}
-{{--                                                        </div>--}}
-{{--                                                    </div>--}}
-{{--                                                </div>--}}
-{{--                                                <div class="product-item__footer">--}}
-{{--                                                    <div class="border-top pt-2 flex-center-between flex-wrap">--}}
-{{--                                                        <a href="../shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>--}}
-{{--                                                        <a href="../shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>--}}
-{{--                                                    </div>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </li>--}}
-{{--                                    <li class="col-6 col-wd-3 col-md-4 product-item remove-divider-wd">--}}
-{{--                                        <div class="product-item__outer h-100">--}}
-{{--                                            <div class="product-item__inner px-xl-4 p-3">--}}
-{{--                                                <div class="product-item__body pb-xl-2">--}}
-{{--                                                    <div class="mb-2"><a href="../shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>--}}
-{{--                                                    <h5 class="mb-1 product-item__title"><a href="../shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Widescreen NX Mini F1 SMART NX</a></h5>--}}
-{{--                                                    <div class="mb-2">--}}
-{{--                                                        <a href="../shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{ asset('frontend/img/212X200/img5.jpg') }}" alt="Image Description"></a>--}}
-{{--                                                    </div>--}}
-{{--                                                    <div class="flex-center-between mb-1">--}}
-{{--                                                        <div class="prodcut-price">--}}
-{{--                                                            <div class="text-gray-100">$685,00</div>--}}
-{{--                                                        </div>--}}
-{{--                                                        <div class="d-none d-xl-block prodcut-add-cart">--}}
-{{--                                                            <a href="../shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>--}}
-{{--                                                        </div>--}}
-{{--                                                    </div>--}}
-{{--                                                </div>--}}
-{{--                                                <div class="product-item__footer">--}}
-{{--                                                    <div class="border-top pt-2 flex-center-between flex-wrap">--}}
-{{--                                                        <a href="../shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>--}}
-{{--                                                        <a href="../shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>--}}
-{{--                                                    </div>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </li>--}}
-{{--                                    <li class="col-6 col-wd-3 col-md-4 product-item">--}}
-{{--                                        <div class="product-item__outer h-100">--}}
-{{--                                            <div class="product-item__inner px-xl-4 p-3">--}}
-{{--                                                <div class="product-item__body pb-xl-2">--}}
-{{--                                                    <div class="mb-2"><a href="../shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>--}}
-{{--                                                    <h5 class="mb-1 product-item__title"><a href="../shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Wireless Audio System Multiroom 360 degree Full base audio</a></h5>--}}
-{{--                                                    <div class="mb-2">--}}
-{{--                                                        <a href="../shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{ asset('frontend/img/212X200/img1.jpg') }}" alt="Image Description"></a>--}}
-{{--                                                    </div>--}}
-{{--                                                    <div class="flex-center-between mb-1">--}}
-{{--                                                        <div class="prodcut-price">--}}
-{{--                                                            <div class="text-gray-100">$685,00</div>--}}
-{{--                                                        </div>--}}
-{{--                                                        <div class="d-none d-xl-block prodcut-add-cart">--}}
-{{--                                                            <a href="../shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>--}}
-{{--                                                        </div>--}}
-{{--                                                    </div>--}}
-{{--                                                </div>--}}
-{{--                                                <div class="product-item__footer">--}}
-{{--                                                    <div class="border-top pt-2 flex-center-between flex-wrap">--}}
-{{--                                                        <a href="../shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>--}}
-{{--                                                        <a href="../shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>--}}
-{{--                                                    </div>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </li>--}}
-{{--                                    <li class="col-6 col-wd-3 col-md-4 product-item remove-divider-xl">--}}
-{{--                                        <div class="product-item__outer h-100">--}}
-{{--                                            <div class="product-item__inner px-xl-4 p-3">--}}
-{{--                                                <div class="product-item__body pb-xl-2">--}}
-{{--                                                    <div class="mb-2"><a href="../shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>--}}
-{{--                                                    <h5 class="mb-1 product-item__title"><a href="../shop/single-product-fullwidth.html" class="text-blue font-weight-bold">GameConsole Destiny  Special Edition</a></h5>--}}
-{{--                                                    <div class="mb-2">--}}
-{{--                                                        <a href="../shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{ asset('frontend/img/212X200/img7.jpg') }}" alt="Image Description"></a>--}}
-{{--                                                    </div>--}}
-{{--                                                    <div class="flex-center-between mb-1">--}}
-{{--                                                        <div class="prodcut-price">--}}
-{{--                                                            <div class="text-gray-100">$685,00</div>--}}
-{{--                                                        </div>--}}
-{{--                                                        <div class="d-none d-xl-block prodcut-add-cart">--}}
-{{--                                                            <a href="../shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>--}}
-{{--                                                        </div>--}}
-{{--                                                    </div>--}}
-{{--                                                </div>--}}
-{{--                                                <div class="product-item__footer">--}}
-{{--                                                    <div class="border-top pt-2 flex-center-between flex-wrap">--}}
-{{--                                                        <a href="../shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>--}}
-{{--                                                        <a href="../shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>--}}
-{{--                                                    </div>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </li>--}}
-{{--                                    <li class="col-6 col-wd-3 col-md-4 product-item d-xl-none d-wd-block remove-divider-xl">--}}
-{{--                                        <div class="product-item__outer h-100">--}}
-{{--                                            <div class="product-item__inner px-xl-4 p-3">--}}
-{{--                                                <div class="product-item__body pb-xl-2">--}}
-{{--                                                    <div class="mb-2"><a href="../shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>--}}
-{{--                                                    <h5 class="mb-1 product-item__title"><a href="../shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Camera C430W 4k Waterproof</a></h5>--}}
-{{--                                                    <div class="mb-2">--}}
-{{--                                                        <a href="../shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{ asset('frontend/img/212X200/img8.jpg') }}" alt="Image Description"></a>--}}
-{{--                                                    </div>--}}
-{{--                                                    <div class="flex-center-between mb-1">--}}
-{{--                                                        <div class="prodcut-price">--}}
-{{--                                                            <div class="text-gray-100">$685,00</div>--}}
-{{--                                                        </div>--}}
-{{--                                                        <div class="d-none d-xl-block prodcut-add-cart">--}}
-{{--                                                            <a href="../shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>--}}
-{{--                                                        </div>--}}
-{{--                                                    </div>--}}
-{{--                                                </div>--}}
-{{--                                                <div class="product-item__footer">--}}
-{{--                                                    <div class="border-top pt-2 flex-center-between flex-wrap">--}}
-{{--                                                        <a href="../shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>--}}
-{{--                                                        <a href="../shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>--}}
-{{--                                                    </div>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </li>--}}
-{{--                                    <li class="col-6 col-wd-3 col-md-4 product-item d-xl-none d-wd-block remove-divider-wd">--}}
-{{--                                        <div class="product-item__outer h-100">--}}
-{{--                                            <div class="product-item__inner px-xl-4 p-3">--}}
-{{--                                                <div class="product-item__body pb-xl-2">--}}
-{{--                                                    <div class="mb-2"><a href="../shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>--}}
-{{--                                                    <h5 class="mb-1 product-item__title"><a href="../shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Full Color LaserJet Pro M452dn</a></h5>--}}
-{{--                                                    <div class="mb-2">--}}
-{{--                                                        <a href="../shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{ asset('frontend/img/212X200/img6.jpg') }}" alt="Image Description"></a>--}}
-{{--                                                    </div>--}}
-{{--                                                    <div class="flex-center-between mb-1">--}}
-{{--                                                        <div class="prodcut-price">--}}
-{{--                                                            <div class="text-gray-100">$685,00</div>--}}
-{{--                                                        </div>--}}
-{{--                                                        <div class="d-none d-xl-block prodcut-add-cart">--}}
-{{--                                                            <a href="../shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>--}}
-{{--                                                        </div>--}}
-{{--                                                    </div>--}}
-{{--                                                </div>--}}
-{{--                                                <div class="product-item__footer">--}}
-{{--                                                    <div class="border-top pt-2 flex-center-between flex-wrap">--}}
-{{--                                                        <a href="../shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>--}}
-{{--                                                        <a href="../shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>--}}
-{{--                                                    </div>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </li>--}}
-{{--                                </ul>--}}
-{{--                            </div>--}}
                         </div>
                         <!-- End Tab Content -->
                     </div>
@@ -392,63 +111,8 @@
 
     <!-- End Products-4-1-4 -->
     <div class="container">
-        <!-- Prodcut-cards-carousel -->
-        <div class="space-top-2">
-            <div class=" d-flex justify-content-between border-bottom border-color-1 flex-md-nowrap flex-wrap border-sm-bottom-0">
-                <h3 class="section-title mb-0 pb-2 font-size-22">Ən Çox Satanlar</h3>
-                <ul class="nav nav-pills mb-2 pt-3 pt-md-0 mb-0 border-top border-color-1 border-md-top-0 align-items-center font-size-15 font-size-15-md flex-nowrap flex-md-wrap overflow-auto overflow-md-visble">
-                    <li class="nav-item flex-shrink-0 flex-md-shrink-1">
-                        <a class="text-gray-90 btn btn-outline-primary border-width-2 rounded-pill py-1 px-4 font-size-15 text-lh-19 font-size-15-md" href="#">Top 20</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="js-slick-carousel u-slick u-slick--gutters-2 overflow-hidden u-slick-overflow-visble pt-3 pb-6" data-pagi-classes="text-center right-0 bottom-1 left-0 u-slick__pagination u-slick__pagination--long mb-0 z-index-n1 mt-4">
-                <div class="js-slide">
-                    <ul class="row list-unstyled products-group no-gutters mb-0 overflow-visible">
-                        @isset($soldedProducts)
-                            @foreach($soldedProducts as $soldedProduct)
-                                <li class="col-wd-3 col-md-4 product-item product-item__card d-wd-block pb-2 mb-2 pb-md-0 mb-md-0 border-bottom border-md-bottom-0 remove-divider-wd">
-                                    <div class="product-item__outer h-100">
-                                        <div class="product-item__inner p-md-3 row no-gutters">
-                                            <div class="col col-lg-auto product-media-left">
-                                                <a href="{{ $soldedProduct->path() }}" class="max-width-150 d-block">
-                                                    <img class="img-fluid" src="{{ asset('storage/'.$soldedProduct->photo) }}" alt="{{ $soldedProduct->title }}">
-                                                </a>
-                                            </div>
-                                            <div class="col product-item__body pl-2 pl-lg-3 mr-xl-2 mr-wd-1">
-                                                <div class="mb-4">
-                                                    <div class="mb-2">
-                                                        <a href="{{ $soldedProduct->category->path() }}" class="font-size-12 text-gray-5">{{ $soldedProduct->category->name() }}</a>
-                                                    </div>
-                                                    <h5 class="product-item__title">
-                                                        <a href="{{ $soldedProduct->path() }}" class="text-blue font-weight-bold">{{ $soldedProduct->title }}</a>
-                                                    </h5>
-                                                </div>
-                                                <div class="flex-center-between mb-3">
-                                                    <div class="prodcut-price">
-                                                        <div class="text-gray-100">₼{{ $soldedProduct->price }}</div>
-                                                    </div>
-                                                    <div class="d-none d-xl-block prodcut-add-cart">
-                                                        <a href="#" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                    </div>
-                                                </div>
-                                                <div class="product-item__footer">
-                                                    <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                        <a href="#" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Qarşılaşdır</a>
-                                                        <a href="#" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> İstək siyahısı</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            @endforeach
-                        @endisset
-                    </ul>
-                </div>
-
-            </div>
-        </div>
+        <!-- Prodcut-cards-carousel  -->
+        <!-- Bura ən çox satan məhsullar gələcək -->
         <!-- End Prodcut-cards-carousel -->
         <!-- Full banner -->
         <div class="mb-6">
@@ -502,7 +166,7 @@
                               "settings": {
                                 "slidesToShow": 2
                               }
-                            }]'>
+                            }]' data-autoplay="true">
                     @isset($seenProducts)
                         @foreach($seenProducts as $seenProduct)
                             <div class="js-slide products-group">
@@ -523,15 +187,6 @@
                                                     <div class="prodcut-price">
                                                         <div class="text-gray-100">₼{{ $product->price }}</div>
                                                     </div>
-                                                    <div class="d-none d-xl-block prodcut-add-cart">
-                                                        <a href="#" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="product-item__footer">
-                                                <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                    <a href="#" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Qarşılaşdır</a>
-                                                    <a href="#" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> İstək siyahısı</a>
                                                 </div>
                                             </div>
                                         </div>

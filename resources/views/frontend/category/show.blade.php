@@ -45,9 +45,7 @@
   <script src="{{ asset('frontend/vendor/hs-megamenu/src/hs.megamenu.js') }}"></script>
   <script src="{{ asset('frontend/vendor/svg-injector/dist/svg-injector.min.js') }}"></script>
   <script src="{{ asset('frontend/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js') }}"></script>
-  <script src="{{ asset('frontend/vendor/jquery-validation/dist/jquery.validate.min.js') }}"></script>
   <script src="{{ asset('frontend/vendor/fancybox/jquery.fancybox.min.js') }}"></script>
-  <script src="{{ asset('frontend/vendor/ion-rangeslider/js/ion.rangeSlider.min.js ') }}"></script>
   <script src="{{ asset('frontend/vendor/typed.js/lib/typed.min.js') }}"></script>
   <script src="{{ asset('frontend/vendor/slick-carousel/slick/slick.js') }}"></script>
   <script src="{{ asset('frontend/vendor/bootstrap-select/dist/js/bootstrap-select.min.js') }}"></script>
@@ -65,7 +63,6 @@
   <script src="{{ asset('frontend/js/components/hs.onscroll-animation.js') }}"></script>
   <script src="{{ asset('frontend/js/components/hs.slick-carousel.js') }}"></script>
   <script src="{{ asset('frontend/js/components/hs.quantity-counter.js') }}"></script>
-  <script src="{{ asset('frontend/js/components/hs.range-slider.js') }}"></script>
   <script src="{{ asset('frontend/js/components/hs.show-animation.js') }}"></script>
   <script src="{{ asset('frontend/js/components/hs.svg-injector.js') }}"></script>
   <script src="{{ asset('frontend/js/components/hs.scroll-nav.js') }}"></script>
@@ -86,6 +83,7 @@
     });
 
     $(document).on('ready', function () {
+
       // initialization of header
       $.HSCore.components.HSHeader.init($('#header'));
 
@@ -107,6 +105,7 @@
       // initialization of quantity counter
       $.HSCore.components.HSQantityCounter.init('.js-quantity');
 
+
       // initialization of popups
       $.HSCore.components.HSFancyBox.init('.js-fancybox');
 
@@ -126,17 +125,8 @@
       // initialization of forms
       $.HSCore.components.HSFocusState.init();
 
-      // initialization of form validation
-      $.HSCore.components.HSValidation.init('.js-validate', {
-        rules: {
-          confirmPassword: {
-            equalTo: '#signupPassword'
-          }
-        }
-      });
 
       // initialization of forms
-      $.HSCore.components.HSRangeSlider.init('.js-range-slider');
 
       // initialization of show animations
       $.HSCore.components.HSShowAnimation.init('.js-animation-link');
@@ -190,7 +180,6 @@
 
   <link rel="stylesheet" href="{{ asset('frontend/vendor/animate.css/animate.min.css') }}">
   <link rel="stylesheet" href="{{ asset('frontend/vendor/hs-megamenu/src/hs.megamenu.css') }}">
-  <link rel="stylesheet" href="{{ asset('frontend/vendor/ion-rangeslider/css/ion.rangeSlider.css' ) }}">
   <link rel="stylesheet" href="{{ asset('frontend/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css') }}">
   <link rel="stylesheet" href="{{ asset('frontend/vendor/fancybox/jquery.fancybox.css') }}">
   <link rel="stylesheet" href="{{ asset('frontend/vendor/slick-carousel/slick/slick.css') }}">

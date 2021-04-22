@@ -10,11 +10,21 @@
           </div>
           <div class="topbar-right ml-auto">
             <ul class="list-inline mb-0">
+              @guest
+                <li class="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border">
+                  <div class="position-relative">
+                    <a id="sellerDropdownInvoker" class="dropdown-nav-link dropdown-toggle d-flex align-items-center u-header-topbar__nav-link font-weight-normal" href="javascript:;" role="button" aria-controls="sellerDropdown" aria-haspopup="true" aria-expanded="false" data-unfold-event="hover" data-unfold-target="#sellerDropdown" data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-delay="300" data-unfold-hide-on-scroll="true" data-unfold-animation-in="slideInUp" data-unfold-animation-out="fadeOut">
+                      <span class="d-none d-sm-inline-flex align-items-center"><span class="mr-1 font-weight-bold">₼</span> Sila Express - də Sat</span>
+                    </a>
+                    <div id="sellerDropdown" class="dropdown-menu dropdown-unfold" aria-placeholder="Sila Express - də Sat" aria-labelledby="sellerDropdownInvoker">
+                      <a href="{{ route('seller.login') }}" class="dropdown-item active">Satıcı Girişi</a>
+                      <a href="{{ route('seller.register') }}" class="dropdown-item active">Satıcı Qeydiyyatı</a>
+                    </div>
+                  </div>
+                </li>
+              @endguest
               <li class="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border">
-                <a href="../home/contact-v2.html" class="u-header-topbar__nav-link"><i class="ec ec-dollar mr-1"></i> Sila Express - də Sat</a>
-              </li>
-              <li class="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border">
-                <a href="../shop/track-your-order.html" class="u-header-topbar__nav-link"><i class="ec ec-transport mr-1"></i> Sifarişim hardadır?</a>
+                <a href="#" class="u-header-topbar__nav-link"><i class="ec ec-transport mr-1"></i> Sifarişim hardadır?</a>
               </li>
               <li class="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border u-header-topbar__nav-item-no-border u-header-topbar__nav-item-border-single">
                 <div class="d-flex align-items-center">
@@ -125,52 +135,31 @@
           
                                   <!-- List -->
                                   <ul id="headerSidebarList" class="u-header-collapse__nav">
-                                    <!-- Value of the Day -->
-                                    <li class="">
-                                      <a class="u-header-collapse__nav-link font-weight-bold" href="#">Günün məhsulu</a>
-                                    </li>
-                                    <!-- End Value of the Day -->
-          
-                                    <!-- Top 100 Offers -->
-                                    <li class="">
-                                      <a class="u-header-collapse__nav-link font-weight-bold" href="#">Ən yaxşı 100 təklif</a>
-                                    </li>
-                                    <!-- End Top 100 Offers -->
-          
-                                    <!-- New Arrivals -->
-                                    <li class="">
-                                      <a class="u-header-collapse__nav-link font-weight-bold" href="#">Yeni gələnlər</a>
-                                    </li>
-                                    <!-- End New Arrivals -->
-          
-                                    <!-- Computers & Accessories -->
-                                    <li class="u-has-submenu u-header-collapse__submenu">
-                                      <a class="u-header-collapse__nav-link u-header-collapse__nav-pointer" href="javascript:;" data-target="#headerSidebarComputersCollapse" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="headerSidebarComputersCollapse">
-                                        Kateqoriya 1
-                                      </a>
-          
-                                      <div id="headerSidebarComputersCollapse" class="collapse" data-parent="#headerSidebarContent">
-                                        <ul class="u-header-collapse__nav-list">
-                                          <li><span class="u-header-sidebar__sub-menu-title">Kateqoriya 1</span>
-                                          </li>
-                                          <li class=""><a class="u-header-collapse__submenu-nav-link" href="#">All Computers & Accessories</a>
-                                          </li>
-                                          <li class=""><a class="u-header-collapse__submenu-nav-link" href="#">Laptops, Desktops & Monitors</a>
-                                          </li>
-                                          <li class=""><a class="u-header-collapse__submenu-nav-link" href="#">Printers & Ink</a></li>
-                                          <li class=""><a class="u-header-collapse__submenu-nav-link" href="#">Networking & Internet Devices</a>
-                                          </li>
-                                          <li class=""><a class="u-header-collapse__submenu-nav-link" href="#">Computer Accessories</a></li>
-                                          <li class=""><a class="u-header-collapse__submenu-nav-link" href="#">Software</a></li>
-                                          <li><span class="u-header-sidebar__sub-menu-title">Office & Stationery</span>
-                                          </li>
-                                          <li><a class="u-header-collapse__submenu-nav-link" href="#">All Office & Stationery</a></li>
-                                          <li><a class="u-header-collapse__submenu-nav-link" href="#">All Electronics</a></li>
-                                        </ul>
-                                      </div>
-                                    </li>
-                                    <!-- End Computers & Accessories -->
-          
+                                    @foreach($categories as $category)
+                                      @if(count($category->categories) > 0)
+                                        <li class="u-has-submenu u-header-collapse__submenu">
+                                          <a class="u-header-collapse__nav-link u-header-collapse__nav-pointer" href="javascript:;" data-target="#headerSidebarComputersCollapse" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="headerSidebarComputersCollapse">
+                                            {{ $category->name }}
+                                          </a>
+
+                                          <div id="headerSidebarComputersCollapse" class="collapse" data-parent="#headerSidebarContent">
+                                            <ul class="u-header-collapse__nav-list">
+                                              <li><span class="u-header-sidebar__sub-menu-title">{{ $category->name }}</span>
+                                              </li>
+                                              @foreach($category->categories as $cat)
+                                                <li class="">
+                                                  <a class="u-header-collapse__submenu-nav-link" href="{{ $cat->path() }}">{{ $cat->name }}</a>
+                                                </li>
+                                              @endforeach
+                                            </ul>
+                                          </div>
+                                        </li>
+                                      @else
+                                        <li class="">
+                                          <a class="u-header-collapse__nav-link" href="{{ $category->path() }}">{{ $category->name }}</a>
+                                        </li>
+                                      @endif
+                                    @endforeach
                                   </ul>
                                   <!-- End List -->
                                 </div>
@@ -184,7 +173,7 @@
                                   <a class="u-header-sidebar__footer-link text-gray-90" href="#">Məxfilik</a>
                                 </li>
                                 <li class="list-inline-item pr-3">
-                                  <a class="u-header-sidebar__footer-link text-gray-90" href="#">Şərtlər</a>
+                                  <a class="u-header-sidebar__footer-link text-gray-90" href="#">Alıcı Razılaşması</a>
                                 </li>
                                 <li class="list-inline-item">
                                   <a class="u-header-sidebar__footer-link text-gray-90" href="#">
@@ -192,7 +181,7 @@
                                   </a>
                                 </li>
                               </ul>
-          
+
                               <!-- SVG Background Shape -->
                               <div class="position-absolute right-0 bottom-0 left-0 z-index-n1">
                                 <img class="js-svg-injector" src="{{ asset('frontend/svg/components/wave-bottom-with-dots.svg') }}" alt="Image Description" data-parent="#SVGwaveWithDots">
@@ -219,32 +208,18 @@
                                       data-animation-in="slideInUp"
                                       data-animation-out="fadeOut">
                                       <a class="nav-link u-header__nav-link" href="{{ route('index') }}" aria-haspopup="true" aria-expanded="false">Anasəhifə</a>
-
-                                      <!-- Home - Submenu -->
-                                      
-                                      <!-- End Home - Submenu -->
                                   </li>
                                   <!-- End Home -->
 
-                                  <!-- Blog -->
-                                  
-                                  <!-- End Blog -->
-
                                   <!-- About us -->
                                   <li class="nav-item u-header__nav-item">
-                                      <a class="nav-link u-header__nav-link" href="">Haqqımızda</a>
+                                      <a class="nav-link u-header__nav-link" href="#">Haqqımızda</a>
                                   </li>
                                   <!-- End About us -->
 
-                                  <!-- FAQs -->
-                                  <li class="nav-item u-header__nav-item">
-                                      <a class="nav-link u-header__nav-link" href="../home/faq.html">FAQs</a>
-                                  </li>
-                                  <!-- End FAQs -->
-
                                   <!-- Contact Us -->
                                   <li class="nav-item u-header__nav-item">
-                                      <a class="nav-link u-header__nav-link" href="">Əlaqə</a>
+                                      <a class="nav-link u-header__nav-link" href="#">Əlaqə</a>
                                   </li>
                                   <!-- End Contact Us -->
                               </ul>
@@ -304,14 +279,14 @@
                                   <!-- End Input -->
                               </li>
                               <!-- End Search -->
-                              <li class="col d-none d-xl-block"><a href="../shop/compare.html" class="text-gray-90" data-toggle="tooltip" data-placement="top" title="Compare"><i class="font-size-22 ec ec-compare"></i></a></li>
-                              <li class="col d-none d-xl-block"><a href="../shop/wishlist.html" class="text-gray-90" data-toggle="tooltip" data-placement="top" title="Favorites"><i class="font-size-22 ec ec-favorites"></i></a></li>
-                              <li class="col d-xl-none px-2 px-sm-3"><a href="../shop/my-account.html" class="text-gray-90" data-toggle="tooltip" data-placement="top" title="My Account"><i class="font-size-22 ec ec-user"></i></a></li>
+                              <li class="col d-xl-none px-2 px-sm-3">
+                                <a href="#" class="text-gray-90" data-toggle="tooltip" data-placement="top" title="Mənim hesabım"><i class="font-size-22 ec ec-user"></i></a>
+                              </li>
                               <li class="col pr-xl-0 px-2 px-sm-3">
-                                  <a href="../shop/cart.html" class="text-gray-90 position-relative d-flex " data-toggle="tooltip" data-placement="top" title="Cart">
+                                  <a href="{{ route('cart.index') }}" class="text-gray-90 position-relative d-flex " data-toggle="tooltip" data-placement="top" title="Səbət">
                                       <i class="font-size-22 ec ec-shopping-bag"></i>
-                                      <span class="width-22 height-22 bg-dark position-absolute d-flex align-items-center justify-content-center rounded-circle left-12 top-8 font-weight-bold font-size-12 text-white">2</span>
-                                      <span class="d-none d-xl-block font-weight-bold font-size-16 text-gray-90 ml-3">$1785.00</span>
+                                      <span class="width-22 height-22 bg-dark position-absolute d-flex align-items-center justify-content-center rounded-circle left-12 top-8 font-weight-bold font-size-12 text-white">{{ count($cart) }}</span>
+                                      <span class="d-none d-xl-block font-weight-bold font-size-16 text-gray-90 ml-3">₼{{ $total }}</span>
                                   </a>
                               </li>
                           </ul>
@@ -353,336 +328,39 @@
                                           <nav class="js-mega-menu navbar navbar-expand-xl u-header__navbar u-header__navbar--no-space hs-menu-initialized">
                                               <div id="navBar" class="collapse navbar-collapse u-header__navbar-collapse">
                                                   <ul class="navbar-nav u-header__navbar-nav border-primary border-top-0">
-                                                      <li class="nav-item u-header__nav-item"
-                                                          data-event="hover"
-                                                          data-position="left">
-                                                          <a href="#" class="nav-link u-header__nav-link font-weight-bold">Value of the Day</a>
-                                                      </li>
-                                                      <li class="nav-item u-header__nav-item"
-                                                          data-event="hover"
-                                                          data-position="left">
-                                                          <a href="#" class="nav-link u-header__nav-link font-weight-bold">Top 100 Offers</a>
-                                                      </li>
-                                                      <li class="nav-item u-header__nav-item"
-                                                          data-event="hover"
-                                                          data-position="left">
-                                                          <a href="#" class="nav-link u-header__nav-link font-weight-bold">New Arrivals</a>
-                                                      </li>
+                                                    <li class="nav-item u-header__nav-item" data-event="hover" data-position="left">
+                                                      <a href="#" class="nav-link u-header__nav-link font-weight-bold">Yeni əlavə olunan məhsullar</a>
+                                                    </li>
+                                                  @foreach($categories as $category)
+                                                    @if(count($category->categories) > 0)
                                                       <!-- Nav Item MegaMenu -->
-                                                      <li class="nav-item hs-has-mega-menu u-header__nav-item"
-                                                          data-event="hover"
-                                                          data-animation-in="slideInUp"
-                                                          data-animation-out="fadeOut"
-                                                          data-position="left">
-                                                          <a id="basicMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false">Computers & Accessories</a>
-
+                                                        <li class="nav-item hs-has-mega-menu u-header__nav-item" data-event="hover" data-animation-in="slideInUp" data-animation-out="fadeOut" data-position="left">
+                                                          <a id="basicMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="{{ $category->path() }}" aria-haspopup="true" aria-expanded="false">{{ $category->name }}</a>
                                                           <!-- Nav Item - Mega Menu -->
                                                           <div class="hs-mega-menu vmm-tfw u-header__sub-menu" aria-labelledby="basicMegaMenu">
-                                                              <div class="vmm-bg">
-                                                                  <img class="img-fluid" src="../../assets/img/500X400/img1.png" alt="Image Description">
-                                                              </div>
-                                                              <div class="row u-header__mega-menu-wrapper">
-                                                                  <div class="col mb-3 mb-sm-0">
-                                                                      <span class="u-header__sub-menu-title">Computers & Accessories</span>
-                                                                      <ul class="u-header__sub-menu-nav-group mb-3">
-                                                                          <li><a class="nav-link u-header__sub-menu-nav-link" href="#">All Computers & Accessories</a></li>
-                                                                          <li><a class="nav-link u-header__sub-menu-nav-link" href="#">Laptops, Desktops & Monitors</a></li>
-                                                                          <li><a class="nav-link u-header__sub-menu-nav-link" href="#">Printers & Ink</a></li>
-                                                                          <li><a class="nav-link u-header__sub-menu-nav-link" href="#">Networking & Internet Devices</a></li>
-                                                                          <li><a class="nav-link u-header__sub-menu-nav-link" href="#">Computer Accessories</a></li>
-                                                                          <li><a class="nav-link u-header__sub-menu-nav-link" href="#">Software</a></li>
-                                                                          <li>
-                                                                              <a class="nav-link u-header__sub-menu-nav-link u-nav-divider border-top pt-2 flex-column align-items-start" href="#">
-                                                                                  <div class="">All Electronics</div>
-                                                                                  <div class="u-nav-subtext font-size-11 text-gray-30">Discover more products</div>
-                                                                              </a>
-                                                                          </li>
-                                                                      </ul>
-                                                                  </div>
-
-                                                                  <div class="col mb-3 mb-sm-0">
-                                                                      <span class="u-header__sub-menu-title">Office & Stationery</span>
-                                                                      <ul class="u-header__sub-menu-nav-group">
-                                                                          <li><a class="nav-link u-header__sub-menu-nav-link" href="#">All Office & Stationery</a></li>
-                                                                      </ul>
-                                                                  </div>
-                                                              </div>
+                                                            <div class="row u-header__mega-menu-wrapper">
+                                                              @foreach($category->categories->chunk(ceil(count($category->categories)/2)) as $chunk)
+                                                                <div class="col mb-3 mb-sm-0">
+                                                                  <ul class="u-header__sub-menu-nav-group mb-3">
+                                                                    @foreach($chunk as $subcategory)
+                                                                      <li>
+                                                                        <a class="nav-link u-header__sub-menu-nav-link" href="{{ $subcategory->path() }}">{{ $subcategory->name }}</a>
+                                                                      </li>
+                                                                    @endforeach
+                                                                  </ul>
+                                                                </div>
+                                                              @endforeach
+                                                            </div>
                                                           </div>
                                                           <!-- End Nav Item - Mega Menu -->
-                                                      </li>
-                                                      <!-- End Nav Item MegaMenu-->
-                                                      <!-- Nav Item MegaMenu -->
-                                                      <li class="nav-item hs-has-mega-menu u-header__nav-item"
-                                                          data-event="hover"
-                                                          data-position="left">
-                                                          <a id="basicMegaMenu1" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false">Cameras, Audio & Video</a>
-
-                                                          <!-- Nav Item - Mega Menu -->
-                                                          <div class="hs-mega-menu vmm-tfw u-header__sub-menu" aria-labelledby="basicMegaMenu1">
-                                                              <div class="vmm-bg">
-                                                                  <img class="img-fluid" src="../../assets/img/500X400/img4.png" alt="Image Description">
-                                                              </div>
-                                                              <div class="row u-header__mega-menu-wrapper">
-                                                                  <div class="col mb-3 mb-sm-0">
-                                                                      <span class="u-header__sub-menu-title">Cameras & Photography</span>
-                                                                      <ul class="u-header__sub-menu-nav-group mb-3">
-                                                                          <li><a class="nav-link u-header__sub-menu-nav-link" href="#">Lenses</a></li>
-                                                                          <li><a class="nav-link u-header__sub-menu-nav-link" href="#">Camera Accessories</a></li>
-                                                                          <li><a class="nav-link u-header__sub-menu-nav-link" href="#">Security & Surveillance</a></li>
-                                                                          <li><a class="nav-link u-header__sub-menu-nav-link" href="#">Binoculars & Telescopes</a></li>
-                                                                          <li><a class="nav-link u-header__sub-menu-nav-link" href="#">Camcorders</a></li>
-                                                                          <li><a class="nav-link u-header__sub-menu-nav-link" href="#">Software</a></li>
-                                                                          <li>
-                                                                              <a class="nav-link u-header__sub-menu-nav-link u-nav-divider border-top pt-2 flex-column align-items-start" href="#">
-                                                                                  <div class="">All Electronics</div>
-                                                                                  <div class="u-nav-subtext font-size-11 text-gray-30">Discover more products</div>
-                                                                              </a>
-                                                                          </li>
-                                                                      </ul>
-                                                                  </div>
-
-                                                                  <div class="col mb-3 mb-sm-0">
-                                                                      <span class="u-header__sub-menu-title">Audio & Video</span>
-                                                                      <ul class="u-header__sub-menu-nav-group">
-                                                                          <li><a class="nav-link u-header__sub-menu-nav-link" href="#">All Audio & Video</a></li>
-                                                                          <li><a class="nav-link u-header__sub-menu-nav-link" href="#">Headphones & Speakers</a></li>
-                                                                      </ul>
-                                                                  </div>
-                                                              </div>
-                                                          </div>
-                                                          <!-- End Nav Item - Mega Menu -->
-                                                      </li>
-                                                      <!-- End Nav Item MegaMenu-->
-                                                      <!-- Nav Item MegaMenu -->
-                                                      <li class="nav-item hs-has-mega-menu u-header__nav-item"
-                                                          data-event="hover"
-                                                          data-position="left">
-                                                          <a id="basicMegaMenu2" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false">Mobiles & Tablets</a>
-
-                                                          <!-- Nav Item - Mega Menu -->
-                                                          <div class="hs-mega-menu vmm-tfw u-header__sub-menu vmm-bg-extended" aria-labelledby="basicMegaMenu2">
-                                                              <div class="vmm-bg">
-                                                                  <img class="img-fluid" src="../../assets/img/500X400/img3.png" alt="Image Description">
-                                                              </div>
-                                                              <div class="row u-header__mega-menu-wrapper">
-                                                                  <div class="col mb-3 mb-sm-0">
-                                                                      <span class="u-header__sub-menu-title">Mobiles & Tablets</span>
-                                                                      <ul class="u-header__sub-menu-nav-group mb-3">
-                                                                          <li><a class="nav-link u-header__sub-menu-nav-link" href="#">All Mobile Phones</a></li>
-                                                                          <li><a class="nav-link u-header__sub-menu-nav-link" href="#">Smartphones</a></li>
-                                                                          <li><a class="nav-link u-header__sub-menu-nav-link" href="#">Refurbished Mobiles</a></li>
-                                                                          <li><a class="nav-link u-header__sub-menu-nav-link border-top pt-2" href="#">All Mobile Accessories</a></li>
-                                                                          <li><a class="nav-link u-header__sub-menu-nav-link" href="#">Cases & Covers</a></li>
-                                                                          <li>
-                                                                              <a class="nav-link u-header__sub-menu-nav-link u-nav-divider border-top pt-2 flex-column align-items-start" href="#">
-                                                                                  <div class="">All Electronics</div>
-                                                                                  <div class="u-nav-subtext font-size-11 text-gray-30">Discover more products</div>
-                                                                              </a>
-                                                                          </li>
-                                                                      </ul>
-                                                                  </div>
-
-                                                                  <div class="col mb-3 mb-sm-0">
-                                                                      <ul class="u-header__sub-menu-nav-group">
-                                                                          <li><a class="nav-link u-header__sub-menu-nav-link" href="#">All Tablets</a></li>
-                                                                          <li><a class="nav-link u-header__sub-menu-nav-link" href="#">Tablet Accessories</a></li>
-                                                                      </ul>
-                                                                  </div>
-                                                              </div>
-                                                          </div>
-                                                          <!-- End Nav Item - Mega Menu -->
-                                                      </li>
-                                                      <!-- End Nav Item MegaMenu-->
-                                                      <!-- Nav Item MegaMenu -->
-                                                      <li class="nav-item hs-has-mega-menu u-header__nav-item"
-                                                          data-event="hover"
-                                                          data-position="left">
-                                                          <a id="basicMegaMenu3" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false">Movies, Music & Video</a>
-
-                                                          <!-- Nav Item - Mega Menu -->
-                                                          <div class="hs-mega-menu vmm-tfw u-header__sub-menu" aria-labelledby="basicMegaMenu3">
-                                                              <div class="vmm-bg">
-                                                                  <img class="img-fluid" src="../../assets/img/500X400/img2.png" alt="Image Description">
-                                                              </div>
-                                                              <div class="row u-header__mega-menu-wrapper">
-                                                                  <div class="col mb-3 mb-sm-0">
-                                                                      <span class="u-header__sub-menu-title">Movies & TV Shows</span>
-                                                                      <ul class="u-header__sub-menu-nav-group mb-3">
-                                                                          <li><a class="nav-link u-header__sub-menu-nav-link" href="#">All Movies & TV Shows</a></li>
-                                                                          <li><a class="nav-link u-header__sub-menu-nav-link" href="#">All English</a></li>
-                                                                          <li><a class="nav-link u-header__sub-menu-nav-link border-bottom pb-3" href="#">All Hindi</a></li>
-                                                                      </ul>
-                                                                      <span class="u-header__sub-menu-title">Video Games</span>
-                                                                      <ul class="u-header__sub-menu-nav-group">
-                                                                          <li><a class="nav-link u-header__sub-menu-nav-link" href="#">PC Games</a></li>
-                                                                          <li><a class="nav-link u-header__sub-menu-nav-link" href="#">Consoles</a></li>
-                                                                          <li><a class="nav-link u-header__sub-menu-nav-link" href="#">Accessories</a></li>
-                                                                      </ul>
-                                                                  </div>
-
-                                                                  <div class="col mb-3 mb-sm-0">
-                                                                      <span class="u-header__sub-menu-title">Music</span>
-                                                                      <ul class="u-header__sub-menu-nav-group">
-                                                                          <li><a class="nav-link u-header__sub-menu-nav-link" href="#">All Music</a></li>
-                                                                          <li><a class="nav-link u-header__sub-menu-nav-link" href="#">Indian Classical</a></li>
-                                                                          <li><a class="nav-link u-header__sub-menu-nav-link" href="#">Musical Instruments</a></li>
-                                                                      </ul>
-                                                                  </div>
-                                                              </div>
-                                                          </div>
-                                                          <!-- End Nav Item - Mega Menu -->
-                                                      </li>
-                                                      <!-- End Nav Item MegaMenu-->
-                                                      <!-- Nav Item MegaMenu -->
-                                                      <li class="nav-item hs-has-mega-menu u-header__nav-item"
-                                                          data-event="hover"
-                                                          data-position="left">
-                                                          <a id="basicMegaMenu4" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false">TV & Audio</a>
-
-                                                          <!-- Nav Item - Mega Menu -->
-                                                          <div class="hs-mega-menu vmm-tfw u-header__sub-menu" aria-labelledby="basicMegaMenu4">
-                                                              <div class="vmm-bg">
-                                                                  <img class="img-fluid" src="../../assets/img/500X400/img5.png" alt="Image Description">
-                                                              </div>
-                                                              <div class="row u-header__mega-menu-wrapper">
-                                                                  <div class="col mb-3 mb-sm-0">
-                                                                      <span class="u-header__sub-menu-title">Audio & Video</span>
-                                                                      <ul class="u-header__sub-menu-nav-group mb-3">
-                                                                          <li><a class="nav-link u-header__sub-menu-nav-link" href="#">All Audio & Video</a></li>
-                                                                          <li><a class="nav-link u-header__sub-menu-nav-link" href="#">Televisions</a></li>
-                                                                          <li><a class="nav-link u-header__sub-menu-nav-link" href="#">Headphones</a></li>
-                                                                          <li><a class="nav-link u-header__sub-menu-nav-link" href="#">Speakers</a></li>
-                                                                          <li><a class="nav-link u-header__sub-menu-nav-link" href="#">Audio & Video Accessories</a></li>
-                                                                          <li>
-                                                                              <a class="nav-link u-header__sub-menu-nav-link u-nav-divider border-top pt-2 flex-column align-items-start" href="#">
-                                                                                  <div class="">Electro Home Appliances</div>
-                                                                                  <div class="u-nav-subtext font-size-11 text-gray-30">Available in select cities</div>
-                                                                              </a>
-                                                                          </li>
-                                                                      </ul>
-                                                                  </div>
-
-                                                                  <div class="col mb-3 mb-sm-0">
-                                                                      <span class="u-header__sub-menu-title">Music</span>
-                                                                      <ul class="u-header__sub-menu-nav-group">
-                                                                          <li><a class="nav-link u-header__sub-menu-nav-link" href="#">Televisions</a></li>
-                                                                          <li><a class="nav-link u-header__sub-menu-nav-link" href="#">Headphones</a></li>
-                                                                      </ul>
-                                                                  </div>
-                                                              </div>
-                                                          </div>
-                                                          <!-- End Nav Item - Mega Menu -->
-                                                      </li>
-                                                      <!-- End Nav Item MegaMenu-->
-                                                      <!-- Nav Item MegaMenu -->
-                                                      <li class="nav-item hs-has-mega-menu u-header__nav-item"
-                                                          data-event="hover"
-                                                          data-position="left">
-                                                          <a id="basicMegaMenu5" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false">Watches & Eyewear</a>
-
-                                                          <!-- Nav Item - Mega Menu -->
-                                                          <div class="hs-mega-menu vmm-tfw u-header__sub-menu" aria-labelledby="basicMegaMenu5">
-                                                              <div class="vmm-bg">
-                                                                  <img class="img-fluid" src="../../assets/img/500X400/img6.png" alt="Image Description">
-                                                              </div>
-                                                              <div class="row u-header__mega-menu-wrapper">
-                                                                  <div class="col mb-3 mb-sm-0">
-                                                                      <span class="u-header__sub-menu-title">Watches</span>
-                                                                      <ul class="u-header__sub-menu-nav-group mb-3">
-                                                                          <li><a class="nav-link u-header__sub-menu-nav-link" href="#">All Watches</a></li>
-                                                                          <li><a class="nav-link u-header__sub-menu-nav-link" href="#">Men's Watches</a></li>
-                                                                          <li><a class="nav-link u-header__sub-menu-nav-link" href="#">Women's Watches</a></li>
-                                                                          <li><a class="nav-link u-header__sub-menu-nav-link" href="#">Premium Watches</a></li>
-                                                                          <li><a class="nav-link u-header__sub-menu-nav-link" href="#">Deals on Watches</a></li>
-                                                                      </ul>
-                                                                  </div>
-
-                                                                  <div class="col mb-3 mb-sm-0">
-                                                                      <span class="u-header__sub-menu-title">Eyewear</span>
-                                                                      <ul class="u-header__sub-menu-nav-group">
-                                                                          <li><a class="nav-link u-header__sub-menu-nav-link" href="#">Men's Sunglasses</a></li>
-                                                                      </ul>
-                                                                  </div>
-                                                              </div>
-                                                          </div>
-                                                          <!-- End Nav Item - Mega Menu -->
-                                                      </li>
-                                                      <!-- End Nav Item MegaMenu-->
-                                                      <!-- Nav Item MegaMenu -->
-                                                      <li class="nav-item hs-has-mega-menu u-header__nav-item"
-                                                          data-event="hover"
-                                                          data-position="left">
-                                                          <a id="basicMegaMenu3" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false">Car, Motorbike & Industrial</a>
-
-                                                          <!-- Nav Item - Mega Menu -->
-                                                          <div class="hs-mega-menu vmm-tfw u-header__sub-menu" aria-labelledby="basicMegaMenu3">
-                                                              <div class="vmm-bg">
-                                                                  <img class="img-fluid" src="../../assets/img/500X400/img7.png" alt="Image Description">
-                                                              </div>
-                                                              <div class="row u-header__mega-menu-wrapper">
-                                                                  <div class="col mb-3 mb-sm-0">
-                                                                      <span class="u-header__sub-menu-title">Car & Motorbike</span>
-                                                                      <ul class="u-header__sub-menu-nav-group mb-3">
-                                                                          <li><a class="nav-link u-header__sub-menu-nav-link" href="#">All Cars & Bikes</a></li>
-                                                                          <li><a class="nav-link u-header__sub-menu-nav-link" href="#">Car & Bike Care</a></li>
-                                                                          <li><a class="nav-link u-header__sub-menu-nav-link border-bottom pb-3" href="#">Lubricants</a></li>
-                                                                      </ul>
-                                                                      <span class="u-header__sub-menu-title">Shop for Bike</span>
-                                                                      <ul class="u-header__sub-menu-nav-group">
-                                                                          <li><a class="nav-link u-header__sub-menu-nav-link" href="#">Helmets & Gloves</a></li>
-                                                                          <li><a class="nav-link u-header__sub-menu-nav-link" href="#">Bike Parts</a></li>
-                                                                      </ul>
-                                                                  </div>
-
-                                                                  <div class="col mb-3 mb-sm-0">
-                                                                      <span class="u-header__sub-menu-title">Industrial Supplies</span>
-                                                                      <ul class="u-header__sub-menu-nav-group">
-                                                                          <li><a class="nav-link u-header__sub-menu-nav-link" href="#">All Industrial Supplies</a></li>
-                                                                          <li><a class="nav-link u-header__sub-menu-nav-link" href="#">Lab & Scientific</a></li>
-                                                                      </ul>
-                                                                  </div>
-                                                              </div>
-                                                          </div>
-                                                          <!-- End Nav Item - Mega Menu -->
-                                                      </li>
-                                                      <!-- End Nav Item MegaMenu-->
-                                                      <!-- Nav Item -->
-                                                      <li class="nav-item hs-has-sub-menu u-header__nav-item"
-                                                          data-event="click"
-                                                          data-animation-in="slideInUp"
-                                                          data-animation-out="fadeOut"
-                                                          data-position="left">
-                                                          <a id="homeMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="homeSubMenu">Accessories</a>
-
-                                                          <!-- Home - Submenu -->
-                                                          <ul id="homeSubMenu" class="hs-sub-menu u-header__sub-menu animated hs-position-left fadeOut" aria-labelledby="homeMegaMenu" style="min-width: 230px; display: none;">
-                                                              <!-- Home-v1 -->
-                                                              <li class="hs-has-sub-menu">
-                                                                  <a class="nav-link u-header__sub-menu-nav-link " href="index.html">Home-v1</a>
-                                                              </li>
-                                                              <!-- End Home-v1 -->
-
-                                                              <!-- Home-v2 -->
-                                                              <li class="hs-has-sub-menu">
-                                                                  <a class="nav-link u-header__sub-menu-nav-link " href="home-v2.html">Home-v2</a>
-                                                              </li>
-                                                              <!-- End Home-v2 -->
-
-                                                              <!-- Home-v3 -->
-                                                              <li class="hs-has-sub-menu">
-                                                                  <a class="nav-link u-header__sub-menu-nav-link " href="home-v3.html">Home-v3</a>
-                                                              </li>
-                                                              <!-- End Home-v3 -->
-
-                                                              <!-- Home-v4 -->
-                                                              <li class="hs-has-sub-menu">
-                                                                  <a class="nav-link u-header__sub-menu-nav-link " href="home-v4.html">Home-v4</a>
-                                                              </li>
-                                                              <!-- End Home-v4 -->
-                                                          </ul>
-                                                          <!-- End Home - Submenu -->
-                                                      </li>
-                                                      <!-- End Nav Item -->
+                                                        </li>
+                                                        <!-- End Nav Item MegaMenu-->
+                                                      @else
+                                                        <li class="nav-item u-header__nav-item" data-event="hover" data-position="left">
+                                                          <a href="{{ $category->path() }}" class="nav-link u-header__nav-link">{{ $category->name }}</a>
+                                                        </li>
+                                                      @endif
+                                                    @endforeach
                                                   </ul>
                                               </div>
                                           </nav>
@@ -704,12 +382,12 @@
                               <input type="email" class="form-control py-2 pl-5 font-size-15 border-0 height-40 rounded-left-pill" name="email" id="searchProduct" placeholder="Məhsul axtar.." aria-label="Search for Products" aria-describedby="searchProduct1" required>
                               <div class="input-group-append">
                                   <!-- Select -->
-                                  <select class="js-select selectpicker dropdown-select custom-search-categories-select"
+                                  <select name="category" class="js-select selectpicker dropdown-select custom-search-categories-select"
                                       data-style="btn height-40 text-gray-60 font-weight-normal border-0 rounded-0 bg-white px-5 py-2">
-                                      <option value="one" selected>Bütün Kateqoriyalar</option>
-                                      <option value="two">Kateqoriya 1</option>
-                                      <option value="three">Kateqoriya 2</option>
-                                      <option value="four">Kateqoriya 3</option>
+                                      <option value="all" selected>Bütün Kateqoriyalar</option>
+                                      @foreach($categories as $category)
+                                        <option value="{{ $category->id }}">{{$category->name}}</option>
+                                      @endforeach
                                   </select>
                                   <!-- End Select -->
                                   <button class="btn btn-dark height-40 py-2 px-3 rounded-right-pill" type="button" id="searchProduct1">
@@ -725,18 +403,11 @@
                   <div class="col-md-auto align-self-center">
                       <div class="d-flex">
                           <ul class="d-flex list-unstyled mb-0">
-                              <li class="col"><a href="../shop/compare.html" class="text-gray-90" data-toggle="tooltip" data-placement="top" title="Qarşılaşdır"><i class="font-size-22 ec ec-compare"></i></a></li>
-                              <li class="col"><a href="../shop/wishlist.html" class="text-gray-90" data-toggle="tooltip" data-placement="top" title="İstək siyahısı"><i class="font-size-22 ec ec-favorites"></i></a></li>
-                              <li class="col pr-0">
-                                  <a href="../shop/cart.html" class="text-gray-90 position-relative d-flex " data-toggle="tooltip" data-placement="top" title="Səbət">
-                                      <i class="font-size-22 ec ec-shopping-bag"></i>
-                                      <span class="width-22 height-22 bg-dark position-absolute flex-content-center text-white rounded-circle left-12 top-8 font-weight-bold font-size-12">2</span>
-                                      <span class="font-weight-bold font-size-16 text-gray-90 ml-3">₼1785.00</span>
-                                  </a>
-                              </li>
+                              <cart ref="cart" cart="{{ route('cart.index') }}"></cart>
                           </ul>
                       </div>
                   </div>
+
                   <!-- End Header Icons -->
               </div>
           </div>

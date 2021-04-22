@@ -35,32 +35,18 @@
           <!-- End Checkboxes -->
 
         </div>
-        <div class="range-slider">
-          <h4 class="font-size-14 mb-3 font-weight-bold">Qiymət</h4>
+        <div class="row col-12">
+          <h4 class="font-size-14 col-12 mb-4 font-weight-bold">Qiymət</h4>
           <!-- Range Slider -->
-          <input onchange="$.HSCore.components.HSRangeSlider._baseConfig" ref="minMax" class="js-range-slider"
-                 type="text"
-                 data-extra-classes="u-range-slider u-range-slider-indicator u-range-slider-grid"
-                 data-type="double"
-                 data-grid="false"
-                 data-hide-from-to="true"
-                 data-prefix="₼"
-                 data-min="0"
-                 data-max="4000"
-                 data-from="0"
-                 data-to="4000"
-                 data-result-min="#rangeSliderExample3MinResult"
-                 data-result-max="#rangeSliderExample3MaxResult"
-          >
-          <!-- End Range Slider -->
-          <div class="mt-1 text-gray-111 d-flex mb-4">
-            <span class="mr-0dot5">Qiymət: </span>
-            <span>₼ </span>
-            <span id="rangeSliderExample3MinResult" class=""></span>
-            <span class="mx-0dot5"> — </span>
-            <span>₼ </span>
-            <span id="rangeSliderExample3MaxResult" class=""></span>
+          <div class="form-group col-6">
+            <label for="inputZip">Min</label>
+            <input type="text" v-model="selected.min" class="form-control" id="inputZip">
           </div>
+          <div class="form-group col-6">
+            <label for="inputMax">Max</label>
+            <input type="text" v-model="selected.max" class="form-control" id="inputMax">
+          </div>
+
         </div>
       </div>
       <div class="mb-8">
@@ -125,13 +111,11 @@
         <div class="d-flex px-1">
           <form method="get">
             <!-- Select -->
-            <select class="js-select selectpicker dropdown-select max-width-200 max-width-160-sm right-dropdown-0 px-2 px-xl-0"
+            <select v-model="selected.sort" class="js-select selectpicker dropdown-select max-width-200 max-width-160-sm right-dropdown-0 px-2 px-xl-0"
                     data-style="btn-sm bg-white font-weight-normal py-2 border text-gray-20 bg-lg-down-transparent border-lg-down-0">
-              <option value="one" selected>Bütün Məhsullar</option>
-              <option value="two">Yeni</option>
-              <option value="four">Ən Son</option>
-              <option value="five">Ucuzdan-Bahaya</option>
-              <option value="six">Bahadan-Ucuza</option>
+              <option value="all" selected>Bütün Məhsullar</option>
+              <option value="asc">Ucuzdan-Bahaya</option>
+              <option value="desc">Bahadan-Ucuza</option>
             </select>
             <!-- End Select -->
           </form>
@@ -140,7 +124,7 @@
       <!-- End Shop-control-bar -->
       <!-- Shop Body -->
       <!-- Tab Content -->
-      <div class="tab-content" id="pills-tabContent">
+      <div class="tab-content" id="pills-tabContent" :class="{ 'svg-preloader' : loader  }">
         <div class="tab-pane fade pt-2 show active" id="pills-one-example1" role="tabpanel" aria-labelledby="pills-one-example1-tab" data-target-group="groups">
           <ul class="row list-unstyled products-group no-gutters">
             <div v-if="noproducts">Nəticə tapılmadı...</div>
@@ -169,12 +153,6 @@
                       </div>
                     </div>
                   </div>
-                  <div class="product-item__footer">
-                    <div class="border-top pt-2 flex-center-between flex-wrap">
-                      <a href="#" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Qarşılaşdır</a>
-                      <a href="#" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> İstək siyahısı</a>
-                    </div>
-                  </div>
                 </div>
               </div>
             </li>
@@ -184,7 +162,7 @@
       <!-- End Tab Content -->
       <!-- End Shop Body -->
       <!-- Shop Pagination -->
-      <nav v-if="!noproducts" class="d-md-flex justify-content-end align-items-center border-top pt-3" aria-label="Page navigation example">
+      <nav v-if="products.total > products.per_page" class="d-md-flex justify-content-end align-items-center border-top pt-3" aria-label="Page navigation example">
         <pagination :data="products" @pagination-change-page="getResults"></pagination>
       </nav>
 
@@ -194,14 +172,13 @@
 </template>
 
 <script>
-
-
 export default {
   name: "CategoryProducts",
   props: ['id', 'get_category_url', 'get_all_brands', 'get_all_colors','sorting_category_product'],
 
   data() {
     return {
+      loader: false,
       colors: {},
       brands: {},
       category: {},
@@ -212,21 +189,32 @@ export default {
         colors: [],
         min: 0,
         max: 4000,
+        sort: 'all'
       },
       noproducts: false,
     }
   },
 
   mounted() {
+    this.loader = true
     this.getCategory()
     this.getResults()
     this.getColors()
     this.getBrands()
   },
 
+  created() {
+    this.formatter = price => `₼${price}`
+  },
+
   methods: {
+
     getCategory() {
-      axios.get(this.get_category_url).then(data => {this.category = data.data.category; this.recent_products = data.data.recent_products}).catch(error => console.log(error))
+      axios.get(this.get_category_url).then(data => {
+        this.category = data.data.category;
+        this.recent_products = data.data.recent_products
+        setTimeout(() => this.loader = false, 1000)
+      }).catch(error => console.log(error))
     },
     getResults(page = 1) {
       axios.get(Laravel.base_url+'/category/get/'+this.id+'?page=' + page)
@@ -243,32 +231,27 @@ export default {
       axios.get(this.get_all_brands).then(res => this.brands = res.data.brands)
     },
 
-    loadBrandsProducts() {
+    loadProducts() {
+      this.loader = true
       axios.get(this.sorting_category_product, {
-        params: _.omit(this.selected,'brands')
-      }).then(res => this.products = res.data.products)
-    },
-    loadColorsProducts() {
-      axios.get(this.sorting_category_product, {
-        params: _.omit(this.selected,'colors')
-      }).then(res => this.products = res.data.products)
-    },
-    loadMinMaxProducts() {
-      axios.get(this.sorting_category_product, {
-        params: _.omit(this.selected,['min','max'])
-      }).then(res => this.products = res.data.products)
+        params: this.selected
+      }).then(res => {
+        setTimeout(() => {this.loader = false}, 1000)
+        if(res.data.products.data.length > 0) {
+          this.noproducts = false
+          this.products = res.data.products
+        } else this.noproducts = true
+      })
     },
 
   },
   watch: {
     selected: {
       handler: function () {
-        this.loadBrandsProducts()
-        this.loadColorsProducts()
-        this.loadMinMaxProducts()
+        this.loadProducts()
       },
       deep: true
-    }
+    },
   }
 }
 </script>

@@ -44,7 +44,7 @@ class SellerStockController extends Controller
         if($request->has('photo')) {
           Storage::delete('public/'.$oldPhoto);
           $stock->update([
-            'photo' => $request->photo->store('uploads/products/colors','public')
+            'photo' => $request->photo->store('uploads/product/colors','public')
           ]);
 
           $image = Image::make(public_path('storage/'.$stock->photo))->fit(720,660);

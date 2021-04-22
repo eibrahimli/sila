@@ -698,7 +698,7 @@ export default {
             errors: [],
             errors2: [],
             dropzoneOptions: {
-                url: `${Laravel.base_url}/admin/product/${this.id}/photos`,
+                url: `${Laravel.base_url}/seller/product/${this.id}/photos`,
                 thumbnailWidth: 150,
                 maxFilesize: 5,
                 headers: { "X-CSRF-Token": Laravel.csrfToken },
@@ -867,8 +867,6 @@ export default {
               `,
                 showConfirmButton: false
             });
-
-            console.log(this.$refs.myVueDropzone.getUploadingFiles());
 
             data.set("specs", jsonData);
             data.set("_method", "PATCH");

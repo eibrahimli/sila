@@ -49,7 +49,6 @@
 
 <link rel="stylesheet" href="{{ asset('frontend/vendor/animate.css/animate.min.css') }}">
 <link rel="stylesheet" href="{{ asset('frontend/vendor/hs-megamenu/src/hs.megamenu.css') }}">
-<link rel="stylesheet" href="{{ asset('frontend/vendor/ion-rangeslider/css/ion.rangeSlider.css') }}">
 <link rel="stylesheet" href="{{ asset('frontend/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css') }}">
 <link rel="stylesheet" href="{{ asset('frontend/vendor/fancybox/jquery.fancybox.css') }}">
 <link rel="stylesheet" href="{{ asset('frontend/vendor/slick-carousel/slick/slick.css') }}">
@@ -64,9 +63,7 @@
 <script src="{{ asset('frontend/vendor/hs-megamenu/src/hs.megamenu.js') }}"></script>
 <script src="{{ asset('frontend/vendor/svg-injector/dist/svg-injector.min.js') }}"></script>
 <script src="{{ asset('frontend/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js') }}"></script>
-{{-- <script src="{{ asset('frontend/vendor/jquery-validation/dist/jquery.validate.min.js') }}"></script> --}}
 <script src="{{ asset('frontend/vendor/fancybox/jquery.fancybox.min.js') }}"></script>
-<script src="{{ asset('frontend/vendor/ion-rangeslider/js/ion.rangeSlider.min.js') }}"></script>
 <script src="{{ asset('frontend/vendor/typed.js/lib/typed.min.js') }}"></script>
 <script src="{{ asset('frontend/vendor/slick-carousel/slick/slick.js') }}"></script>
 <script src="{{ asset('frontend/vendor/appear.js') }}"></script>
@@ -80,7 +77,6 @@
 <script src="{{ asset('frontend/js/components/hs.unfold.js') }}"></script>
 <script src="{{ asset('frontend/js/components/hs.focus-state.js') }}"></script>
 <script src="{{ asset('frontend/js/components/hs.malihu-scrollbar.js') }}"></script>
-<script src="{{ asset('frontend/js/components/hs.validation.js') }}"></script>
 <script src="{{ asset('frontend/js/components/hs.fancybox.js') }}"></script>
 <script src="{{ asset('frontend/js/components/hs.onscroll-animation.js') }}"></script>
 <script src="{{ asset('frontend/js/components/hs.slick-carousel.js') }}"></script>
@@ -145,18 +141,6 @@
 
     // initialization of forms
     $.HSCore.components.HSFocusState.init();
-
-    // initialization of form validation
-    // $.HSCore.components.HSValidation.init('.js-validate', {
-    //     rules: {
-    //         confirmPassword: {
-    //             equalTo: '#signupPassword'
-    //         }
-    //     }
-    // });
-
-    // initialization of forms
-    $.HSCore.components.HSRangeSlider.init('.js-range-slider');
 
     // initialization of show animations
     $.HSCore.components.HSShowAnimation.init('.js-animation-link');

@@ -23,45 +23,80 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a46ce7e5-5fcb-4d11-85d5-c77d9d458cf4" name="Default Changelist" comment="Ana səhifə Azərbaycandilinə tərcümə edildi...">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminStockController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/IndexController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Mail/ProductActivated.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/backend/AdminProductEdit.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/frontend/category/CategoryProducts.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/backend/product/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/emails/product/activated.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/category/show.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/inc/brands_carousel.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/frontend/category_routes.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/frontend/product_routes.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminOrderController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/CartController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Order.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_12_054534_create_orders_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/frontend/cart/CartIndex.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/frontend/cart/Checkout.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/frontend/inc/Cart.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/frontend/product/ProductShow.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/tools/url.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/order/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/cart/checkout.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/cart/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/inc/breadcrumb.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/partials/menu.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/product/show.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/frontend/cart_routes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ecommerce.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ecommerce.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminStockController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminStockController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/IndexController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SiteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SiteController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Seller/SellerProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Seller/SellerProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Seller/SellerStockController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Seller/SellerStockController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/mail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_03_002759_create_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_03_002759_create_products_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontend/js/components/hs.range-slider.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/frontend/js/components/hs.range-slider.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/frontend/img/1920X422/img1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/frontend/img/1920X422/img1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/frontend/js/components/hs.range-slider.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/frontend/vendor/ion-rangeslider/License.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/frontend/vendor/ion-rangeslider/css/ion.rangeSlider.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/frontend/vendor/ion-rangeslider/css/ion.rangeSlider.skinFlat.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/frontend/vendor/ion-rangeslider/css/ion.rangeSlider.skinHTML5.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/frontend/vendor/ion-rangeslider/css/ion.rangeSlider.skinModern.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/frontend/vendor/ion-rangeslider/css/ion.rangeSlider.skinNice.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/frontend/vendor/ion-rangeslider/css/ion.rangeSlider.skinSimple.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/frontend/vendor/ion-rangeslider/css/normalize.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/frontend/vendor/ion-rangeslider/history.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/frontend/vendor/ion-rangeslider/img/sprite-skin-flat.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/frontend/vendor/ion-rangeslider/img/sprite-skin-modern.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/frontend/vendor/ion-rangeslider/img/sprite-skin-nice.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/frontend/vendor/ion-rangeslider/img/sprite-skin-simple.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/frontend/vendor/ion-rangeslider/index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/frontend/vendor/ion-rangeslider/js/ion.rangeSlider.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/frontend/vendor/ion-rangeslider/js/ion.rangeSlider.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/frontend/vendor/ion-rangeslider/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/frontend/vendor/player.js/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/frontend/vendor/player.js/.eslintrc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/frontend/vendor/pwstrength-bootstrap/examples/zxcvbn.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/frontend/vendor/pwstrength-bootstrap/examples/zxcvbn.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/frontend.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/frontend.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/seller.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/seller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/frontend/SignIn.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/frontend/SignIn.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/frontend/category/CategoryProducts.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/frontend/category/CategoryProducts.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/seller/product/ProductEdit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/seller/product/ProductEdit.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/frontend.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/frontend.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/backend/inc/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/inc/nav.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/inc/accountSidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/inc/accountSidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/category/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/category/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/frontend/inc/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/inc/footer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/inc/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/inc/header.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/frontend/inc/indexheader.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/inc/indexheader.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/frontend/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/frontend/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/seller/product/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/seller/product/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/seller/product/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/seller/product/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/user/logreg.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/user/logreg.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/seller/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/seller/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/admin_routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin_routes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/frontend/product_routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/frontend/product_routes.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -77,12 +112,12 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="composer.json" />
-        <option value="JavaScript File" />
         <option value="Blade" />
         <option value="CSS File" />
         <option value="Laravel Blade" />
-        <option value="blade" />
+        <option value="JavaScript File" />
         <option value="Vue Single File Component" />
+        <option value="blade" />
       </list>
     </option>
   </component>
@@ -219,6 +254,7 @@
       <path value="$PROJECT_DIR$/vendor/psr/http-factory" />
       <path value="$PROJECT_DIR$/vendor/lcobucci/jwt" />
       <path value="$PROJECT_DIR$/vendor/intervention/image" />
+      <path value="$PROJECT_DIR$/vendor/hardevine/shoppingcart" />
     </include_path>
   </component>
   <component name="ProjectId" id="1i2rroGTt64PPYMpdCzKJoamN6K" />
@@ -235,7 +271,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../aladdin" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="editor.breadcrumbs" />
@@ -243,10 +279,16 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/frontend/img/1920X422" />
+      <recent name="$PROJECT_DIR$/public/frontend/css" />
+      <recent name="$PROJECT_DIR$/public/frontend/js/components" />
       <recent name="C:\wamp64\www\ecommerce\public\backend\fonts" />
       <recent name="C:\xampp\htdocs\ecommerce\public\backend\img" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/frontend/cart" />
+      <recent name="$PROJECT_DIR$/public/frontend/vendor/ion-rangeslider/js" />
+      <recent name="$PROJECT_DIR$/public/frontend/vendor/ion-rangeslider/css" />
       <recent name="C:\wamp64\www\ecommerce\public\backend\fonts" />
       <recent name="C:\wamp64\www\ecommerce\resources\views" />
     </key>
@@ -515,6 +557,26 @@
       <workItem from="1611357193084" duration="1255000" />
       <workItem from="1611451788637" duration="5322000" />
       <workItem from="1611535571379" duration="13678000" />
+      <workItem from="1611709460505" duration="8189000" />
+      <workItem from="1612042804375" duration="822000" />
+      <workItem from="1612055381848" duration="7468000" />
+      <workItem from="1612143523107" duration="8767000" />
+      <workItem from="1612229062665" duration="6597000" />
+      <workItem from="1612236532910" duration="83000" />
+      <workItem from="1612399570752" duration="5775000" />
+      <workItem from="1612406807510" duration="2529000" />
+      <workItem from="1612482664989" duration="13343000" />
+      <workItem from="1612561846654" duration="19057000" />
+      <workItem from="1612732257142" duration="5829000" />
+      <workItem from="1612741878737" duration="57000" />
+      <workItem from="1612742042806" duration="10287000" />
+      <workItem from="1612894154676" duration="35000" />
+      <workItem from="1612904269793" duration="12533000" />
+      <workItem from="1613003541488" duration="7649000" />
+      <workItem from="1613088982861" duration="9445000" />
+      <workItem from="1613171585501" duration="21630000" />
+      <workItem from="1613228542721" duration="1944000" />
+      <workItem from="1613431369363" duration="908000" />
     </task>
     <task id="LOCAL-00001" summary="Ana səhifə Azərbaycandilinə tərcümə edildi...">
       <created>1603111876562</created>

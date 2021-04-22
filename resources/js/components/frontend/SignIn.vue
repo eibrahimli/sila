@@ -60,7 +60,7 @@
             />
           </div>
           <div
-            id="signupEmail-error"
+            id="signinEmail-error"
             v-if="!$v.email.required && $v.email.$dirty"
             :style="{ display: 'block' }"
             class="invalid-feedback"
@@ -68,7 +68,7 @@
             Email boş ola bilməz.
           </div>
           <div
-            id="signupEmail-error"
+            id="signinEmail-error"
             v-if="!$v.email.email && $v.email.$dirty"
             :style="{ display: 'block' }"
             class="invalid-feedback"

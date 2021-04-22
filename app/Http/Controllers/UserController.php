@@ -30,7 +30,7 @@ class UserController extends Controller
             $this->credentials = $request->only(['email', 'password']);
 
             if (Auth::attempt(['email' => $request->email, 'password' => $request->password],$request->rememberCheckbox)) :
-                return response()->json(['mes' => 'Uğurla giriş etdiniz'],200);
+                return response()->json(['mes' => 'Uğurla giriş etdiniz','user' => Auth::user()],200);
             else:
                 return response()->json(['mes' => 'Email və ya şifrə səhvdir'],422);   
             endif;
@@ -119,5 +119,9 @@ class UserController extends Controller
         return $status == Password::PASSWORD_RESET
                     ? response()->json(['mes' => 'Şifrəniz uğurla sıfırlandı'],200)
                     : response()->json(['error' => 'Şifrənizi sıfırlaya bilmədik.Yenidən yoxlayın...'],422);
+    }
+
+    public function singleUser(User $user) {
+      return response()->json(['user' => Auth::user()]);
     }
 }

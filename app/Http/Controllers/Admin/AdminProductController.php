@@ -79,7 +79,7 @@ class AdminProductController extends Controller
       if ($request->has('photo')) {
         Storage::delete('public/' . $oldPhoto);
         $product->update([
-          'photo' => $request->photo->store('uploads/products', 'public')
+          'photo' => $request->photo->store('uploads/product', 'public')
         ]);
 
         $image = Image::make(public_path('storage/' . $product->photo))->fit(720, 660);
@@ -205,7 +205,7 @@ class AdminProductController extends Controller
 
     try {
       if ($request->has('file')) {
-        $path = $request->file->store('uploads/products/photos', 'public');
+        $path = $request->file->store('uploads/product/photos', 'public');
         $product->stocks()->create([
           'color_id' => 0,
           'photo' => $path,

@@ -27,8 +27,9 @@
     {{-- <link rel="stylesheet" href="{{ asset('css/app.css') }}"> --}}
     <script>
         window.Laravel = {
-          csrfToken: "{{ csrf_token() }}"
-          , base_url: "{{ url('') }}"
+          csrfToken: "{{ csrf_token() }}",
+          base_url: "{{ url('') }}",
+          cart_url: "{{ route('cart.getCart') }}"
         }
     
       </script>
@@ -78,6 +79,8 @@
             </a>
             <!-- End Go to Top -->
 
+        <script src="{{ asset('js/frontend.js') }}"></script>
+
             <!-- JS Global Compulsory -->
             <script src="{{ asset('frontend/vendor/jquery/dist/jquery.min.js') }}"></script>
             <script src="{{ asset('frontend/vendor/jquery-migrate/dist/jquery-migrate.min.js') }}"></script>
@@ -85,9 +88,9 @@
             <script src="{{ asset('frontend/vendor/bootstrap/bootstrap.min.js') }}"></script>
 
             @yield('scripts')
-
-            <script src="{{ asset('js/frontend.js') }}"></script>
-
+        <script>
+            $.HSCore.components.HSSVGIngector.init('.js-svg-injector');
+        </script>
 
     </body>
 </html>

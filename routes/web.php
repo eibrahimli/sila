@@ -55,14 +55,27 @@ Route::get('get/all/brands', [SiteController::class, 'getAllBrands'])->name('get
 
   // End Of All frontend product Routes
 
+  // All Frontend Cart Routes
+
+  include_once 'frontend/cart_routes.php';
+
+  // End of All Frontend Cart Routes
+
+  // All Orders Routes
+
+  // End of All Orders Routes
+
 
 // My Account routes
 
 Route::name('user.')->prefix('user')->group(function () {
   // Register and login routes
-  Route::post('giris', [UserController::class, 'giris']);
+  Route::post('giris', [UserController::class, 'giris'])->name('giris');
   Route::post('qeydiyyat', [UserController::class, 'qeydiyyat']);
   // End of Register and login routes
+
+
+  Route::get('single/{user}', [UserController::class, 'singleUser'])->middleware(['auth'])->name('singleUser');
 
   Route::get('loginregister', [UserController::class, 'loginregister'])->name('loginregister')->middleware('guest');
   Route::view('forgot-password', 'frontend.user.password.email')->middleware(['guest'])->name('password.request');

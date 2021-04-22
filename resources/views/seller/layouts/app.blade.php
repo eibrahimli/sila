@@ -107,7 +107,7 @@
             </div>
             </a>
             <div class="dropdown-menu  dropdown-menu-right">
-              <a class="dropdown-item" href="{{ route('seller.store.edit',auth()->user()->stores()->first()->id) }}"> Mağazanı Yenilə</a>
+              <a class="dropdown-item" href="{{ route('seller.store.edit',auth()->id()) }}"> Mağazanı Yenilə</a>
               <a class="dropdown-item" href="{{ route('seller.edit',auth()->id()) }}"> Ayarlar</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
@@ -149,7 +149,7 @@
             <div class="bg-dark text-muted container-fluid p-b-10 text-center text-overline">
               results
             </div>
-            <div class="list-group list  ">
+            <div class="list-group list">
 
               <div class="list-group-item d-flex  align-items-center">
                 <div class="m-r-20">
@@ -170,9 +170,8 @@
                   <div class="text-muted">Marketing</div>
                 </div>
 
-
               </div>
-              <div class="list-group-item d-flex  align-items-center">
+              <div class="list-group-item d-flex align-items-center">
                 <div class="m-r-20">
                   <div class="avatar avatar-sm "><img class="avatar-img rounded-circle" src="assets\img\users\user-8.jpg" alt="user-image"></div>
                 </div>
@@ -181,9 +180,8 @@
                   <div class="text-muted">Developer</div>
                 </div>
 
-
               </div>
-              <div class="list-group-item d-flex  align-items-center">
+              <div class="list-group-item d-flex align-items-center">
                 <div class="m-r-20">
                   <div class="avatar avatar-sm ">
                     <div class="avatar-title bg-dark rounded"><i class="mdi mdi-24px mdi-file-pdf"></i>
@@ -197,9 +195,9 @@
 
 
               </div>
-              <div class="list-group-item d-flex  align-items-center">
+              <div class="list-group-item d-flex align-items-center">
                 <div class="m-r-20">
-                  <div class="avatar avatar-sm ">
+                  <div class="avatar avatar-sm">
                     <div class="avatar-title bg-dark rounded"><i class="mdi mdi-24px mdi-file-document-box"></i></div>
                   </div>
                 </div>
@@ -210,7 +208,7 @@
 
 
               </div>
-              <div class="list-group-item d-flex  align-items-center">
+              <div class="list-group-item d-flex align-items-center">
                 <div class="m-r-20">
                   <div class="avatar avatar-sm ">
                     <div class="avatar avatar-sm  ">
@@ -225,7 +223,7 @@
 
 
               </div>
-              <div class="list-group-item d-flex  align-items-center">
+              <div class="list-group-item d-flex align-items-center">
                 <div class="m-r-20">
                   <div class="avatar avatar-sm ">
                     <div class="avatar avatar-sm ">

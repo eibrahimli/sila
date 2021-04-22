@@ -22,11 +22,14 @@
         "vuelidate": "^0.7.6"
     },
     "dependencies": {
+        "@chenfengyuan/vue-number-input": "^1.2.1",
         "@riophae/vue-treeselect": "^0.4.0",
         "ckeditor4-vue": "^1.2.0",
         "laravel-vue-pagination": "^2.3.1",
         "sweetalert2": "^10.13.0",
         "vue-disable-autocomplete": "0.0.4",
-        "vue-select": "^3.11.2"
+        "vue-range-component": "^1.0.3",
+        "vue-select": "^3.11.2",
+        "vue-toast-notification": "^0.6.0"
     }
 }
