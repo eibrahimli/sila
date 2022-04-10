@@ -15,6 +15,8 @@ class IndexController extends Controller
       $seenProducts = Product::where('status', '1')->orderByDesc('seen')->take(15)->get();
       $sliderproducts = Product::all()->sortByDesc('created_at')->take(3);
 
+      // dd($products);
+
       return view('frontend.index',compact('products','soldedProducts', 'seenProducts','sliderproducts'));
     }
 }
