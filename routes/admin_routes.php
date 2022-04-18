@@ -97,6 +97,14 @@ use App\Http\Controllers\Admin\AdminCategoryController;
             Route::name('order.')->prefix('order')->group(function () {
               Route::get('active', [AdminOrderController::class, 'index'])->name('index');
               Route::get('notactive', [AdminOrderController::class, 'notActiveIndex'])->name('notActiveIndex');
+              Route::get('not/active/orders', [AdminOrderController::class, 'getNotActiveOrders'])->name('getNotActiveOrders');
+              Route::get('{order}', [AdminOrderController::class, 'show'])->name('show');
+
+              Route::get('not/active/orders', [AdminOrderController::class, 'getNotActiveOrders'])->name('getNotActiveOrders');
+              Route::get('active/orders', [AdminOrderController::class, 'getActiveOrders'])->name('getActiveOrders');
+              Route::patch('active/{order}', [AdminOrderController::class, 'activeOrder'])->name('activeOrder');
+              Route::delete('{order}', [AdminOrderController::class, 'destroy'])->name('destroy');
+              Route::delete('activeorders/{order}', [AdminOrderController::class, 'activeDestroy'])->name('active_destroy');
             });
         // End Admin Orders Routes
 

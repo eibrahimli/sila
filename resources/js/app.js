@@ -26,6 +26,7 @@ Vue.component('user-edit-page', require('./components/UserEdit.vue').default)
 Vue.component('category-create-page', require('./components/CategoryCreate.vue').default)
 Vue.component('category-edit-page', require('./components/CategoryEdit.vue').default)
 Vue.component('admin-product-edit-page', require('./components/backend/AdminProductEdit.vue').default)
+Vue.component('not-active-orders', require('./components/backend/order/NotActive.vue').default)
 
 const app = new Vue({
     el: '#app',

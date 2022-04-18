@@ -328,9 +328,6 @@
                     <nav class="js-mega-menu navbar navbar-expand-xl u-header__navbar u-header__navbar--no-space hs-menu-initialized">
                       <div id="navBar" class="collapse navbar-collapse u-header__navbar-collapse">
                         <ul class="navbar-nav u-header__navbar-nav">
-                          <li class="nav-item u-header__nav-item" data-event="hover" data-position="left">
-                            <a href="#" class="nav-link u-header__nav-link font-weight-bold">Yeni əlavə olunan məhsullar</a>
-                          </li>
                           @foreach($categories as $category)
                               @if(count($category->categories) > 0)
                                 <!-- Nav Item MegaMenu -->
