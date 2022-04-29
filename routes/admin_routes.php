@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\AdminOrderController;
 use App\Http\Controllers\Admin\AdminStockController;
 use App\Http\Controllers\Admin\AdminProductController;
 use App\Http\Controllers\Admin\AdminCategoryController;
+use App\Http\Controllers\Admin\AdminBrandController;
 
     Route::name('admin.')->namespace('Admin')->prefix('admin')->group(function () {
 
@@ -107,6 +108,20 @@ use App\Http\Controllers\Admin\AdminCategoryController;
               Route::delete('activeorders/{order}', [AdminOrderController::class, 'activeDestroy'])->name('active_destroy');
             });
         // End Admin Orders Routes
+
+
+        // Brand routes
+
+        Route::name('brand.')->prefix('brand')->group(function () {
+            Route::get('', [AdminBrandController::class, 'index'])->name('index');            
+            Route::get('create', [AdminBrandController::class, 'create'])->name('create');
+            Route::post('store', [AdminBrandController::class, 'store'])->name('store');
+            Route::get('{brand}/edit', [AdminBrandController::class, 'edit'])->name('edit');                
+            Route::patch('{brand}', [AdminBrandController::class, 'update'])->name('update');
+            Route::delete('{brand}', [AdminBrandController::class, 'destroy'])->name('destroy');
+        });
+
+        // End Brand routes
 
         // All Page Routes
             

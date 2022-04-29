@@ -86,7 +86,43 @@
                         </a>
                     </li>
                 </ul>
-            </li>         
+            </li>     
+            <li class="menu-item">
+                <a href="#" class="open-dropdown menu-link">
+                    <span class="menu-label">
+                        <span class="menu-name">Brendlər
+                            <span class="menu-arrow"></span>
+                        </span>
+                    </span>
+                    <span class="menu-icon">
+                        <i class="icon-placeholder mdi mdi-format-list-bulleted"></i>
+                    </span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="menu-item ">
+                        <a href='{{ route('admin.brand.index') }}' class='menu-link'>
+                            <span class="menu-label">
+                                <span class="menu-name">Bütün Brendlər</span>
+                            </span>
+                            <span class="menu-icon">
+                                <i class="icon-placeholder mdi mdi-format-list-checks">
+                                </i>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="menu-item ">
+                        <a href='{{ route('admin.brand.create') }}' class='menu-link'>
+                            <span class="menu-label">
+                                <span class="menu-name">Yeni Brend</span>
+                            </span>
+                            <span class="menu-icon">
+                                <i class="icon-placeholder mdi mdi-plus-circle">
+                                </i>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </li>     
             <li class="menu-item">
                 <a href="#" class="open-dropdown menu-link">
                     <span class="menu-label">
