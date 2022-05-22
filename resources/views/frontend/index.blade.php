@@ -76,7 +76,7 @@
                                                     <div class="product-item__inner px-xl-4 p-3">
                                                         <div class="product-item__body pb-xl-2">
                                                             <div class="mb-2">
-                                                                <a href="{{ $product->category->path() ?: '' }}" class="font-size-12 text-gray-5">{{ $product->category->name() }}</a>
+                                                                <a href="{{ $product->category->url ?: '' }}" class="font-size-12 text-gray-5">{{ $product->category->name() }}</a>
                                                             </div>
                                                             <h5 class="mb-1 product-item__title">
                                                                 <a href="{{ $product->path() }}" class="text-blue font-weight-bold">{{ $product->title }}</a>
