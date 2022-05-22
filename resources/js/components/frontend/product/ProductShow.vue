@@ -384,41 +384,8 @@
       <!-- End Tab Content -->
     </div>
     <!-- End Single Product Tab -->
-    <!-- Related products -->
-    <div class="mb-6" v-if="related_products.length > 0">
-      <div class="d-flex justify-content-between align-items-center border-bottom border-color-1 flex-lg-nowrap flex-wrap mb-4">
-        <h3 class="section-title mb-0 pb-2 font-size-22">Oxşar məhsullar</h3>
-      </div>
-      <ul class="row list-unstyled products-group no-gutters">
-        <li v-for="related_product in related_products" :key="related_product.id" class="col-6 col-md-3 col-xl-2gdot4-only col-wd-2 product-item">
-          <div class="product-item__outer h-100">
-            <div class="product-item__inner px-xl-4 p-3">
-              <div class="product-item__body pb-xl-2">
-                <div class="mb-2">
-                  <a :href="category_url" class="font-size-12 text-gray-5">{{ category }}</a></div>
-                <h5 class="mb-1 product-item__title">
-                  <a :href="slug(related_product.id, related_product.title)" class="text-blue font-weight-bold">{{ related_product.title }}</a>
-                </h5>
-                <div class="mb-2">
-                  <a :href="slug(related_product.id, related_product.title)" class="d-block text-center">
-                    <img class="img-fluid" :src="path(related_product.photo)" alt="Image Description">
-                  </a>
-                </div>
-                <div class="flex-center-between mb-1">
-                  <div class="prodcut-price">
-                    <div class="text-gray-100">₼{{ related_product.price }}</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </div>
-    <!-- End Related products -->
   </div>
 </template>
-
 <script>
   import {Url} from "../../../tools/url.js";
 
@@ -443,6 +410,7 @@
     },
     mounted() {
       this.loadProduct()
+      
     },
 
     computed: {

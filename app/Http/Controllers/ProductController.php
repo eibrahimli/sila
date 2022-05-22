@@ -12,25 +12,17 @@ use Illuminate\Support\Str;
 class ProductController extends Controller
 {
     public function show(Product $product, $slug) {
+      $related_products = $product->category->products->where('id', '!=', $product->id);
 
-      return view('frontend.product.show',compact('product'));
+      return view('frontend.product.show',compact('product','related_products'));
     }
 
     public function getProduct(Product $product) {
       $product->spec = unserialize($product->spec);
-      $related_products = DB::table('products')
-        ->where('products.category_id', $product->category_id)
-        ->where('products.id', '!=', $product->id)
-        ->take(10)
-        ->join('categories', 'products.category_id', '=', 'categories.id')
-        ->select('products.id', 'products.title', 'products.price', 'products.photo')
-        ->get();
-
       $colors = DB::table('colors')->select('colors.name', 'colors.id')->get();
 
       return response()->json([
         'product' => $product,'stocks' => $product->stocks,
-        'related_products' => $related_products,
         'colors' => $colors,
         'category_url' => route('category.show', [$product->category->id, Str::slug($product->category->name)]),
         'category' => $product->category->name

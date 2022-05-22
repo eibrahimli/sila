@@ -4715,39 +4715,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 var URL = new _tools_url_js__WEBPACK_IMPORTED_MODULE_0__["Url"]();
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -32901,110 +32868,6 @@ var render = function () {
         ]
       ),
     ]),
-    _vm._v(" "),
-    _vm.related_products.length > 0
-      ? _c("div", { staticClass: "mb-6" }, [
-          _vm._m(3),
-          _vm._v(" "),
-          _c(
-            "ul",
-            { staticClass: "row list-unstyled products-group no-gutters" },
-            _vm._l(_vm.related_products, function (related_product) {
-              return _c(
-                "li",
-                {
-                  key: related_product.id,
-                  staticClass:
-                    "col-6 col-md-3 col-xl-2gdot4-only col-wd-2 product-item",
-                },
-                [
-                  _c("div", { staticClass: "product-item__outer h-100" }, [
-                    _c(
-                      "div",
-                      { staticClass: "product-item__inner px-xl-4 p-3" },
-                      [
-                        _c(
-                          "div",
-                          { staticClass: "product-item__body pb-xl-2" },
-                          [
-                            _c("div", { staticClass: "mb-2" }, [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "font-size-12 text-gray-5",
-                                  attrs: { href: _vm.category_url },
-                                },
-                                [_vm._v(_vm._s(_vm.category))]
-                              ),
-                            ]),
-                            _vm._v(" "),
-                            _c(
-                              "h5",
-                              { staticClass: "mb-1 product-item__title" },
-                              [
-                                _c(
-                                  "a",
-                                  {
-                                    staticClass: "text-blue font-weight-bold",
-                                    attrs: {
-                                      href: _vm.slug(
-                                        related_product.id,
-                                        related_product.title
-                                      ),
-                                    },
-                                  },
-                                  [_vm._v(_vm._s(related_product.title))]
-                                ),
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "mb-2" }, [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "d-block text-center",
-                                  attrs: {
-                                    href: _vm.slug(
-                                      related_product.id,
-                                      related_product.title
-                                    ),
-                                  },
-                                },
-                                [
-                                  _c("img", {
-                                    staticClass: "img-fluid",
-                                    attrs: {
-                                      src: _vm.path(related_product.photo),
-                                      alt: "Image Description",
-                                    },
-                                  }),
-                                ]
-                              ),
-                            ]),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "flex-center-between mb-1" },
-                              [
-                                _c("div", { staticClass: "prodcut-price" }, [
-                                  _c("div", { staticClass: "text-gray-100" }, [
-                                    _vm._v("₼" + _vm._s(related_product.price)),
-                                  ]),
-                                ]),
-                              ]
-                            ),
-                          ]
-                        ),
-                      ]
-                    ),
-                  ]),
-                ]
-              )
-            }),
-            0
-          ),
-        ])
-      : _vm._e(),
   ])
 }
 var staticRenderFns = [
@@ -33792,23 +33655,6 @@ var staticRenderFns = [
               _vm._v("- April 3, 2019"),
             ]),
           ]),
-        ]),
-      ]
-    )
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass:
-          "d-flex justify-content-between align-items-center border-bottom border-color-1 flex-lg-nowrap flex-wrap mb-4",
-      },
-      [
-        _c("h3", { staticClass: "section-title mb-0 pb-2 font-size-22" }, [
-          _vm._v("Oxşar məhsullar"),
         ]),
       ]
     )
@@ -49948,14 +49794,15 @@ __webpack_require__.r(__webpack_exports__);
 /*!******************************************************************!*\
   !*** ./resources/js/components/frontend/product/ProductShow.vue ***!
   \******************************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ProductShow_vue_vue_type_template_id_7e8a061a_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ProductShow.vue?vue&type=template&id=7e8a061a&scoped=true& */ "./resources/js/components/frontend/product/ProductShow.vue?vue&type=template&id=7e8a061a&scoped=true&");
 /* harmony import */ var _ProductShow_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ProductShow.vue?vue&type=script&lang=js& */ "./resources/js/components/frontend/product/ProductShow.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _ProductShow_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _ProductShow_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -49985,7 +49832,7 @@ component.options.__file = "resources/js/components/frontend/product/ProductShow
 /*!*******************************************************************************************!*\
   !*** ./resources/js/components/frontend/product/ProductShow.vue?vue&type=script&lang=js& ***!
   \*******************************************************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

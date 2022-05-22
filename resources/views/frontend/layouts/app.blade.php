@@ -79,10 +79,12 @@
             </a>
             <!-- End Go to Top -->
 
+            <script src="{{ asset('frontend/vendor/jquery/dist/jquery.min.js') }}"></script>
+
         <script src="{{ asset('js/frontend.js') }}"></script>
 
             <!-- JS Global Compulsory -->
-            <script src="{{ asset('frontend/vendor/jquery/dist/jquery.min.js') }}"></script>
+            
             <script src="{{ asset('frontend/vendor/jquery-migrate/dist/jquery-migrate.min.js') }}"></script>
             <script src="{{ asset('frontend/vendor/popper.js/dist/umd/popper.min.js') }}"></script>
             <script src="{{ asset('frontend/vendor/bootstrap/bootstrap.min.js') }}"></script>
