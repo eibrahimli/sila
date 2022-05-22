@@ -147,7 +147,7 @@
       
       setTimeout(() => {
         $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
-      }, 2);
+      }, 1000);
 
       // initialization of go to
       $.HSCore.components.HSGoTo.init('.js-go-to');
