@@ -10,7 +10,7 @@
           </div>
           <div class="topbar-right ml-auto">
             <ul class="list-inline mb-0">
-              @guest
+              {{-- @guest
                 <li class="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border">
                   <div class="position-relative">
                     <a id="sellerDropdownInvoker" class="dropdown-nav-link dropdown-toggle d-flex align-items-center u-header-topbar__nav-link font-weight-normal" href="javascript:;" role="button" aria-controls="sellerDropdown" aria-haspopup="true" aria-expanded="false" data-unfold-event="hover" data-unfold-target="#sellerDropdown" data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-delay="300" data-unfold-hide-on-scroll="true" data-unfold-animation-in="slideInUp" data-unfold-animation-out="fadeOut">                  
@@ -22,11 +22,11 @@
                     </div>
                   </div>
                 </li>
-              @endguest
-              <li class="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border">
+              @endguest --}}
+              {{-- <li class="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border">
                 <a href="#" class="u-header-topbar__nav-link"><i class="ec ec-transport mr-1"></i> Sifarişim hardadır?</a>
-              </li>
-              <li class="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border u-header-topbar__nav-item-no-border u-header-topbar__nav-item-border-single">
+              </li> --}}
+              {{-- <li class="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border u-header-topbar__nav-item-no-border u-header-topbar__nav-item-border-single">
                 <div class="d-flex align-items-center">
                   <!-- Language -->
                   <div class="position-relative">
@@ -44,7 +44,7 @@
                   </div>
                   <!-- End Language -->
                 </div>
-              </li>
+              </li> --}}
               <li class="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border">
                 <!-- Account Sidebar Toggle Button -->
                 @guest
