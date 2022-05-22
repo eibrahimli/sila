@@ -175,7 +175,7 @@
                                         <div class="product-item__inner px-wd-4 p-2 p-md-3">
                                             <div class="product-item__body pb-xl-2">
                                                 <div class="mb-2">
-                                                    <a href="{{ isset($seenProduct->category) ? $seenProduct->category->url : '#' }}" class="font-size-12 text-gray-5">{{ isset($seenProduct->category) ? $product->seenProduct->name() : '' }}</a>
+                                                    <a href="{{ isset($seenProduct->category) ? $seenProduct->category->url : '#' }}" class="font-size-12 text-gray-5">{{ isset($seenProduct->category) ? $seenProduct->category->name() : '' }}</a>
                                                 </div>
                                                 <h5 class="mb-1 product-item__title">
                                                     <a href={{ $seenProduct->path() }} class="text-blue font-weight-bold">{{ $seenProduct->title }}</a>
