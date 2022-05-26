@@ -185,7 +185,7 @@
                                                 </div>
                                                 <div class="flex-center-between mb-1">
                                                     <div class="prodcut-price">
-                                                        <div class="text-gray-100">₼{{ $product->price }}</div>
+                                                        <div class="text-gray-100">₼{{ $seenProduct->price }}</div>
                                                     </div>
                                                 </div>
                                             </div>
