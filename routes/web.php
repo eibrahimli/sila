@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\SearchController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SiteController;
@@ -42,6 +43,10 @@ Route::get('', [IndexController::class, 'index'])->name('index');
 
 Route::get('get/all/colors', [SiteController::class, 'getAllColors'])->name('getAllColors');
 Route::get('get/all/brands', [SiteController::class, 'getAllBrands'])->name('getAllBrands');
+
+// Search routes
+
+Route::post('search', [SearchController::class, 'entry'])->name('search');
 
   // All Fontend Category routes
 

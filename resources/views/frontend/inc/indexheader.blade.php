@@ -187,20 +187,21 @@
           <!-- End Logo-offcanvas-menu -->
           <!-- Search Bar -->
           <div class="col d-none d-xl-block">
-            <form class="js-focus-state">
+            <form class="js-focus-state" method="POST" action="{{ route("search") }}">
+              @csrf
               <label class="sr-only" for="searchproduct">Axtar</label>
               <div class="input-group">
-                <input type="text" class="form-control py-2 pl-5 font-size-15 border-right-0 height-40 border-width-2 rounded-left-pill border-primary" name="key" id="searchproduct-item" placeholder="Məhsul Axtar" aria-label="Məhsul axtar" aria-describedby="searchProduct1" required>
+                <input type="text" class="form-control py-2 pl-5 font-size-15 border-right-0 height-40 border-width-2 rounded-left-pill border-primary" name="query" id="searchproduct-item" placeholder="Məhsul Axtar" aria-label="Məhsul axtar" aria-describedby="searchProduct1" required>
                 <div class="input-group-append">
                   <!-- Select -->
-                  <select name="category" class="js-select selectpicker dropdown-select custom-search-categories-select" data-style="btn height-40 text-gray-60 font-weight-normal border-top border-bottom border-left-0 rounded-0 border-primary border-width-2 pl-0 pr-5 py-2">
+                  <select name="category_id" class="js-select selectpicker dropdown-select custom-search-categories-select" data-style="btn height-40 text-gray-60 font-weight-normal border-top border-bottom border-left-0 rounded-0 border-primary border-width-2 pl-0 pr-5 py-2">
                     <option value="all" selected>Bütün Kateqoriyalar</option>
                     @foreach($categories as $category)
                       <option value="{{ $category->id }}">{{$category->name}}</option>
                     @endforeach
                   </select>
                   <!-- End Select -->
-                  <button class="btn btn-primary height-40 py-2 px-3 rounded-right-pill" type="button" id="searchProduct1">
+                  <button class="btn btn-primary height-40 py-2 px-3 rounded-right-pill" type="submit" id="searchProduct1">
                     <span class="ec ec-search font-size-24"></span>
                   </button>
                 </div>

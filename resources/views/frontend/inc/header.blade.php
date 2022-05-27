@@ -269,10 +269,11 @@
 
                                   <!-- Input -->
                                   <div id="searchClassic" class="dropdown-menu dropdown-unfold dropdown-menu-right left-0 mx-2" aria-labelledby="searchClassicInvoker">
-                                      <form class="js-focus-state input-group px-3">
+                                      <form class="js-focus-state input-group px-3" method="POST" action="{{ route('search') }}">
+                                          @csrf
                                           <input class="form-control" type="search" placeholder="Search Product">
                                           <div class="input-group-append">
-                                              <button class="btn btn-primary px-3" type="button"><i class="font-size-18 ec ec-search"></i></button>
+                                              <button class="btn btn-primary px-3" type="submit"><i class="font-size-18 ec ec-search"></i></button>
                                           </div>
                                       </form>
                                   </div>
@@ -373,13 +374,14 @@
                   <!-- Search bar -->
                   <div class="col align-self-center">
                       <!-- Search-Form -->
-                      <form class="js-focus-state">
+                      <form method="POST" action="{{ route('search') }}">
+                        @csrf
                           <label class="sr-only" for="searchProduct">Axtar</label>
                           <div class="input-group">
-                              <input type="email" class="form-control py-2 pl-5 font-size-15 border-0 height-40 rounded-left-pill" name="email" id="searchProduct" placeholder="Məhsul axtar.." aria-label="Search for Products" aria-describedby="searchProduct1" required>
+                              <input type="text" class="form-control py-2 pl-5 font-size-15 border-0 height-40 rounded-left-pill" name="query" id="searchProduct" placeholder="Məhsul axtar.." aria-label="Search for Products" aria-describedby="searchProduct1" required>
                               <div class="input-group-append">
                                   <!-- Select -->
-                                  <select name="category" class="js-select selectpicker dropdown-select custom-search-categories-select"
+                                  <select name="category_id" class="js-select selectpicker dropdown-select custom-search-categories-select"
                                       data-style="btn height-40 text-gray-60 font-weight-normal border-0 rounded-0 bg-white px-5 py-2">
                                       <option value="all" selected>Bütün Kateqoriyalar</option>
                                       @foreach($categories as $category)
@@ -387,7 +389,7 @@
                                       @endforeach
                                   </select>
                                   <!-- End Select -->
-                                  <button class="btn btn-dark height-40 py-2 px-3 rounded-right-pill" type="button" id="searchProduct1">
+                                  <button class="btn btn-dark height-40 py-2 px-3 rounded-right-pill" type="submit">
                                       <span class="ec ec-search font-size-24"></span>
                                   </button>
                               </div>
