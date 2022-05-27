@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Setting;
 use Gloudemans\Shoppingcart\Facades\Cart;
@@ -49,6 +50,12 @@ class AppServiceProvider extends ServiceProvider
       endif;
 
       $view->with('cart', $cart)->with('total', $total);
+    });
+
+    view()->composer(['frontend.inc.brands_carousel'], function($view) {
+      $brands = Brand::all();
+
+      $view->with('brands', $brands);
     });
   }
 }

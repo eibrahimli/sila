@@ -36,7 +36,7 @@ class AdminBrandController extends Controller
                 'photo' => $request->photo->store('uploads/brands', 'public')
             ]);
 
-            $image = Image::make(public_path('storage/'.$brand->photo))->fit(166,59);
+            $image = Image::make(public_path('storage/'.$brand->photo))->fit(200,60);
             $image->save();
         endif;
 
@@ -66,7 +66,7 @@ class AdminBrandController extends Controller
                 'photo' => $request->photo->store('uploads/brands', 'public')
             ]);
 
-            $image = Image::make(public_path('storage/'.$brand->photo))->fit(166,59);
+            $image = Image::make(public_path('storage/'.$brand->photo))->fit(200,60);
             $image->save();
         endif;
 

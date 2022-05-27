@@ -71,7 +71,7 @@
                     </div>  
                     
                     <div class="form-group col-12">
-                        <label for="inputPhoto">Şəkil* (166x59 tövsiyyə edilir...)</label>
+                        <label for="inputPhoto">Şəkil* (200x60 tövsiyyə edilir...)</label>
                         <input type="file" class="form-control @error('photo') {{ 'is-invalid' }} @enderror" name="photo" id="inputPhoto">
                         @error('photo')
                             <div class="invalid-feedback">
