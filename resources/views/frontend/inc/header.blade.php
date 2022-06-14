@@ -50,7 +50,7 @@
                 @guest
                 <a id="sidebarNavToggler" href="javascript:;" role="button" class="u-header-topbar__nav-link" aria-controls="sidebarContent" aria-haspopup="true" aria-expanded="false" data-unfold-event="click" data-unfold-hide-on-scroll="false" data-unfold-target="#sidebarContent" data-unfold-type="css-animation" data-unfold-animation-in="fadeInRight" data-unfold-animation-out="fadeOutRight" data-unfold-duration="500">
                   <i class="ec ec-user mr-1"></i> Qeydiyyat <span class="text-gray-50">və ya</span>
-                  Giriş Et
+                  Giriş
                 </a>
                 @endguest
                 @auth
@@ -59,9 +59,9 @@
                     <i class="ec ec-user mr-1"></i> Satıcı Paneli </a> <span style="font-size: 0.813rem" class="text-gray-50">və ya</span>
                   @else
                   <a id="sidebarNavToggler" href="{{ url('') }}" role="button" class="u-header-topbar__nav-link">
-                    <i class="ec ec-user mr-1"></i> Mənim Hesabım </a> <span style="font-size: 0.813rem" class="text-gray-50">və ya</span>
+                    <i class="ec ec-user mr-1"></i> {{ auth()->user()->email }} </a> <span style="font-size: 0.813rem" class="text-gray-50">və ya</span>
                   @endif
-                  <a style="cursor: pointer" role="button" class="u-header-topbar__nav-link" onclick="document.getElementById('formLogOut').submit()">Çıxış Et</a>
+                  <a style="cursor: pointer" role="button" class="u-header-topbar__nav-link" onclick="document.getElementById('formLogOut').submit()">Çıxış</a>
 
                 <form style="display: none" id="formLogOut" action="{{ route('logout') }}" method="POST">
                   @csrf
