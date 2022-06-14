@@ -7,7 +7,7 @@
                     <div class="row align-items-center">
                         <div class="col-auto flex-horizontal-center">
                             <i class="ec ec-newsletter font-size-40"></i>
-                            <h2 class="font-size-20 mb-0 ml-3">Bületenə abonə ol</h2>
+                            <h2 class="font-size-20 mb-0 ml-3">Endirimlərdən və yeniliklərdən xəbərdar ol!</h2>
                         </div>
                     </div>
                 </div>
