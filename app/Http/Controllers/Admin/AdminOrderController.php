@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Jobs\OrderActivatedJob;
 use App\Models\Order;
 use Illuminate\Http\Request;
-use App\Jobs\OrderActivatedJob;
+use App\Http\Controllers\Controller;
 
 class AdminOrderController extends Controller
 {
     public function index() {
-      $orders = Order::where('active', 1)->orderByDesc('id')->paginate(1);
+      $total_prices = Order::where('active', 1)->sum('total_price');
 
-      return view('backend.order.index',compact('orders'));
+      return view('backend.order.index',compact('total_prices'));
     }
 
     public function notActiveIndex() {
@@ -20,6 +20,12 @@ class AdminOrderController extends Controller
 
       return view('backend.order.not-active-index',compact('total_prices'));
     }
+
+    public function show(Order $order) {
+      // dd(unserialize($order->cart));
+      return view('backend.order.show')->with('order', $order);
+    }
+
     public function getNotActiveOrders() {
       $orders = Order::where('active', 0)->orderByDesc('id')->paginate(10);
 
@@ -30,9 +36,6 @@ class AdminOrderController extends Controller
       $orders = Order::where('active', 1)->orderByDesc('id')->paginate(10);
 
       return response()->json(['orders' => $orders],200);
-    }
-    public function show(Order $order) {
-      return view('backend.order.show')->with('order', $order);
     }
 
     public function activeOrder(Order $order, Request $request) {

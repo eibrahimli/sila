@@ -61,7 +61,7 @@
                                 <thead>
                                 <tr>
                                     <th class="">Məhsul</th>
-                                    <th class="text-center">Rəng</th>                                                                        
+                                    {{-- <th class="text-center">Rəng</th>                                                                         --}}
                                     <th class="text-center">Məbləğ</th>
                                     <th class="text-center">Note</th>
                                     <th class="text-center">Poçt Kodu</th>
@@ -75,7 +75,7 @@
                                     <td class="">
                                         <p class="text-black m-0">{{ $cart->name }}</p>                                        
                                     </td>
-                                    <td class="text-center">{{ $cart->options->all()['name'] }}</td>                                                                        
+                                    {{-- <td class="text-center">{{ $cart->options->all()['name'] }}</td>                                                                         --}}
                                     <td class="text-center">₼{{ $cart->price }}</td>
                                     <td class="text-center">{{ $order->note }}</td>
                                     <td class="text-center">{{ $order->post_code }}</td>
@@ -97,7 +97,7 @@
                         <div class="p-t-10 p-b-20">                            
                             <hr>
                             <div class="text-center opacity-75">
-                                &copy; Aladdin.az {{ date('Y') }}
+                                &copy; Silaexpress.com {{ date('Y') }}
                             </div>
                         </div>
                     </div>
