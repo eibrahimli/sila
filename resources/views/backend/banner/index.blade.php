@@ -27,7 +27,7 @@
         <div class="col-lg-12 mx-auto  mt-2">
           <div class="card py-3 m-b-30">
             <div class="card-body">
-              <admin-banners all_banners_url="{{ route('admin.banner.all') }}" deletephotos="{{ route('admin.banner.destroy') }}" add_banner="{{ route('admin.banner.store') }}"></banner>
+              <admin-banners all_banners_url="{{ route('admin.banner.all') }}" deletephotos="{{ route('admin.banner.destroy') }}" add_banner="{{ route('admin.banner.store') }}"></admin-banners>
             </div>
           </div>
         </div>
