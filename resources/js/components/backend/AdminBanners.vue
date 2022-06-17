@@ -95,6 +95,7 @@ import "vue2-dropzone/dist/vue2Dropzone.min.css";
 
     export default {
         props: ['add_banner','all_banners_url','deletephotos'],
+        name: 'banner',
         components: {
             vueDropzone: vue2Dropzone,
         },
