@@ -12,4 +12,6 @@ class Color extends Model
     public function stocks() {
       return $this->hasMany(Stock::class);
     }
+
+    protected $fillable = ['name', 'lang'];
 }

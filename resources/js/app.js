@@ -28,6 +28,7 @@ Vue.component('category-edit-page', require('./components/CategoryEdit.vue').def
 Vue.component('admin-product-edit-page', require('./components/backend/AdminProductEdit.vue').default)
 Vue.component('not-active-orders', require('./components/backend/order/NotActive.vue').default)
 Vue.component('active-orders', require('./components/backend/order/Active.vue').default)
+Vue.component('banner', require('./components/backend/AdminBanners').default)
 
 const app = new Vue({
     el: '#app',

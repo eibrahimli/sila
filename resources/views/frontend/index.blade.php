@@ -4,7 +4,7 @@
 
 @section('content')
     <!-- Slider Section -->
-    <div class="mb-5">
+    <div class="mb-5 container">
         <div class="bg-img-hero" style="background-image: url({{ asset('frontend/img/1920X422/img1.jpg') }});">
             <div class="container min-height-420 overflow-hidden">
                 <div class="js-slick-carousel u-slick" data-pagi-classes="text-center position-absolute right-0 bottom-0 left-0 u-slick__pagination u-slick__pagination--long justify-content-start mb-3 mb-md-4 offset-xl-3 pl-2 pb-1">
@@ -22,9 +22,6 @@
                                             <sup class="">₼</sup>{{ $sliderproduct->price }}
                                         </div>
                                     </div>
-                                    <a href="{{ $sliderproduct->path() }}" class="btn btn-primary transition-3d-hover rounded-lg font-weight-normal py-2 px-md-7 px-3 font-size-15" data-scs-animation-in="fadeInUp" data-scs-animation-delay="400">
-                                        Almağa Başla
-                                    </a>
                                 </div>
                                 <div class="col-xl-5 col-6  d-flex align-items-center" data-scs-animation-in="fadeInRight" data-scs-animation-delay="500">
                                     <img class="img-fluid" style="border-radius: 10px;" src="{{ $sliderproduct->img }}" alt="Image Description">
@@ -120,15 +117,7 @@
                 <div class="" style="background-image: url({{ asset('frontend/img/1400X206/img1.jpg') }});">
                     <div class="space-top-2-md p-4 pt-6 pt-md-8 pt-lg-6 pt-xl-8 pb-lg-4 px-xl-8 px-lg-6">
                         <div class="flex-horizontal-center mt-lg-3 mt-xl-0 overflow-auto overflow-md-visble">
-                            <h1 class="text-lh-38 font-size-32 font-weight-light mb-0 flex-shrink-0 flex-md-shrink-1">Alış Veriş Et Və <strong>Kompanyadan</strong> Faydalan</h1>
-                            <div class="ml-5 flex-content-center flex-shrink-0">
-                                <div class="bg-primary rounded-lg px-6 py-2">
-                                    <em class="font-size-14 font-weight-light">Başlayır</em>
-                                    <div class="font-size-30 font-weight-bold text-lh-1">
-                                        <sup class="">₼</sup>79<sup class="">99</sup>
-                                    </div>
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>

@@ -212,6 +212,57 @@
             </li>
 
             <li class="menu-item">
+                <a href="#" class="open-dropdown menu-link">
+                    <span class="menu-label">
+                        <span class="menu-name">Rənglər
+                            <span class="menu-arrow"></span>
+                        </span>
+                    </span>
+                    <span class="menu-icon">
+                        <i class="icon-placeholder mdi mdi-format-list-bulleted"></i>
+                    </span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="menu-item ">
+                        <a href='{{ route('admin.color.index') }}' class='menu-link'>
+                            <span class="menu-label">
+                                <span class="menu-name">Bütün Rənglər</span>
+                            </span>
+                            <span class="menu-icon">
+                                <i class="icon-placeholder mdi mdi-format-list-checks">
+                                </i>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="menu-item ">
+                        <a href='{{ route('admin.color.create') }}' class='menu-link'>
+                            <span class="menu-label">
+                                <span class="menu-name">Yeni Rəng</span>
+                            </span>
+                            <span class="menu-icon">
+                                <i class="icon-placeholder mdi mdi-plus-circle">
+                                </i>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            
+
+            <li class="menu-item">
+                <a href="{{ route('admin.banner.index') }}" class="menu-link">
+                    <span class="menu-label">
+                        <span class="menu-name">Bannerlər
+                            
+                        </span>
+                    </span>
+                    <span class="menu-icon">
+                        <i class="icon-placeholder mdi mdi-circle-outline"></i>
+                    </span>
+                </a>
+            </li>
+
+            <li class="menu-item">
                 <a href="{{ route('admin.edit') }}" class="menu-link">
                     <span class="menu-label">
                         <span class="menu-name">Ayarlar

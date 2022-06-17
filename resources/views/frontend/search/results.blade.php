@@ -48,7 +48,7 @@
                                             <ins class="font-size-20 font-bodl">₼ {{ $item['price'] }}</ins>
                                         </div>
                                         <div class="d-none d-xl-block prodcut-add-cart">
-                                            <a href="../shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
+                                            <a href="{{ $item->url }}" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
                                         </div>
                                     </div>
                                 </div>

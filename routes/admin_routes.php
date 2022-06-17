@@ -9,6 +9,8 @@ use App\Http\Controllers\Admin\AdminStockController;
 use App\Http\Controllers\Admin\AdminProductController;
 use App\Http\Controllers\Admin\AdminCategoryController;
 use App\Http\Controllers\Admin\AdminBrandController;
+use App\Http\Controllers\Admin\AdminBannerController;
+use App\Http\Controllers\Admin\AdminColorController;
 
     Route::name('admin.')->namespace('Admin')->prefix('admin')->group(function () {
 
@@ -131,6 +133,33 @@ use App\Http\Controllers\Admin\AdminBrandController;
             });
         
         // End of All Page Routes
+
+        // Colors routes
+
+            Route::name('color.')->prefix('color')->group(function () {
+                Route::get('', [AdminColorController::class, 'index'])->name('index');            
+                Route::get('create', [AdminColorController::class, 'create'])->name('create');
+                Route::post('store', [AdminColorController::class, 'store'])->name('store');
+                Route::get('{color}/edit', [AdminColorController::class, 'edit'])->name('edit');                
+                Route::patch('{color}', [AdminColorController::class, 'update'])->name('update');
+                Route::delete('{color}', [AdminColorController::class, 'destroy'])->name('destroy');
+            });
+
+        // End Colors routes
+
+
+        // All Banners Routes
+
+            Route::name('banner.')->prefix('banner')->group(function(){
+                Route::get('', [AdminBannerController::class, 'index'])->name('index');
+                Route::get('all', [AdminBannerController::class, 'all'])->name('all');
+
+                Route::post('store', [AdminBannerController::class, 'store'])->name('store');
+
+                Route::post('delete', [AdminBannerController::class, 'destroy'])->name('destroy');
+            });
+
+        // End of All Banners Routes
         });
 
     });
