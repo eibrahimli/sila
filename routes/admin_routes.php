@@ -152,11 +152,10 @@ use App\Http\Controllers\Admin\AdminColorController;
 
             Route::name('banner.')->prefix('banner')->group(function(){
                 Route::get('', [AdminBannerController::class, 'index'])->name('index');
-                Route::get('all', [AdminBannerController::class, 'all'])->name('all');
 
                 Route::post('store', [AdminBannerController::class, 'store'])->name('store');
 
-                Route::post('delete', [AdminBannerController::class, 'destroy'])->name('destroy');
+                Route::get('delete/{banner}', [AdminBannerController::class, 'destroy'])->name('destroy');
             });
 
         // End of All Banners Routes

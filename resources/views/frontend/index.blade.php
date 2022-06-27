@@ -112,17 +112,15 @@
         <!-- Bura ən çox satan məhsullar gələcək -->
         <!-- End Prodcut-cards-carousel -->
         <!-- Full banner -->
-        <div class="mb-6">
-            <a href="#" class="d-block text-gray-90">
-                <div class="" style="background-image: url({{ asset('frontend/img/1400X206/img1.jpg') }});">
-                    <div class="space-top-2-md p-4 pt-6 pt-md-8 pt-lg-6 pt-xl-8 pb-lg-4 px-xl-8 px-lg-6">
-                        <div class="flex-horizontal-center mt-lg-3 mt-xl-0 overflow-auto overflow-md-visble">
-                            
-                        </div>
+        @if($middle) 
+            <div class="mb-6">
+                <a href="#" class="d-block text-gray-90">
+                    <div style="height: 206px;border-radius: 1rem;background-image: url('{{ asset('storage/'.$middle->photo) }}');">
+                       
                     </div>
-                </div>
-            </a>
-        </div>
+                </a>
+            </div>
+        @endif
         <!-- End Full banner -->
         <!-- Recently viewed -->
         <div class="mb-6">

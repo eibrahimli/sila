@@ -2,63 +2,54 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Arr;
 use App\Models\Banner;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller;
+use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Storage;
+use App\Http\Requests\Admin\Banner\StoreRequest;
 
 class AdminBannerController extends Controller
 {
     public function index() {        
-
-        return view('backend.banner.index');
+        $middle = Banner::where('middle', true)->first();
+        return view('backend.banner.index', compact('middle'));
     }
 
 
-    public function all() {
-        $banners = Banner::all()->sortByDesc('id');
-        return response()->json(['banners' => $banners]);
-    }
+    public function store(StoreRequest $request) {        
+        $data = $request->validated();
+        
+        $exist = Banner::where('middle', true)->first();
 
-    public function store(Request $request) {        
-        $validator = Validator::make($request->all(), [
-            'file' => 'required|file|image|mimes:png,jpg,jpeg,svg,gif'
+        if($exist) {
+            Storage::delete('public/' . $exist->photo);
+            $exist->delete();
+        }
+
+        $banner = Banner::query()->create([
+            'middle' => true,
         ]);
 
-        if($validator->fails()): return response()->json(['mes' => 'Göndərilən məlumatlar doğru deil'],422); endif;
+        if(Arr::exists($data,'middle')):
+            $banner->update([
+                'photo' => $request->middle->store('uploads/banner', 'public')
+              ]);
+      
+              $image = Image::make(public_path('storage/' . $banner->photo))->fit(1400, 206);
+              $image->save();
+        endif;    
 
-        try{
+        return back()->with('success', 'Banner əlavə edildi');
 
-            $banner = new Banner;
-
-            $banner->photo = $request->file->store('uploads/banners','public');
-
-            $banner->save();
-
-            return response()->json(['mes' => 'Banner uğurlu şəkildə əlavə edildi..'],200);
-
-        } catch(\Exception $e) {
-            return response()->json(['mes' => 'Banner əlavə edərkən xəta baş verdi'],422);
-        }
     }
 
-    public function destroy(Request $request) {
-        if (empty($request->checkedNames)) {
-            return response()->json(['error' => 'Silinəcək banner seçməmisiniz!!'], 422);
-        } else {
-        try {
-            foreach ($request->checkedNames as $banner):
-            $banner = Banner::find($banner);
-            Storage::delete('public/' . $banner->photo);
-            $banner->delete();
-            endforeach;
-    
-            return response()->json(['mes' => 'Banner uğurlu şəkildə silindi...'], 200);
-        } catch (\Exception $e) {
-            return response()->json(['error' => 'Banner silinərkən xəta baş verdi!!'], 422);
-        }
-    
-        }
+    public function destroy(Banner $banner) {
+        Storage::delete('public/' . $banner->photo);
+
+        $banner->delete();
+
+        return back()->with('response', 'Banner uğurlu şəkildə silindi');
     }
 }

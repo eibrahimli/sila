@@ -27,7 +27,48 @@
         <div class="col-lg-12 mx-auto  mt-2">
           <div class="card py-3 m-b-30">
             <div class="card-body">
-              <admin-banners all_banners_url="{{ route('admin.banner.all') }}" deletephotos="{{ route('admin.banner.destroy') }}" add_banner="{{ route('admin.banner.store') }}"></admin-banners>
+              @if(session('status') == 'ok')
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>Uğurlu Əməliyyat!</strong> Banner əlavə edildi.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+              @elseif(session('status') == 'error')
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                  <strong>Diqqət!</strong> Nəsə səhv oldu.
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">×</span>
+                  </button>
+                </div>
+
+              @endif
+
+              @if($middle)
+                <div class="col-12 mb-2 mt-2">
+                  <img src="{{ asset('storage/'.$middle->photo) }}" class="img-fluid" alt="...">
+                  <button onclick="middle('{{ route('admin.banner.destroy', $middle->id) }}')" class="btn btn-danger btn-sm mt-2 deletemiddle" 
+                    type="button">
+                    <i class="mdi mdi-delete"></i>
+                  </button>
+                </div>
+              @endif
+                <form method="post" enctype="multipart/form-data" action="{{ route('admin.banner.store') }}">
+                    @csrf
+                    <div class="form-group col-12">
+                        <label for="inputLanguage">Ortadakı banner</label>
+                        <div class="mb-3">
+                          <input class="form-control" type="file" name="middle">
+                        </div>
+                        @error('middle')
+                          <div class="invalid-feedback">
+                            {{ $message }}
+                          </div>
+                        @enderror
+                    </div>     
+                    
+                    <button type="submit" class="btn btn-success btn-cta ml-3">Əlavə Et</button>
+                </form>
             </div>
           </div>
         </div>
@@ -41,5 +82,10 @@
   <script src="{{ asset('backend/js/formadvence.js') }}"></script>
   <script>
     $('.js-select2').select2()
+
+    const middle = (url) => {
+      window.location.href = url
+    }
   </script>
+  
 @endsection
