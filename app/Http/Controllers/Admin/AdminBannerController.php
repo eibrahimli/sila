@@ -30,6 +30,7 @@ class AdminBannerController extends Controller
 
         $banner = Banner::query()->create([
             'middle' => true,
+            'link' => $data['link'],
         ]);
 
         if(Arr::exists($data,'middle')):

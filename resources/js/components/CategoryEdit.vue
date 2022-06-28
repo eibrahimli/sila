@@ -117,6 +117,17 @@
             Rəqəm olmalıdır...
           </div>
         </div>
+
+        <div class="col-12 mb-2 mt-2">
+          <img :src="banner_url" class="img-fluid" alt="...">
+        </div>
+
+        <div class="form-group col-12">
+          <label for="inputLanguage">Ortadakı banner</label>
+          <div class="mb-3">
+            <input class="form-control" type="file" @change="bannerPhoto">
+          </div>
+        </div> 
       </div>
 
       <button type="submit" class="btn btn-success btn-cta">Yadda Saxla</button>
@@ -128,7 +139,7 @@
 import { required, minLength, numeric } from "vuelidate/lib/validators";
 
 export default {
-  props: ['url','getcategoryurl','_method'],
+  props: ['url','getcategoryurl','_method','banner_url'],
   data() {
     return {
       loading: true,
@@ -140,7 +151,8 @@ export default {
         desc: '',
         lang: '',
         category_id: '',
-        photo: ''
+        photo: '',
+        banner_photo: ''
       },      
       errors: []
     };
@@ -243,6 +255,7 @@ export default {
               timer: 1500,
             });
             vm.category.photo = res.data.photo;
+            vm.banner_url = vm.base_url +'/storage/'+ res.data.category.banner_photo;
           }
         }
       }
@@ -251,6 +264,10 @@ export default {
     getPhoto(e) {
       this.category.photo = e.target;
     },
+
+    bannerPhoto(e) {
+      this.category.banner_photo = e.target.files[0];
+    }
   },
 };
 </script>

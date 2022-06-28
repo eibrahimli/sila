@@ -56,6 +56,15 @@
                 <form method="post" enctype="multipart/form-data" action="{{ route('admin.banner.store') }}">
                     @csrf
                     <div class="form-group col-12">
+                      <label for="inputName">Link</label>
+                      <input type="text" name="link" value="{{ $middle ? $middle->link : '' }}" class="form-control @error('link') {{  'is-invalid' }} @enderror" id="inputName" placeholder="Link">
+                      @error('link')
+                        <div class="invalid-feedback">
+                          {{ $message }}
+                        </div>
+                      @enderror
+                    </div>
+                    <div class="form-group col-12">
                         <label for="inputLanguage">Ortadakı banner</label>
                         <div class="mb-3">
                           <input class="form-control" type="file" name="middle">

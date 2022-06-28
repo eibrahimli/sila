@@ -33,6 +33,7 @@
                 url="{{ route('admin.category.update',$category->id) }}" 
                 getcategoryurl="{{ route('admin.category.getCategory',$category->id) }}"
                 _method="PATCH"
+                banner_url="{{ asset('storage/'.$category->banner_photo) }}"
                 >
               </category-edit-page>
             </div>

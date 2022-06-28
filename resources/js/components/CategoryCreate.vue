@@ -116,8 +116,16 @@
             Rəqəm olmalıdır...
           </div>
         </div>
+        <div class="form-group col-12">
+          <label for="inputLanguage">Ortadakı banner</label>
+          <div class="mb-3">
+            <input class="form-control" type="file" @change="bannerPhoto">
+          </div>
+        </div> 
+
       </div>
 
+      
       <button type="submit" class="btn btn-success btn-cta">Yadda Saxla</button>
     </form>
   </div>
@@ -139,7 +147,8 @@ export default {
         desc: '',
         lang: '',
         category_id: '',
-        photo: ''
+        photo: '',
+        banner_photo: ''
       },      
       errors: []
     };
@@ -242,6 +251,10 @@ export default {
     getPhoto(e) {
       this.category.photo = e.target;
     },
+    bannerPhoto(e) {
+      console.log(e)
+      this.category.banner_photo = e.target.files[0];
+    }
   },
 };
 </script>

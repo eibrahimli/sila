@@ -114,7 +114,7 @@
         <!-- Full banner -->
         @if($middle) 
             <div class="mb-6">
-                <a href="#" class="d-block text-gray-90">
+                <a href="{{ $middle->link }}" class="d-block text-gray-90">
                     <div style="height: 206px;border-radius: 1rem;background-image: url('{{ asset('storage/'.$middle->photo) }}');">
                        
                     </div>
