@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\AdminCategoryController;
 use App\Http\Controllers\Admin\AdminBrandController;
 use App\Http\Controllers\Admin\AdminBannerController;
 use App\Http\Controllers\Admin\AdminColorController;
+use App\Http\Controllers\UnitController;
 
     Route::name('admin.')->namespace('Admin')->prefix('admin')->group(function () {
 
@@ -146,6 +147,19 @@ use App\Http\Controllers\Admin\AdminColorController;
             });
 
         // End Colors routes
+
+        // Units routes
+
+            Route::name('unit.')->prefix('unit')->group(function () {
+                Route::get('', [UnitController::class, 'index'])->name('index');            
+                Route::get('create', [UnitController::class, 'create'])->name('create');
+                Route::post('store', [UnitController::class, 'store'])->name('store');
+                Route::get('{unit}/edit', [UnitController::class, 'edit'])->name('edit');                
+                Route::patch('{unit}', [UnitController::class, 'update'])->name('update');
+                Route::delete('{unit}', [UnitController::class, 'destroy'])->name('destroy');
+            });
+
+        // End Units routes
 
 
         // All Banners Routes

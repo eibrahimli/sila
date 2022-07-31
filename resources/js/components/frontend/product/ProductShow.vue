@@ -44,7 +44,9 @@
               </div>
               <div class="d-md-flex align-items-center">
                 <div class="text-gray-9 font-size-14">Mağaza: <span class="text-green font-weight-bold"><a href="#">{{ product.sn }}</a></span></div>
-                <div class="ml-md-3 text-gray-9 font-size-14">Stok: <span class="text-green font-weight-bold">{{ `{ ${product.stock} }` }} ədəd stokda</span></div>
+                <div class="ml-md-3 text-gray-9 font-size-14">
+                  Stok: <span class="text-green font-weight-bold">{{ `{ ${product.stock} }` }} {{ product.unit ? product.unit.name.toLowerCase() : 'ədəd' }} stokda</span>
+                  </div>
               </div>
             </div>
             <!--
@@ -53,7 +55,7 @@
             -->
             <div class="mb-4">
               <div class="d-flex align-items-baseline">
-                <ins class="font-size-36 text-decoration-none">₼{{ product.price }}</ins>
+                <ins class="font-size-36 text-decoration-none">₼{{ parseFloat(quantity * product.price) }}</ins>
               </div>
             </div>
             <div class="border-top border-bottom py-3 mb-4" v-if="productColor.length > 0">
@@ -70,7 +72,7 @@
             </div>
             <div class="d-md-flex align-items-end mb-3">
               <div class="max-width-150 mb-4 mb-md-0">
-                <h6 class="font-size-14">Ədəd</h6>
+                <h6 class="font-size-14">{{ product.unit ? product.unit.name : 'Ədəd' }}</h6>
                 <!-- Quantity -->
                 <div class="py-1 px-3">
                   <div class="js-quantity row align-items-center">

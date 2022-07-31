@@ -8,6 +8,7 @@ use App\Models\User;
 use Dotenv\Validator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Unit;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Auth\Events\Registered;
@@ -129,6 +130,19 @@ class SellerController extends Controller
       $data[] = [
         'id' => $brand->id,
         'label' => $brand->name,
+      ];
+    endforeach;
+    return response()->json($data, 200);
+  }
+
+
+  public function allUnits()
+  {
+    $units = Unit::all()->sortByDesc('id');
+    foreach ($units as $unit):
+      $data[] = [
+        'id' => $unit->id,
+        'label' => $unit->name,
       ];
     endforeach;
     return response()->json($data, 200);

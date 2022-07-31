@@ -22,10 +22,10 @@ class ProductController extends Controller
       $colors = DB::table('colors')->select('colors.name', 'colors.id')->get();
 
       return response()->json([
-        'product' => $product,'stocks' => $product->stocks,
+        'product' => $product->load('unit'),'stocks' => $product->stocks,
         'colors' => $colors,
         'category_url' => route('category.show', [$product->category->id, Str::slug($product->category->name)]),
-        'category' => $product->category->name
+        'category' => $product->category->name,
       ],200);
     }
 

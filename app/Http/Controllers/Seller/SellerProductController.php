@@ -78,6 +78,7 @@ class SellerProductController extends Controller
     $validator = Validator::make($request->all(), [
       'category_id' => 'required',
       'brand_id' => 'required',
+      'unit_id' => 'required',
       'title' => 'required|min:5',
       'desc' => 'required|min:5',
       'price' => 'required',
@@ -268,6 +269,7 @@ class SellerProductController extends Controller
     $validator = Validator::make($request->all(), [
       'category_id' => 'required',
       'brand_id' => 'required',
+      'unit_id' => 'required',
       'title' => 'required|min:5',
       'desc' => 'required|min:5',
       'price' => 'required',

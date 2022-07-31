@@ -29,7 +29,14 @@
         <div class="col-lg-12 mx-auto  mt-2">
           <div class="card py-3 m-b-30">
             <div class="card-body">
-              <product-create-page colorsurl="{{ route('seller.colors.all') }}" url="{{ route('seller.product.store') }}" brandsurl="{{ route('seller.brand.all') }}" categoryurl="{{ route('seller.getCat') }}" url="{{ route('seller.product.store') }}"></product-create-page>
+              <product-create-page 
+                colorsurl="{{ route('seller.colors.all') }}" 
+                url="{{ route('seller.product.store') }}" 
+                brandsurl="{{ route('seller.brand.all') }}" 
+                unitsurl="{{ route('seller.unit.all') }}" 
+                categoryurl="{{ route('seller.getCat') }}" 
+                url="{{ route('seller.product.store') }}">
+              </product-create-page>
             </div>
           </div>
         </div>

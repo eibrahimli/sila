@@ -18,6 +18,7 @@ use App\Http\Controllers\Seller\SellerProductController;
   
     Route::middleware(['seller', 'verified'])->group(function () {
       Route::get('brand/all', [SellerController::class, 'allBrands'])->name('brand.all');
+      Route::get('unit/all', [SellerController::class, 'allUnits'])->name('unit.all');
       Route::get('colors/all', [SellerController::class, 'allColors'])->name('colors.all');
       Route::get('', [SellerController::class, 'index'])->name('index');
       Route::get('{seller}/edit', [SellerController::class, 'edit'])->name('edit');

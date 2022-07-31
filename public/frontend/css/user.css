@@ -1,0 +1,87 @@
+*{
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.profile_container{
+    display: flex;
+    gap: 1.5rem;
+}
+
+.profile_nav {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.profile_nav_list{
+    list-style-type: none;
+    border: 1px solid #333;
+}
+
+.profile_nav_list_item{
+    border-bottom: 1px solid #ddd;
+}
+
+.profile_nav_list_item a{
+    text-decoration: none;
+    color: #333e48;
+    padding: .857em 0;
+    display: block;
+}
+
+.profile_nav_list_item a.active {
+    font-weight: bold !important;
+}
+
+/* Profile content */
+
+.profile_content{
+    display: flex;
+    flex: 4;
+}
+
+.profile_orders_table{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    border: 1px solid #333;
+    border-radius: .5rem;
+    padding: 1rem;
+}
+.profile_orders_table tr{
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #ddd;
+    padding: .5rem;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.profile_orders_table tr th{
+    text-align: left;
+    font-weight: bold;
+}
+
+.profile_orders_table .orders_button{
+    display: inline-block;
+    background-color: #efecec;
+    border-color: #efecec;
+    color: #333e48;
+    padding: 0.618em 2em;
+    font-size: .857em;
+    margin-right: 0.236em;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    font-weight: 400;
+    line-height: 1.714;
+    border-radius: 1.375rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.profile_orders_table .orders_button:hover {
+    background-color: #333;
+    color: #efecec;
+}
+

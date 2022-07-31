@@ -151,7 +151,7 @@
                     </div>
                 </div>
 
-                <div class="form-group col-md-12 col-sm-12">
+                <div class="form-group col-md-6 col-sm-12">
                     <label for="brand_id">Brend</label>
                     <treeselect
                         :options="brands"
@@ -170,6 +170,15 @@
                     >
                         Məhsul brendi seçilməlidi...
                     </div>
+                </div>
+                <div class="form-group col-md-6 col-sm-12">
+                  <label for="brand_id">Vahid</label>
+                  <treeselect :options="units" v-model="$v.product.unit_id.$model" class="is-invalid"
+                              placeholder="Vahid seçin" id="brand_id"></treeselect>
+                  <div v-if="!$v.product.unit_id.required && $v.product.unit_id.$dirty" style="display: block"
+                       class="invalid-feedback">
+                    Məhsul vahidi seçilməlidi...
+                  </div>
                 </div>
                 <div class="form-group col-12">
                     <label for="stock"
@@ -644,7 +653,8 @@ export default {
         "getphotos",
         "id",
         "deletephotos",
-        "getcolorsrelatedtoproduct"
+        "getcolorsrelatedtoproduct",
+        "unitsurl"
     ],
     data() {
         return {
@@ -657,6 +667,7 @@ export default {
             options: [],
             brands: [],
             colors: [],
+            units: [],
             productColors: [],
             photos: [],
             photo: "",
@@ -689,6 +700,7 @@ export default {
                 stock: 0,
                 category_id: null,
                 brand_id: null,
+                unit_id: null,
                 title: "",
                 desc: "",
                 price: "",
@@ -719,6 +731,11 @@ export default {
     validations: {
         product: {
             brand_id: {
+                required,
+                integer
+            },
+
+            unit_id: {
                 required,
                 integer
             },
@@ -776,6 +793,9 @@ export default {
         axios
             .get(this.brandsurl)
             .then(res => (this.brands = Object.values(res.data)));
+        axios
+            .get(this.unitsurl)
+            .then(res => (this.units = Object.values(res.data)));
         axios
             .get(this.colorsurl)
             .then(res => (this.colors = Object.values(res.data)));

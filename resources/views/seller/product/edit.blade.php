@@ -33,6 +33,7 @@
                 getproducturl = "{{ route('seller.product.getProductUrl',$product->id) }}"
                 colorsurl="{{ route('seller.colors.all') }}"
                 brandsurl="{{ route('seller.brand.all') }}"
+                unitsurl="{{ route('seller.unit.all') }}"
                 categoryurl="{{ route('seller.getCat') }}"
                 getspecs="{{ route('seller.product.getSpecs',$product->id) }}"
                 getphotos="{{ route('seller.product.getPhotos',$product->id) }}"
