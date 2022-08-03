@@ -35146,12 +35146,12 @@ blockquote:not(.blockquote) p {
 }
 
 .text-lh-57 {
-  line-height: 1.75rem;
+  line-height: 2rem;
 }
 
 @media (min-width: 768px) {
   .text-lh-57 {
-    line-height: 3.56212rem;
+    line-height: 4rem;
   }
 }
 

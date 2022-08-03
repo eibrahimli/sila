@@ -12,8 +12,8 @@
                         <div class="js-slide bg-img-hero-center" data-animation-delay="0">
                             <div class="row min-height-420 py-7 py-md-0">
                                 <div class="offset-xl-3 col-xl-4 col-6 mt-md-8">
-                                    <h1 class="font-size-64 text-lh-57 font-weight-light" style="word-break: break-all" data-scs-animation-in="fadeInUp">
-                                        {{ Str::substr($sliderproduct->title, 0, 50) }}
+                                    <h1 class="font-size-64 text-lh-57 font-weight-light" style="word-break: break-word;" data-scs-animation-in="fadeInUp">
+                                        {{ Str::substr($sliderproduct->title, 0, 30) }}
                                     </h1>
                                     <h6 class="font-size-15 font-weight-bold mb-3 animated fadeInUp" data-scs-animation-in="fadeInUp" data-scs-animation-delay="200" style="animation-delay: 200ms; opacity: 1; visibility: hidden">UNDER FAVORABLE SMARTWATCHES
                                     </h6>
