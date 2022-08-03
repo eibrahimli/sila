@@ -55,7 +55,7 @@
             -->
             <div class="mb-4">
               <div class="d-flex align-items-baseline">
-                <ins class="font-size-36 text-decoration-none">₼{{ parseFloat(quantity * product.price) }}</ins>
+                <ins class="font-size-36 text-decoration-none">₼{{ parseFloat(quantity * product.price).toFixed(2) }}</ins>
               </div>
             </div>
             <div class="border-top border-bottom py-3 mb-4" v-if="productColor.length > 0">
