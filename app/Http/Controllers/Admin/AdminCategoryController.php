@@ -38,7 +38,7 @@ class AdminCategoryController extends Controller
     ]);
 
     if($validator->fails()) {
-      return response()->json(['error' => $validator->errors],422);
+      return response()->json(['error' => $validator->errors()],422);
     }
 
     try {      
