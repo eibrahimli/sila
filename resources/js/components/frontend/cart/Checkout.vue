@@ -2,7 +2,7 @@
   <div class="container" :class="{ 'svg-preloader' : loader  }">
     <div v-if="!ordered">
       <div class="mb-5">
-        <h1 class="text-center">Ödəmə hissəsi</h1>
+        <h1 class="text-center">Şifariş hissəsi</h1>
       </div>
       <!-- Accordion -->
       <!-- End Accordion -->

@@ -79,7 +79,7 @@
                     </div>
                     <div class="d-md-flex">
                       <button onclick="window.location.href = Laravel.base_url+'/cart'" type="button" class="btn btn-soft-secondary mb-3 mb-md-0 font-weight-normal px-5 px-md-4 px-lg-5 w-100 w-md-auto">Səbəti Yenilə</button>
-                      <a :href="checkout_url" class="btn btn-primary-dark-w ml-md-2 px-5 px-md-4 px-lg-5 w-100 w-md-auto d-none d-md-inline-block">Ödəmə hissəsi</a>
+                      <a :href="checkout_url" class="btn btn-primary-dark-w ml-md-2 px-5 px-md-4 px-lg-5 w-100 w-md-auto d-none d-md-inline-block">Sifariş hissəsi</a>
                     </div>
                   </div>
                 </div>
@@ -108,7 +108,7 @@
               </tr>
               </tbody>
             </table>
-            <button onclick="window.location.href = Laravel.base_url+'/cart/checkout'" type="button" class="btn btn-primary-dark-w ml-md-2 px-5 px-md-4 px-lg-5 w-100 w-md-auto d-md-none">Ödəmə Hissəsi</button>
+            <button onclick="window.location.href = Laravel.base_url+'/cart/checkout'" type="button" class="btn btn-primary-dark-w ml-md-2 px-5 px-md-4 px-lg-5 w-100 w-md-auto d-md-none">Sifariş Hissəsi</button>
           </div>
         </div>
       </div>
