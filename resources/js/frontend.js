@@ -26,6 +26,7 @@ Vue.component('category-products', require('./components/frontend/category/Categ
 
 // Product Components
 Vue.component('product-show', require('./components/frontend/product/ProductShow').default)
+Vue.component('new-products', require('./components/frontend/product/NewProduct').default)
 
 // Cart Components
 
