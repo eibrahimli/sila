@@ -291,7 +291,7 @@
                       </ul>
                       <div class="flex-center-between px-4 pt-2">
                         <a href="{{ route('cart.index') }}" class="btn btn-soft-secondary mb-3 mb-md-0 font-weight-normal px-5 px-md-4 px-lg-5">Səbət</a>
-                        <a href="{{ route('cart.checkout') }}" class="btn btn-primary-dark-w ml-md-2 px-5 px-md-4 px-lg-5">Ödəmə</a>
+                        <a href="{{ route('cart.checkout') }}" class="btn btn-primary-dark-w ml-md-2 px-5 px-md-4 px-lg-5">Sifariş</a>
                       </div>
                     </div>
                   @endif
