@@ -11,7 +11,6 @@ use Illuminate\Support\Facades\DB;
 class IndexController extends Controller
 {
     public function index() {
-      $products = Product::active()->orderByDesc('created_at')->take(18)->get();
       $soldedProducts = Product::active()->orderByDesc('sold')->take(8)->get();
       $seenProducts = Product::active()->orderByDesc('seen')->take(15)->get();
       $sliderproducts = Product::active()->orderByDesc('created_at')->take(3)->get();
@@ -19,6 +18,13 @@ class IndexController extends Controller
       // Banner
       $middle = Banner::where('middle', true)->first();
 
-      return view('frontend.index',compact('products','soldedProducts', 'seenProducts','sliderproducts','middle'));
+      return view('frontend.index',compact('soldedProducts', 'seenProducts','sliderproducts','middle'));
+    }
+
+
+    public function newProducts() {
+      $products = Product::with('category')->active()->orderByDesc('created_at')->paginate(24);
+
+      return response()->json($products);
     }
 }

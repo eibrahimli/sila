@@ -39,69 +39,7 @@
 
         <!-- End Banner -->
         <!-- Deals-and-tabs -->
-        <div class="mb-5">
-            <div class="row">
-                <!-- Deal -->
-
-                <!-- End Deal -->
-                <!-- Tab Prodcut -->
-                <div class="col">
-                    <!-- Features Section -->
-                    <div class="">
-                        <!-- Nav Classic -->
-                        <div class="position-relative bg-white text-center z-index-2">
-                            <ul class="nav nav-classic nav-tab justify-content-center" id="pills-tab" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active " id="pills-one-example1-tab" data-toggle="pill" href="#pills-one-example1" role="tab" aria-controls="pills-one-example1" aria-selected="true">
-                                        <div class="d-md-flex justify-content-md-center align-items-md-center">
-                                            Yeni
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- End Nav Classic -->
-
-                        <!-- Tab Content -->
-                        <div class="tab-content" id="pills-tabContent">
-                            <div class="tab-pane fade pt-2 show active" id="pills-one-example1" role="tabpanel" aria-labelledby="pills-one-example1-tab">
-                                <ul class="row list-unstyled products-group no-gutters">
-                                    @isset($products)
-                                        @foreach($products as $product)
-                                            <li class="col-6 col-wd-2 col-md-3 product-item">
-                                                <div class="product-item__outer h-100">
-                                                    <div class="product-item__inner px-xl-4 p-3">
-                                                        <div class="product-item__body pb-xl-2">
-                                                            <div class="mb-2">
-                                                                <a href="{{ isset($product->category) ? $product->category->url : '#' }}" class="font-size-12 text-gray-5">{{ isset($product->category) ? $product->category->name() : '' }}</a>
-                                                            </div>
-                                                            <h5 class="mb-1 product-item__title">
-                                                                <a href="{{ $product->path() }}" class="text-blue font-weight-bold">{{ $product->title }}</a>
-                                                            </h5>
-                                                            <div class="mb-2">
-                                                                <a href="{{ $product->path() }}" class="d-block text-center"><img class="img-fluid" src="{{ asset('storage/'.$product->photo) }}" alt="{{ $product->title }}"></a>
-                                                            </div>
-                                                            <div class="flex-center-between mb-1">
-                                                                <div class="prodcut-price">
-                                                                    <div class="text-gray-100">₼{{ $product->price }}</div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        @endforeach
-                                    @endisset
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- End Tab Content -->
-                    </div>
-                    <!-- End Features Section -->
-                </div>
-                <!-- End Tab Prodcut -->
-            </div>
-        </div>
+        @include('frontend.partials.new_products')
         <!-- End Deals-and-tabs -->
     </div>
     <!-- Products-4-1-4 -->
