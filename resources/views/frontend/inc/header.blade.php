@@ -11,7 +11,7 @@
           <div class="topbar-right ml-auto">
             <ul class="list-inline mb-0">
               @guest
-                {{-- <li class="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border">
+                <li class="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border">
                   <div class="position-relative">
                     <a id="sellerDropdownInvoker" class="dropdown-nav-link dropdown-toggle d-flex align-items-center u-header-topbar__nav-link font-weight-normal" href="javascript:;" role="button" aria-controls="sellerDropdown" aria-haspopup="true" aria-expanded="false" data-unfold-event="hover" data-unfold-target="#sellerDropdown" data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-delay="300" data-unfold-hide-on-scroll="true" data-unfold-animation-in="slideInUp" data-unfold-animation-out="fadeOut">
                       <span class="d-none d-sm-inline-flex align-items-center"><span class="mr-1 font-weight-bold">₼</span> Sila Express - də Sat</span>
@@ -21,7 +21,7 @@
                       <a href="{{ route('seller.register') }}" class="dropdown-item active">Satıcı Qeydiyyatı</a>
                     </div>
                   </div>
-                </li> --}}
+                </li>
               @endguest
               {{-- <li class="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border">
                 <a href="#" class="u-header-topbar__nav-link"><i class="ec ec-transport mr-1"></i> Sifarişim hardadır?</a>
@@ -58,7 +58,7 @@
                   <a id="sidebarNavToggler" href="{{ route('seller.index') }}" role="button" class="u-header-topbar__nav-link">
                     <i class="ec ec-user mr-1"></i> Satıcı Paneli </a> <span style="font-size: 0.813rem" class="text-gray-50">və ya</span>
                   @else
-                  <a id="sidebarNavToggler" href="{{ url('') }}" role="button" class="u-header-topbar__nav-link">
+                  <a id="sidebarNavToggler" href="{{ route('user.dashboard', auth()->id()) }}" role="button" class="u-header-topbar__nav-link">
                     <i class="ec ec-user mr-1"></i> {{ auth()->user()->email }} </a> <span style="font-size: 0.813rem" class="text-gray-50">və ya</span>
                   @endif
                   <a style="cursor: pointer" role="button" class="u-header-topbar__nav-link" onclick="document.getElementById('formLogOut').submit()">Çıxış</a>
