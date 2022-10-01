@@ -43,7 +43,7 @@
                 </a>
               </div>
               <div class="d-md-flex align-items-center">
-                <div class="text-gray-9 font-size-14">Mağaza: <span class="text-green font-weight-bold"><a href="#">{{ product.sn }}</a></span></div>
+                <div class="text-gray-9 font-size-14">Mağaza: <span class="text-green font-weight-bold"><a :href="`${base_url}/store/${product.store.id}`">{{ product.sn }}</a></span></div>
                 <div class="ml-md-3 text-gray-9 font-size-14">
                   Stok: <span class="text-green font-weight-bold">{{ `{ ${product.stock} }` }} {{ product.unit ? product.unit.name.toLowerCase() : 'ədəd' }} stokda</span>
                   </div>
@@ -151,10 +151,12 @@
         stocks: {},
         category_url: '',
         category: '',
+        base_url: ''
       }
     },
     mounted() {
       this.loadProduct()
+      this.base_url = window.Laravel.base_url
       
     },
 
