@@ -176,7 +176,7 @@
     <div class="d-flex">
       <a
         class="btn btn-block btn-sm btn-soft-facebook transition-3d-hover mr-1"
-        href="$"
+        :href="facebook_redirect_url"
         target="_blank"
       >
         <span class="fab fa-facebook-square mr-1"></span>
@@ -200,7 +200,7 @@ import { required, minLength, email } from "vuelidate/lib/validators";
 
 export default {
   name: "SignIn",
-  props: ['google_redirect_url'],
+  props: ['google_redirect_url', 'facebook_redirect_url'],
   data() {
     return {
       email: "",

@@ -18,7 +18,7 @@
         <div class="js-scrollbar u-sidebar__body">
           <div class="u-sidebar__content u-header-sidebar__content">
             <!-- Login -->            
-            <sign-in google_redirect_url="{{ route('auth.google.redirect') }}"></sign-in>
+            <sign-in google_redirect_url="{{ route('auth.google.redirect') }}" facebook_redirect_url="{{ route('auth.facebook.redirect') }}"></sign-in>
             <!-- Signup -->
             <sign-up></sign-up>
             <!-- End Signup -->

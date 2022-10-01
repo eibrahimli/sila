@@ -129,3 +129,9 @@ Route::get('test/user', function(Request $request) {
 Route::get('/auth/google/redirect', [SocialController::class, 'googleRedirect'])->name('auth.google.redirect');
 
 Route::get('/auth/google/callback', [SocialController::class, 'googleCallback'])->name('auth.google.callback');
+
+// Login ord Register with Facebook
+
+Route::get('/auth/facebook/redirect', [SocialController::class, 'facebookRedirect'])->name('auth.facebook.redirect');
+
+Route::get('/auth/facebook/callback', [SocialController::class, 'facebookCallback'])->name('auth.facebook.callback');
