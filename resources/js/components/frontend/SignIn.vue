@@ -176,14 +176,16 @@
     <div class="d-flex">
       <a
         class="btn btn-block btn-sm btn-soft-facebook transition-3d-hover mr-1"
-        href="#"
+        href="$"
+        target="_blank"
       >
         <span class="fab fa-facebook-square mr-1"></span>
         Facebook
       </a>
       <a
         class="btn btn-block btn-sm btn-soft-google transition-3d-hover ml-1 mt-0"
-        href="#"
+        :href="google_redirect_url"
+        target="_blank"
       >
         <span class="fab fa-google mr-1"></span>
         Google
@@ -198,6 +200,7 @@ import { required, minLength, email } from "vuelidate/lib/validators";
 
 export default {
   name: "SignIn",
+  props: ['google_redirect_url'],
   data() {
     return {
       email: "",

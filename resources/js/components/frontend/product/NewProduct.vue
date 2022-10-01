@@ -42,7 +42,6 @@ export default {
             items_data: [],
             isLoad: true,
             current_page: 1,
-            last_page: 0,
             base_url: ''
         }
     },
@@ -54,34 +53,24 @@ export default {
     },
 
     mounted() {
-        this.getSet()
+        this.get()
     },
 
     methods: {
-        getSet() {
+        get() {
             this.base_url = window.Laravel.base_url
-            let vm = this
-            axios.get(`${this.base_url}/api/new-products`).then(res => {
-                vm.items = res.data
-                vm.items_data = vm.items.data
-                vm.current_page = res.data.current_page;
-                vm.isLoad = res.data.current_page < res.data.last_page ? true : false
-
-                console.log('burdayam')
-            })
-            
+            axios.get(`${this.base_url}/api/new-products`).then(this.set)   
         },
 
         loadMore() {
-            let vm = this
-            axios.get(vm.items.next_page_url).then(res => {
-                vm.items = res.data
-                vm.items_data = [...vm.items_data, ...vm.items.data]
-                vm.current_page = res.data.current_page;
-                vm.isLoad = res.data.current_page < res.data.last_page ? true : false
-            })
+            axios.get(this.items.next_page_url).then(this.set)
+        },
 
-            console.log(this.items)
+        set(res) {
+            this.items = res.data
+            this.items_data = [...this.items_data, ...this.items.data]
+            this.current_page = res.data.current_page;
+            this.isLoad = res.data.current_page < res.data.last_page ? true : false
         }
     }
 }

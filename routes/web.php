@@ -5,6 +5,7 @@ use App\Http\Controllers\SearchController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SiteController;
+use App\Http\Controllers\SocialController;
 use App\Http\Controllers\UserController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
@@ -66,10 +67,6 @@ Route::post('search', [SearchController::class, 'entry'])->name('search');
 
   // End of All Frontend Cart Routes
 
-  // All Orders Routes
-
-  // End of All Orders Routes
-
 
 // My Account routes
 
@@ -81,6 +78,12 @@ Route::name('user.')->prefix('user')->group(function () {
 
 
   Route::get('single/{user}', [UserController::class, 'singleUser'])->middleware(['auth'])->name('singleUser');
+
+  Route::middleware('auth')->group(function () {
+      Route::get('dashboard/{user}', [UserController::class, 'dashboard'])->name('dashboard');
+      Route::get('orders/{user}', [UserController::class, 'orders'])->name('orders');
+      Route::get('orders/{user}/show/{order}', [UserController::class, 'orderShow'])->name('orderShow');
+  });
 
   Route::get('loginregister', [UserController::class, 'loginregister'])->name('loginregister')->middleware('guest');
   Route::view('forgot-password', 'frontend.user.password.email')->middleware(['guest'])->name('password.request');
@@ -120,3 +123,9 @@ Route::post('/email/verification-notification', function (Request $request) {
 Route::get('test/user', function(Request $request) {
   return view('frontend.user.orders');
 });
+
+// Login ord Register with Google
+
+Route::get('/auth/google/redirect', [SocialController::class, 'googleRedirect'])->name('auth.google.redirect');
+
+Route::get('/auth/google/callback', [SocialController::class, 'googleCallback'])->name('auth.google.callback');
