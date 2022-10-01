@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SiteController;
 use App\Http\Controllers\SocialController;
+use App\Http\Controllers\StoreController;
 use App\Http\Controllers\UserController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
@@ -123,6 +124,10 @@ Route::post('/email/verification-notification', function (Request $request) {
 Route::get('test/user', function(Request $request) {
   return view('frontend.user.orders');
 });
+
+// Store routes
+
+Route::get('store/{store}', [StoreController::class, 'show'])->name('store.show');
 
 // Login ord Register with Google
 
