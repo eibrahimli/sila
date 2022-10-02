@@ -43,7 +43,7 @@
                                     </div>
                                     <div class="flex-center-between mb-1">
                                         <div class="prodcut-price d-flex align-items-center position-relative">
-                                            <ins class="font-size-20 font-bodl">₼ {{ $item['price'] }}</ins>
+                                            <div class="font-size-20 font-bodl">₼ {{ $item['price'] }}</div>
                                         </div>
                                         <div class="d-none d-xl-block prodcut-add-cart">
                                             <a href="{{ $item->url }}" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
