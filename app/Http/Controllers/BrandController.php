@@ -46,7 +46,8 @@ class BrandController extends Controller
      */
     public function show(Brand $brand)
     {
-        //
+        $products = $brand->products;
+        return view('frontend.brand.show', compact('brand','products'));
     }
 
     /**

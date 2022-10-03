@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BrandController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\SearchController;
 use Illuminate\Http\Request;
@@ -128,6 +129,10 @@ Route::get('test/user', function(Request $request) {
 // Store routes
 
 Route::get('store/{store}', [StoreController::class, 'show'])->name('store.show');
+
+// Brand routes
+
+Route::get('brand/{brand}', [BrandController::class, 'show'])->name('brand.show');
 
 // Login ord Register with Google
 
