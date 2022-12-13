@@ -88,7 +88,9 @@ class AdminCategoryController extends Controller
       
       if($request->has('banner_photo')):
         if($category->banner_photo != null) {
-          Storage::delete('public/' . $category->banner_photo);
+          if(Storage::exists('public/' . $category->banner_photo)) {
+            Storage::delete('public/' . $category->banner_photo);
+          }
         }
         
         $category->update([
@@ -109,7 +111,9 @@ class AdminCategoryController extends Controller
     try{
 
       if($category->photo) {
-        Storage::delete('public/'.$category->photo);
+        if(Storage::exists('public/' . $category->photo)) {
+          Storage::delete('public/' . $category->photo);
+        }
       }
 
       $category->delete();

@@ -73,11 +73,15 @@ class AdminProductController extends Controller
 
     $oldPhoto = $product->photo;
 
-    try {
+   
       $product->update($validator->validated());
 
       if ($request->has('photo')) {
-        Storage::delete('public/' . $oldPhoto);
+        
+        if(Storage::exists('public/' . $oldPhoto)) {
+          Storage::delete('public/' . $oldPhoto);
+        }
+
         $product->update([
           'photo' => $request->photo->store('uploads/product', 'public')
         ]);
@@ -87,9 +91,7 @@ class AdminProductController extends Controller
       }
 
       return response()->json(['mes' => 'Məhsul uğurlu şəkildə redaktə edildi...', 'product' => $product]);
-    } catch (\Exception $e) {
-      return response()->json(['error' => 'Məhsul yenilənirkən xəta baş verdi...'], 422);
-    }
+    
   }
 
   public function destroy(Product $product)
