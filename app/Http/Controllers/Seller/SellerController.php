@@ -43,9 +43,9 @@ class SellerController extends Controller
 
     try {
       if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-        if (!auth()->user()->hasVerifiedEmail()) {
-          return redirect()->route('verification.notice');
-        }
+        // if (!auth()->user()->hasVerifiedEmail()) {
+        //   return redirect()->route('verification.notice');
+        // }
 
         return redirect()->route('seller.index');
       }
