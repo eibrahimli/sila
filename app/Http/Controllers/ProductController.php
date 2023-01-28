@@ -12,7 +12,7 @@ use Illuminate\Support\Str;
 class ProductController extends Controller
 {
     public function show(Product $product, $slug) {
-      $related_products = $product->category->products->where('id', '!=', $product->id);
+      $related_products = $product->category->products->where('id', '!=', $product->id)->take(20)->get();
 
       return view('frontend.product.show',compact('product','related_products'));
     }
