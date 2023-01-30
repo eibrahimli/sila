@@ -1,4 +1,5 @@
 window.Vue = require('vue');
+
 window.Swal = require('sweetalert2')
 
 require('./bootstrap');
