@@ -39,7 +39,8 @@ class SettingController extends Controller
       $setting->update($request->except(['created_at', 'updated_at', 'id']));
 
       if ($request->has('logo')) {
-        Storage::delete('public/'.$setting->logo);
+        if(Storage::exists('public/'.$setting->logo)) Storage::delete('public/'.$setting->logo);
+        
         $setting->update([
           'logo' => $request->logo->store('uploads', 'public')
         ]);
