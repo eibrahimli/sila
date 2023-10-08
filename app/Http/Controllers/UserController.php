@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Exception;
 use App\Models\User;
+use App\Models\Order;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -61,7 +62,6 @@ class UserController extends Controller
             return response(['mes' => 'Qeydiyyatdan keçərkən nəsə xəta baş verdi'], 422);
         }
     }
-
     public function loginregister() {
         return view('frontend.user.logreg');
     }
@@ -124,4 +124,20 @@ class UserController extends Controller
     public function singleUser(User $user) {
       return response()->json(['user' => Auth::user()]);
     }
+
+    public function dashboard(User $user) {
+        return view('frontend.user.dashboard');
+    }
+
+    public function orders(User $user) {
+        $user->load(['orders']);
+    
+        return view('frontend.user.orders',compact('user'));
+    }
+
+    public function orderShow(User $user,Order $order) {
+        
+        return view('frontend.user.order_show',compact('order','user'));
+    }
+
 }

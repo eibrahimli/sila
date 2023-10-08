@@ -16,7 +16,7 @@
 
 .profile_nav_list{
     list-style-type: none;
-    border: 1px solid #333;
+    /* border: 1px solid #333; */
 }
 
 .profile_nav_list_item{
@@ -38,14 +38,14 @@
 
 .profile_content{
     display: flex;
-    flex: 4;
+    width: 100%;
+    flex: 4; 
 }
 
 .profile_orders_table{
     display: flex;
     flex: 1;
     flex-direction: column;
-    border: 1px solid #333;
     border-radius: .5rem;
     padding: 1rem;
 }
@@ -71,7 +71,6 @@
     color: #333e48;
     padding: 0.618em 2em;
     font-size: .857em;
-    margin-right: 0.236em;
     text-align: center;
     vertical-align: middle;
     cursor: pointer;

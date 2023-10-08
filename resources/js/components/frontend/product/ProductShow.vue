@@ -156,6 +156,7 @@
     },
     mounted() {
       this.loadProduct()
+      
       this.base_url = window.Laravel.base_url
       
     },

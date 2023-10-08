@@ -1,7 +1,7 @@
 @extends('frontend.layouts.app')
-@section('content')
 
-<!-- breadcrumb -->
+@section('content')
+    <!-- breadcrumb -->
 <div class="bg-gray-13 bg-md-transparent">
     <div class="container">
       <!-- breadcrumb -->
@@ -19,20 +19,41 @@
   <!-- End breadcrumb -->
 
 <div class="container">
-    <div class="mb-5 col-md-12">
-        <h1 class="text-center">Mənim Profilim</h1>
-      </div>
-    <div class="profile_container">
+    <div class="mb-5 col-12">
+        <h1 class="text-center">Sifarişlərim</h1>
+    </div>
+    <div class="profile_content">
 
         @include('frontend.inc.user_nav')
     
-        <section class="profile_content">
-            <p>Profilim səhifəsində bütün konfiqurasiyaları edə bilərsiniz.</p>
-        </section>    
+        <section class="order_detail">
+            <h2 class="order_detail_title">Order details</h2>
+            <table class="order_detail_table">
+                <thead>
+                    <tr>
+                        <th>Məhsul</th>
+                        <th>Ümumi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="order_detail_item">
+                        <td>
+                        <a href="https://electro.madrasthemes.com/product/notebook-widescreen-y700-17-gf790-2/">Notebook Widescreen Y700-17 GF790</a> <strong class="product-quantity">×&nbsp;1</strong> </td>
+                        <td class="order_detail_item_price">
+                        <span ><bdi><span>$</span>159.00</bdi></span> </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th scope="row">Total:</th>
+                        <td><span><span>$</span>209.00</span></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>   
     
     </div>
 </div>
-
 @endsection
 
 @section('scripts')
@@ -171,4 +192,25 @@
   <link rel="stylesheet" href="{{ asset('frontend/vendor/fancybox/jquery.fancybox.css') }}">
   <link rel="stylesheet" href="{{ asset('frontend/vendor/slick-carousel/slick/slick.css') }}">
   <link rel="stylesheet" href="{{ asset('frontend/vendor/bootstrap-select/dist/css/bootstrap-select.min.css') }}">
+
+  <style>
+    .order_detail{
+        flex: 4;
+        margin-left: 1rem;
+        width: inherit;
+    }
+    .order_detail_table {
+        width: inherit;
+    }
+    .order_detail .order_detail_table thead tr{
+        display: flex;
+        border-bottom: 1px solid #ddd;
+    }
+    .order_detail .order_detail_table tfoot td{
+        flex: 1;
+    }
+    .order_detail .order_detail_table thead th{
+        flex: 1;
+    }
+  </style>
 @endsection
